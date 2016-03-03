@@ -7,7 +7,7 @@ import Content from './Content.jsx';
 injectTapEventPlugin(); //needed for material-ui to wrok untill react 1.0.0 would be released
 
 var data = {
-	catalogData: [
+	bouquets: [
 		{
 			title: 'Цветы',
 			text: 'эти цветочки просто восхитительны, базарю, еще захочешь',
@@ -32,7 +32,11 @@ var data = {
 			img: 'https://static.wixstatic.com/media/9a9509_352585c71ffd48c19cd541f6ca00b513.jpg/v1/fill/w_427,h_446,al_c,q_90,usm_0.66_1.00_0.01/9a9509_352585c71ffd48c19cd541f6ca00b513.jpg',
 			price: '1200'
 		},
-	]
+	],
+	wedding: [],
+	liveplants: [],
+	gifts: [],
+	yummy: [],
 };
 
 export default class Main extends React.Component {

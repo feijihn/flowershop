@@ -31,7 +31,7 @@ export default class TopMenu extends React.Component {
 					/>
 					<FlatButton
 						//linkButton={true}
-					 	href={'#compositions'}
+					 	href={'#bouquets'}
 					 	value={1}	
 						label={'Букеты и композиции'}
 					 	style={Styles.TopMenuWrapper.Navigation.Buttons}
@@ -47,7 +47,7 @@ export default class TopMenu extends React.Component {
 					/>
 					<FlatButton 
 						//linkButton={true} 
-						href={'#flowersalive'} //oh fuck how d i came up with this? 
+						href={'#liveplants'} //oh fuck how d i came up with this? 
 						value={3}	
 						label={'Живые растения'} 
 						style={Styles.TopMenuWrapper.Navigation.Buttons} 
@@ -55,7 +55,7 @@ export default class TopMenu extends React.Component {
 					/>					
 					<FlatButton 
 						//linkButton={true} 
-						href={'#giftsandaccesories'} 
+						href={'#gifts'} 
 						value={4}	
 						label={'Подарки и украшения'} 
 						style={Styles.TopMenuWrapper.Navigation.Buttons} 
