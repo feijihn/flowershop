@@ -30,6 +30,16 @@ var styles = {
 			margin: 10,
 			textAlign: 'center',
 			display: 'inline-block',
+		},
+		elementOnHover: {
+			width: '100%', 
+			height: '100%', 
+			backgroundColor: 'rgba(225,225,225,0)'
+		},
+		elementNotOnHover: {
+			width: '100%', 
+			height: '100%', 
+			backgroundColor: 'rgba(225,225,225,0.3)'
 		}
 	}
 }

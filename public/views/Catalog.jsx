@@ -6,22 +6,22 @@ import Paper from 'material-ui/lib/paper';
 var data = {
 	catalogData: [
 		{
-			title: '1',
+			title: 'Цветы',
 			text: '',
 			img: 'https://static.wixstatic.com/media/9a9509_ba44cdf7e9b24c68bb28e6070dc1f5ce.jpg/v1/fill/w_560,h_463,al_c,q_90,usm_0.66_1.00_0.01/9a9509_ba44cdf7e9b24c68bb28e6070dc1f5ce.jpg',
 		},
 		{
-			title: '2',
+			title: 'Цветочки',
 			text: '',
 			img: 'https://static.wixstatic.com/media/9a9509_04beb86942c343f1adb9684b25657af3.jpg/v1/fill/w_570,h_463,al_c,q_90,usm_0.66_1.00_0.01/9a9509_04beb86942c343f1adb9684b25657af3.jpg',
 		},
 		{
-			title: '3',
+			title: 'Цветики',
 			text: '',
 			img: 'https://static.wixstatic.com/media/9a9509_77e7370d65524b72b19b4de6c0ccc249.jpg/v1/fill/w_493,h_463,al_c,q_90,usm_0.66_1.00_0.01/9a9509_77e7370d65524b72b19b4de6c0ccc249.jpg',
 		},
 		{
-			title: '4',
+			title: 'Цвета',
 			text: '',
 			img: 'https://static.wixstatic.com/media/9a9509_352585c71ffd48c19cd541f6ca00b513.jpg/v1/fill/w_427,h_446,al_c,q_90,usm_0.66_1.00_0.01/9a9509_352585c71ffd48c19cd541f6ca00b513.jpg',
 		},
@@ -36,6 +36,7 @@ export default class Catalog extends React.Component {
 					title={element.title}
 					text={element.text}
 					img={element.img}
+					id={id}
 				/>
 			)
 		});
@@ -52,23 +53,28 @@ class CatalogElement extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			onHover: false,
 			zDepth: 1
 		}
 	};
 
 	handleMouseEnter = () => {
 		this.setState({
+			onHover: true,
 			zDepth: 5
 		})
 	};
 
 	handleMouseLeave = () => {
 		this.setState({
+			onHover: false,
 			zDepth: 1
 		})
 	};
 
 	render() {
+		var id = this.props.id;
+		var img = this.props.img;
 		return (
 			<Paper 
 				style={Styles.Catalog.elementWrapper} 
@@ -76,7 +82,11 @@ class CatalogElement extends React.Component {
 				onMouseEnter={this.handleMouseEnter}
 				onMouseLeave={this.handleMouseLeave}
 			>  
-				{this.props.title}
+				<div style={{width: '100%', height: '100%', backgroundImage: 'url(' + img + ')'}}>
+					<div style={this.state.onHover ? Styles.Catalog.elementNotOnHover : Styles.Catalog.elementOnHover}>
+						{this.props.title}
+					</div>
+				</div>
 			</Paper>
 		)
 	}
