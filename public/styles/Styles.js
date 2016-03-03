@@ -1,4 +1,6 @@
 import Colors from 'material-ui/lib/styles/colors';
+
+
 var styles = {
 	TopMenuWrapper : {
 		backgroundColor: Colors.red100,

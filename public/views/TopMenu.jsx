@@ -1,6 +1,9 @@
 import React from 'react';
-import FlatButton from 'material-ui/lib/flat-button';
 import Styles from '../styles/Styles.js';
+import Catalog from './Catalog.jsx';
+
+import FlatButton from 'material-ui/lib/flat-button';
+
 
 export default class TopMenu extends React.Component {
 	render(){
@@ -12,6 +15,7 @@ export default class TopMenu extends React.Component {
 					<FlatButton	label={'Каталог'} style={Styles.TopMenuWrapper.Navigation.Buttons}/>
 					<FlatButton	label={'Оплата и Доставка'} style={Styles.TopMenuWrapper.Navigation.Buttons}/>
 				</div>
+				<Catalog />
 			</div>	
 		)
 	}
