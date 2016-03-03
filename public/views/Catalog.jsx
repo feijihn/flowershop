@@ -31,17 +31,18 @@ export default class Catalog extends React.Component {
 		return (
 			<div>  
 				sadas
+				<dick />
 			</div>
 		)
 	}
 };
 
 
-export default class dick extends Catalog {
+export class dick extends Catalog {
 	render() {
 		return (
 			<div>  
-				1111
+				fuck you
 			</div>
 		)
 	}
