@@ -31,21 +31,61 @@ export default class TopMenu extends React.Component {
 					/>
 					<FlatButton
 						//linkButton={true}
-					 	href={'#catalog'}
+					 	href={'#compositions'}
 					 	value={1}	
-						label={'Каталог'}
+						label={'Букеты и композиции'}
 					 	style={Styles.TopMenuWrapper.Navigation.Buttons}
 					 	onClick={this.handleClick}
 					/>
 					<FlatButton 
 						//linkButton={true} 
-						href={'#payment'} 
+						href={'#wedding'} 
 						value={2}	
+						label={'Свадебная флористика'} 
+						style={Styles.TopMenuWrapper.Navigation.Buttons} 
+						onClick={this.handleClick} 
+					/>
+					<FlatButton 
+						//linkButton={true} 
+						href={'#flowersalive'} //oh fuck how d i came up with this? 
+						value={3}	
+						label={'Живые растения'} 
+						style={Styles.TopMenuWrapper.Navigation.Buttons} 
+						onClick={this.handleClick} 
+					/>					
+					<FlatButton 
+						//linkButton={true} 
+						href={'#giftsandaccesories'} 
+						value={4}	
+						label={'Подарки и украшения'} 
+						style={Styles.TopMenuWrapper.Navigation.Buttons} 
+						onClick={this.handleClick} 
+					/>				
+					<FlatButton 
+						//linkButton={true} 
+						href={'#yummy'} //:3 
+						value={5}	
+						label={'Вкусное'} 
+						style={Styles.TopMenuWrapper.Navigation.Buttons} 
+						onClick={this.handleClick} 
+					/>					
+					<FlatButton 
+						//linkButton={true} 
+						href={'#aboutus'} 
+						value={6}	
+						label={'Наш магазин'} 
+						style={Styles.TopMenuWrapper.Navigation.Buttons} 
+						onClick={this.handleClick} 
+					/>
+						<FlatButton 
+						//linkButton={true} 
+						href={'#payment'} 
+						value={7}	
 						label={'Оплата и Доставка'} 
 						style={Styles.TopMenuWrapper.Navigation.Buttons} 
 						onClick={this.handleClick} 
 					/>
-				</div>
+					</div>
 			</div>	
 		)
 	}

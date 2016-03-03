@@ -3,31 +3,29 @@ import Colors from 'material-ui/lib/styles/colors';
 
 var Styles = {
 	TopMenuWrapper : {
-		height: 50,
+		height: 'auto',
+		width: '100%',
+		position: 'relative',
+		backgroundColor: Colors.lightGreen100,
 		Title:{
-			backgroundColor: Colors.lightGreen100,
-			width: '20%',
 			float: 'left',
-			textAlign: 'center',
+			width: '20%',
+			height: 100,
 			Label : {
 				fontFamily: '\'Pacifico\', cursive',
 				fontSize: '1.75em',
 				color: Colors.pink500,
+				lineHeight: '3em',
+				marginLeft: 50,
 			},
 		},
 		Navigation: {
-			float: 'right',
-			width: '80%',
-			height: 50,
-			backgroundColor: Colors.lightGreen200,
+			paddingTop: 30,
 			Buttons: {
-				height: 50,
-				width: 'calc(80vw/3)',
-				color: Colors.pink900
+				color: Colors.pink900,
+				fontSize: 11
 			},
 			ButtonActive: {
-				height: 50,
-				width: 'calc(80vw/3)',
 				borderBottom: '3px solid' + Colors.lightGreenA200,
 			},
 		},
