@@ -7,22 +7,22 @@ var data = {
 	catalogData: [
 		{
 			title: 'Цветы',
-			text: '',
+			text: 'эти цветочки просто восхитительны, базарю, еще захочешь',
 			img: 'https://static.wixstatic.com/media/9a9509_ba44cdf7e9b24c68bb28e6070dc1f5ce.jpg/v1/fill/w_560,h_463,al_c,q_90,usm_0.66_1.00_0.01/9a9509_ba44cdf7e9b24c68bb28e6070dc1f5ce.jpg',
 		},
 		{
 			title: 'Цветочки',
-			text: '',
+			text: 'почему бы тебе не попробовать еще немного этих цветочков?',
 			img: 'https://static.wixstatic.com/media/9a9509_04beb86942c343f1adb9684b25657af3.jpg/v1/fill/w_570,h_463,al_c,q_90,usm_0.66_1.00_0.01/9a9509_04beb86942c343f1adb9684b25657af3.jpg',
 		},
 		{
 			title: 'Цветики',
-			text: '',
+			text: 'тыкай. тыкай сюда. тыкай',
 			img: 'https://static.wixstatic.com/media/9a9509_77e7370d65524b72b19b4de6c0ccc249.jpg/v1/fill/w_493,h_463,al_c,q_90,usm_0.66_1.00_0.01/9a9509_77e7370d65524b72b19b4de6c0ccc249.jpg',
 		},
 		{
 			title: 'Цвета',
-			text: '',
+			text: 'ммм цветоочки',
 			img: 'https://static.wixstatic.com/media/9a9509_352585c71ffd48c19cd541f6ca00b513.jpg/v1/fill/w_427,h_446,al_c,q_90,usm_0.66_1.00_0.01/9a9509_352585c71ffd48c19cd541f6ca00b513.jpg',
 		},
 	]
@@ -49,13 +49,12 @@ export default class Catalog extends React.Component {
 };
 
 
-
 class CatalogElement extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			onHover: false,
-			zDepth: 1
+			zDepth: 2
 		}
 	};
 
@@ -69,7 +68,7 @@ class CatalogElement extends React.Component {
 	handleMouseLeave = () => {
 		this.setState({
 			onHover: false,
-			zDepth: 1
+			zDepth: 2
 		})
 	};
 
@@ -84,12 +83,14 @@ class CatalogElement extends React.Component {
 				onMouseLeave={this.handleMouseLeave}
 			>  
 				<div style={{width: '100%', height: '100%', backgroundImage: 'url(' + img + ')'}}>
-					<div style={this.state.onHover ? Styles.Catalog.elementNotOnHover : Styles.Catalog.elementOnHover}>
-						{this.props.title}
-					</div>
+					{this.state.onHover ?
+						<div style={Styles.Catalog.elementOnHover}>
+							<h2 style={{textAlign: 'center'}}>№{this.props.id+1}</h2>
+							<h3 style={{margin: 7, marginTop: 2}}>{this.props.text}</h3>
+						</div>
+					:null}
 				</div>
 			</Paper>
-
 		)
 	}
 };

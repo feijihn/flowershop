@@ -1,7 +1,7 @@
 import Colors from 'material-ui/lib/styles/colors';
 
 
-var styles = {
+var Styles = {
 	TopMenuWrapper : {
 		height: 50,
 		Title:{
@@ -34,23 +34,19 @@ var styles = {
 	},
 	Catalog: {
 		elementWrapper: {
-			height: 200,
-			width: 200,
-			margin: 10,
-			textAlign: 'center',
+			width: 300, 
+			height: 350, 
+			margin: 5,
 			display: 'inline-block',
 		},
 		elementOnHover: {
-			width: '100%', 
-			height: '100%', 
-			backgroundColor: 'rgba(225,225,225,0)'
+			position: 'absolute',
+			width: 300, //Must be equal to elementWrapper width
+			height: 350, //Must be equal to elementWrapper height
+			backgroundColor: 'rgba(0,0,0,0.4)',
+			color: 'white',
 		},
-		elementNotOnHover: {
-			width: '100%', 
-			height: '100%', 
-			backgroundColor: 'rgba(225,225,225,0.3)'
-		}
 	}
 }
 
-module.exports = styles;
+module.exports = Styles;
