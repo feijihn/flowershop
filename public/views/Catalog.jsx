@@ -61,20 +61,16 @@ class CatalogElement extends React.Component {
 				onMouseEnter={this.handleMouseEnter}
 				onMouseLeave={this.handleMouseLeave}
 			>  
-				<div style={{width: '100%', height: '100%', backgroundImage: 'url(' + img + ')'}}>
+				<div style={{width: '23vw', height: '350px', backgroundImage: 'url(' + img + ')', position: 'absolute'}}>
 					{this.state.onHover ?
 						<div style={Styles.Catalog.elementOnHover}>
 							<h2 style={{textAlign: 'center'}}>№{this.props.id+1}</h2>
 							<h3 style={{margin: 7, marginTop: 2}}>{this.props.text}</h3>
-							<div style={Styles.Catalog.elementFooter}>
-							<FlatButton 
-								style={{color:'white'}} 
-							>
-								{this.props.price}р
-							</FlatButton>
-							</div>
 						</div>
 					:null}
+					<div style={Styles.Catalog.elementFooter}>
+						{this.props.title} {this.props.price}р
+					</div>
 				</div>
 			</Paper>
 		)

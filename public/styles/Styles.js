@@ -3,7 +3,7 @@ import Colors from 'material-ui/lib/styles/colors';
 
 var Styles = {
 	TopMenuWrapper : {
-		height: 'auto',
+		height: '100px',
 		width: '100%',
 		position: 'relative',
 		backgroundColor: Colors.lightGreen100,
@@ -37,24 +37,25 @@ var Styles = {
 	},
 	Catalog: {
 		elementWrapper: {
-			width: '21vw', 
+			width: '23vw', 
 			height: 350, 
 			margin: 2,
 			display: 'inline-block',
 		},
 		elementOnHover: {
 			position: 'absolute',
-			width: '21vw', //Must be equal to elementWrapper width
+			width: '23vw', //Must be equal to elementWrapper width
 			height: 350, //Must be equal to elementWrapper height
-			backgroundColor: 'rgba(0,0,0,0.4)',
+			backgroundColor: 'rgba(0,0,0,0.5)',
 			color: 'white',
 		},
 		elementFooter: {
-			width: '21vw', //Must be equal to elementWrapper width
-			height: 80, //Must be equal to elementWrapper height
+			width: '23vw', //Must be equal to elementWrapper width
+			height: 80, 
 			backgroundColor: 'rgba(0,0,0,0.8)',
 			position: 'absolute',
-			bottom: '0px'
+			bottom: '0px',
+			color: 'white'
 
 		}
 	}

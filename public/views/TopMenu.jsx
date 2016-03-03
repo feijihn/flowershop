@@ -3,6 +3,7 @@ import Styles from '../styles/Styles.js';
 import Catalog from './Catalog.jsx';
 
 import FlatButton from 'material-ui/lib/flat-button';
+import Paper from 'material-ui/lib/paper';
 
 
 export default class TopMenu extends React.Component {
@@ -16,7 +17,7 @@ export default class TopMenu extends React.Component {
 
 	render(){
 		return(
-			<div className={'TopMenuWrapper'} style={Styles.TopMenuWrapper}>
+			<Paper className={'TopMenuWrapper'} style={Styles.TopMenuWrapper}>
 				<div className={'Title'} style={Styles.TopMenuWrapper.Title}>
 					<h className={'Label'} style={Styles.TopMenuWrapper.Title.Label}>Majorgarden</h>
 				</div>
@@ -86,7 +87,7 @@ export default class TopMenu extends React.Component {
 						onClick={this.handleClick} 
 					/>
 					</div>
-			</div>	
+			</Paper>	
 		)
 	}
 }
