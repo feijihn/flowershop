@@ -6,7 +6,7 @@ var Styles = {
 		height: 50,
 		Title:{
 			backgroundColor: Colors.lightGreen100,
-			width: '20vw',
+			width: '20%',
 			float: 'left',
 			textAlign: 'center',
 			Label : {
@@ -17,7 +17,7 @@ var Styles = {
 		},
 		Navigation: {
 			float: 'right',
-			width: '80vw',
+			width: '80%',
 			height: 50,
 			backgroundColor: Colors.lightGreen200,
 			Buttons: {
