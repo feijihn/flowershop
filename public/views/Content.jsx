@@ -11,7 +11,7 @@ export default class Content extends React.Component {
 			switch (this.props.category) {
 				case 0:
 					return(
-					<div className={'ContentWrapper'} style={Styles.ContentWrapper}>
+					<div className={'MainContentWrapper'}>
 						<Home />
 					</div>
 					)
@@ -19,7 +19,7 @@ export default class Content extends React.Component {
 				case 1:
 					return(
 					<div className={'ContentWrapper'} style={Styles.ContentWrapper}>
-						<Catalog />
+						<Catalog data={this.props.data.catalogData} />
 					</div>
 					)
 					break;
