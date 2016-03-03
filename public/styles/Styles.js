@@ -36,7 +36,7 @@ var Styles = {
 		elementWrapper: {
 			width: 300, 
 			height: 350, 
-			margin: 5,
+			margin: 2,
 			display: 'inline-block',
 		},
 		elementOnHover: {
@@ -46,6 +46,14 @@ var Styles = {
 			backgroundColor: 'rgba(0,0,0,0.4)',
 			color: 'white',
 		},
+		elementFooter: {
+			width: 300, //Must be equal to elementWrapper width
+			height: 80, //Must be equal to elementWrapper height
+			backgroundColor: 'rgba(0,0,0,0.8)',
+			position: 'absolute',
+			bottom: '0px'
+
+		}
 	}
 }
 
