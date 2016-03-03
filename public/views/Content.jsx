@@ -7,6 +7,7 @@ import Yummy from './Yummy.jsx';
 import ShoppingCart from './ShoppingCart.jsx';
 import Payment from './Payment.jsx';
 import AboutUs from './AboutUs.jsx';
+import Paper from 'material-ui/lib/paper';
 
 export default class Content extends React.Component {
 	constructor(props) {
@@ -23,58 +24,58 @@ export default class Content extends React.Component {
 				break;
 			case 1:
 				return(
-				<div className={'ContentWrapper'} style={Styles.ContentWrapper}>
+				<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
 					<Catalog data={this.props.data.bouquets} />
-				</div>
+				</Paper>
 				)
 				break;
 			case 2:
 				return(
-				<div className={'ContentWrapper'} style={Styles.ContentWrapper}>
+				<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
 					<Catalog data={this.props.data.wedding} />
-				</div>
+				</Paper>
 				)
 				break;
 			case 3:
 				return(
-				<div className={'ContentWrapper'} style={Styles.ContentWrapper}>
+				<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
 					<Catalog data={this.props.data.liveplants} />
-				</div>
+				</Paper>
 				)
 				break;
 			case 4:
 				return(
-				<div className={'ContentWrapper'} style={Styles.ContentWrapper}>
+				<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
 					<Catalog data={this.props.data.gifts} />
-				</div>
+				</Paper>
 				)
 				break;
 			case 5:
 				return(
-				<div className={'ContentWrapper'} style={Styles.ContentWrapper}>
+				<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
 					<Yummy data={this.props.data.yummy} />
-				</div>
+				</Paper>
 				)
 				break;
 			case 6:
 				return(
-				<div className={'ContentWrapper'} style={Styles.ContentWrapper}>
+				<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
 					<AboutUs />
-				</div>
+				</Paper>
 				)
 				break;
 			case 7:
 				return(
-				<div className={'ContentWrapper'} style={Styles.ContentWrapper}>
+				<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
 					<Payment />
-				</div>
+				</Paper>
 				)
 				break;
 			case 8:
 				return(
-				<div className={'ContentWrapper'} style={Styles.ContentWrapper}>
+				<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
 					<ShoppingCart />
-				</div>
+				</Paper>
 				)
 				break;
 		}

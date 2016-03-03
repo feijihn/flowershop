@@ -31,9 +31,10 @@ var Styles = {
 		},
 	},
 	ContentWrapper: { //should be refactored with bootstrap
-		minHeight: '70vh', // should be whole page - header. later footer might be added
+		minHeight: "calc(100vh - 100px)", // should be whole page - header. later footer might be added
 		width: '70vw',
 		marginLeft: '15vw',
+		backgroundColor: Colors.grey50
 	},
 	Catalog: {
 		elementWrapper: {
