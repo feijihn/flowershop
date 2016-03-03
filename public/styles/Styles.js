@@ -32,6 +32,15 @@ var styles = {
 			},
 		},
 	},
+	Catalog: {
+		elementWrapper: {
+			height: 200,
+			width: 200,
+			margin: 10,
+			textAlign: 'center',
+			display: 'inline-block',
+		}
+	}
 }
 
 module.exports = styles;
