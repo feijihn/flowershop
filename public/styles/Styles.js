@@ -3,9 +3,9 @@ import Colors from 'material-ui/lib/styles/colors';
 
 var Styles = {
 	TopMenuWrapper : {
-		height: 'auto',
 		width: '100%',
 		position: 'relative',
+		height: 100,
 		backgroundColor: Colors.lightGreen100,
 		Title:{
 			float: 'left',
