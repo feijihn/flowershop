@@ -1,6 +1,7 @@
 import React from 'react';
 import Styles from '../styles/Styles.js'
 
+import FlatButton from 'material-ui/lib/flat-button';
 import Paper from 'material-ui/lib/paper';
 
 var data = {
@@ -9,21 +10,25 @@ var data = {
 			title: 'Цветы',
 			text: 'эти цветочки просто восхитительны, базарю, еще захочешь',
 			img: 'https://static.wixstatic.com/media/9a9509_ba44cdf7e9b24c68bb28e6070dc1f5ce.jpg/v1/fill/w_560,h_463,al_c,q_90,usm_0.66_1.00_0.01/9a9509_ba44cdf7e9b24c68bb28e6070dc1f5ce.jpg',
+			price: '420'
 		},
 		{
 			title: 'Цветочки',
 			text: 'почему бы тебе не попробовать еще немного этих цветочков?',
 			img: 'https://static.wixstatic.com/media/9a9509_04beb86942c343f1adb9684b25657af3.jpg/v1/fill/w_570,h_463,al_c,q_90,usm_0.66_1.00_0.01/9a9509_04beb86942c343f1adb9684b25657af3.jpg',
+			price: '930'
 		},
 		{
 			title: 'Цветики',
 			text: 'тыкай. тыкай сюда. тыкай',
 			img: 'https://static.wixstatic.com/media/9a9509_77e7370d65524b72b19b4de6c0ccc249.jpg/v1/fill/w_493,h_463,al_c,q_90,usm_0.66_1.00_0.01/9a9509_77e7370d65524b72b19b4de6c0ccc249.jpg',
+			price: '2320'
 		},
 		{
 			title: 'Цвета',
 			text: 'ммм цветоочки',
 			img: 'https://static.wixstatic.com/media/9a9509_352585c71ffd48c19cd541f6ca00b513.jpg/v1/fill/w_427,h_446,al_c,q_90,usm_0.66_1.00_0.01/9a9509_352585c71ffd48c19cd541f6ca00b513.jpg',
+			price: '1200'
 		},
 	]
 };
@@ -37,6 +42,7 @@ export default class Catalog extends React.Component {
 					text={element.text}
 					img={element.img}
 					id={id}
+					price={element.price}
 				/>
 			)
 		});
@@ -87,6 +93,13 @@ class CatalogElement extends React.Component {
 						<div style={Styles.Catalog.elementOnHover}>
 							<h2 style={{textAlign: 'center'}}>№{this.props.id+1}</h2>
 							<h3 style={{margin: 7, marginTop: 2}}>{this.props.text}</h3>
+							<div style={Styles.Catalog.elementFooter}>
+							<FlatButton 
+								style={{color:'white'}} 
+							>
+								{this.props.price}р
+							</FlatButton>
+							</div>
 						</div>
 					:null}
 				</div>
