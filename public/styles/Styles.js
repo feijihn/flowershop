@@ -30,18 +30,12 @@ var Styles = {
 			},
 		},
 	},
-	HomePage: {
+	ContentWrapper: { //should be refactored with bootstrap
+		paddingTop: 4,
+		minHeight: "calc(100vh - 100px)", // should be whole page - header. later footer might be added
 		width: '70vw',
-		height: 'calc(100vh-50px)',
-		Carousel: {
-			
-		}
-	},
-	MainContentWrapper: { //should be refactored with bootstrap
-		minHeight: '70vh', // whole page - header. later footer might be added
-		width: '100%',
-		marginLeft: 'auto',
-		marginRight: 'auto',
+		marginLeft: '15vw',
+		backgroundColor: Colors.grey50
 	},
 	Catalog: {
 		marginLeft: 'auto',
@@ -56,7 +50,7 @@ var Styles = {
 			position: 'absolute',
 			width:  300, //Must be equal to elementWrapper width
 			height: 350, //Must be equal to elementWrapper height
-			backgroundColor: 'rgba(0,0,0,0.4)',
+			backgroundColor: 'rgba(0,0,0,0.5)',
 			color: 'white',
 		},
 		elementFooter: {
@@ -64,9 +58,15 @@ var Styles = {
 			height: 80, //Must be equal to elementWrapper height
 			backgroundColor: 'rgba(0,0,0,0.8)',
 			position: 'absolute',
-			bottom: '0px'
+			bottom: '0px',
+			color: 'white'
 
 		}
+	},
+	orderButton: {
+		margin: 20, 
+		marginRight: 95, 
+		float:'right',
 	}
 }
 
