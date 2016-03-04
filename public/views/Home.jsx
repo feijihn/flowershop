@@ -26,7 +26,7 @@ export default class Events extends React.Component {
 					backgroundColor: 'white', //in case if image isn't loaded
 					backgroundImage: 'url(' + slide.img + ')',
 					backgroundSize: 'cover',
-					height: '70vh',
+					height: '83vh',
 					backgroundRepeat: 'no-repeat',
 				}}>
 					<div>
