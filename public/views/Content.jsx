@@ -9,9 +9,7 @@ import ShoppingCart from './ShoppingCart.jsx';
 import Payment from './Payment.jsx';
 import AboutUs from './AboutUs.jsx';
 
-/*<div className={'MainContentWrapper'}>
-	<Home />
-</div>*/
+
 export default class Content extends React.Component {
 	constructor(props) {
 		super(props)
@@ -20,9 +18,9 @@ export default class Content extends React.Component {
 		switch (this.props.category) {
 			case 0:
 				return(
-					<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
-						<ShoppingCart data={this.props.data.shoppingcart} />
-					</Paper>
+					<div className={'MainContentWrapper'}>
+						<Home />
+					</div>
 				)
 				break;
 			case 1:
@@ -70,14 +68,15 @@ export default class Content extends React.Component {
 			case 7:
 				return(
 					<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
-						<Payment />
+						<ShoppingCart data={this.props.data.shoppingcart} />
+						{/*<Payment />*/}
 					</Paper>
 				)
 				break;
 			case 8:
 				return(
 					<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
-						<ShoppingCart />
+						<ShoppingCart data={this.props.data.shoppingcart} />
 					</Paper>
 				)
 				break;
