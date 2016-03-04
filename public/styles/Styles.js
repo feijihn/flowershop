@@ -45,20 +45,20 @@ var Styles = {
 		marginLeft: 'auto',
 		marginRight: 'auto',
 		elementWrapper: {
-			width: 300, 
+			width: '23vw', 
 			height: 350, 
 			margin: 2,
 			display: 'inline-block',
 		},
 		elementOnHover: {
 			position: 'absolute',
-			width:  300, //Must be equal to elementWrapper width
+			width:  '23vw', //Must be equal to elementWrapper width
 			height: 350, //Must be equal to elementWrapper height
 			backgroundColor: 'rgba(0,0,0,0.5)',
 			color: 'white',
 		},
 		elementFooter: {
-			width: 300, //Must be equal to elementWrapper width
+			width: '23vw', //Must be equal to elementWrapper width
 			height: 80, //Must be equal to elementWrapper height
 			backgroundColor: 'rgba(0,0,0,0.8)',
 			position: 'absolute',
