@@ -1,6 +1,6 @@
 import React from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import TopMenu from './TopMenu.jsx';
+import Header from './Header.jsx';
 import Content from './Content.jsx';
 
 
@@ -119,7 +119,7 @@ export default class Main extends React.Component {
 	render() {
 		return (
 			<div className={'MainView'}>  
-				<TopMenu clickEvent={this.menuClicked} />
+				<Header clickEvent={this.menuClicked} />
 				<Content data={data} category={this.state.category} />
 			</div>
 		)

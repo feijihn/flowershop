@@ -6,7 +6,7 @@ import FlatButton from 'material-ui/lib/flat-button';
 import Paper from 'material-ui/lib/paper';
 
 
-export default class TopMenu extends React.Component {
+export default class Header extends React.Component {
 	constructor(props){
 		super(props);
 	};
@@ -17,17 +17,17 @@ export default class TopMenu extends React.Component {
 
 	render(){
 		return(
-			<Paper className={'TopMenuWrapper'} style={Styles.TopMenuWrapper}>
-				<div className={'Title'} style={Styles.TopMenuWrapper.Title}>
-					<h className={'Label'} style={Styles.TopMenuWrapper.Title.Label}>Majorgarden</h>
+			<Paper className={'Header'} style={Styles.HeaderWrapper}>
+				<div className={'Title'} style={Styles.HeaderWrapper.Title}>
+					<h className={'Label'} style={Styles.HeaderWrapper.Title.Label}>Majorgarden</h>
 				</div>
-				<div className={'Navigation'} style={Styles.TopMenuWrapper.Navigation}>
+				<div className={'Navigation'} style={Styles.HeaderWrapper.Navigation}>
 					<FlatButton 
 						//linkButton={true} 
 						href={'#home'} 
 						value={0} 
 						label={'Главная'} 
-						style={Styles.TopMenuWrapper.Navigation.Buttons} 
+						style={Styles.HeaderWrapper.Navigation.Buttons} 
 						onClick={this.handleClick} 
 					/>
 					<FlatButton
@@ -35,7 +35,7 @@ export default class TopMenu extends React.Component {
 					 	href={'#bouquets'}
 					 	value={1}	
 						label={'Букеты и композиции'}
-					 	style={Styles.TopMenuWrapper.Navigation.Buttons}
+					 	style={Styles.HeaderWrapper.Navigation.Buttons}
 					 	onClick={this.handleClick}
 					/>
 					<FlatButton 
@@ -43,7 +43,7 @@ export default class TopMenu extends React.Component {
 						href={'#wedding'} 
 						value={2}	
 						label={'Свадебная флористика'} 
-						style={Styles.TopMenuWrapper.Navigation.Buttons} 
+						style={Styles.HeaderWrapper.Navigation.Buttons} 
 						onClick={this.handleClick} 
 					/>
 					<FlatButton 
@@ -51,7 +51,7 @@ export default class TopMenu extends React.Component {
 						href={'#liveplants'} //oh fuck how d i came up with this? 
 						value={3}	
 						label={'Живые растения'} 
-						style={Styles.TopMenuWrapper.Navigation.Buttons} 
+						style={Styles.HeaderWrapper.Navigation.Buttons} 
 						onClick={this.handleClick} 
 					/>					
 					<FlatButton 
@@ -59,7 +59,7 @@ export default class TopMenu extends React.Component {
 						href={'#gifts'} 
 						value={4}	
 						label={'Подарки и украшения'} 
-						style={Styles.TopMenuWrapper.Navigation.Buttons} 
+						style={Styles.HeaderWrapper.Navigation.Buttons} 
 						onClick={this.handleClick} 
 					/>				
 					<FlatButton 
@@ -67,7 +67,7 @@ export default class TopMenu extends React.Component {
 						href={'#yummy'} //:3 
 						value={5}	
 						label={'Вкусное'} 
-						style={Styles.TopMenuWrapper.Navigation.Buttons} 
+						style={Styles.HeaderWrapper.Navigation.Buttons} 
 						onClick={this.handleClick} 
 					/>					
 					<FlatButton 
@@ -75,7 +75,7 @@ export default class TopMenu extends React.Component {
 						href={'#aboutus'} 
 						value={6}	
 						label={'Наш магазин'} 
-						style={Styles.TopMenuWrapper.Navigation.Buttons} 
+						style={Styles.HeaderWrapper.Navigation.Buttons} 
 						onClick={this.handleClick} 
 					/>
 						<FlatButton 
@@ -83,7 +83,7 @@ export default class TopMenu extends React.Component {
 						href={'#payment'} 
 						value={7}	
 						label={'Оплата и Доставка'} 
-						style={Styles.TopMenuWrapper.Navigation.Buttons} 
+						style={Styles.HeaderWrapper.Navigation.Buttons} 
 						onClick={this.handleClick} 
 					/>
 					</div>

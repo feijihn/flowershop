@@ -83,6 +83,7 @@ export default class AboutUs extends React.Component {
 
 	render() {
 		return (
+			<div style={Styles.AboutUsWrapper}>
 			<GoogleMapLoader
 				containerElement={
 					<div
@@ -107,18 +108,10 @@ export default class AboutUs extends React.Component {
 								/>
 							);
 						})}
-						<div style={Styles.AboutUs.textWrapper}>
-							<p style={Styles.AboutUs.text}>
-							#ИППОДРОМ<br/>
-							Беговая аллея, 22, корп. 1,<br/>
-							Москва, 125284<br/>
-							Россия<br/>
-							+7 495 123-04-20
-							</p>
-						</div>
 					</GoogleMap>
 				}
 			/>
+			</div>
 		);
 	}
 }

@@ -60,7 +60,7 @@ export default class Content extends React.Component {
 				break;
 			case 6:
 				return(
-					<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
+					<Paper className={'AboutUsWrapper'} style={Styles.ContentWrapper}>
 						<AboutUs />
 					</Paper>
 				)
