@@ -31,6 +31,7 @@ var Styles = {
 		},
 	},
 	ContentWrapper: { //should be refactored with bootstrap
+		paddingTop: 4,
 		minHeight: "calc(100vh - 100px)", // should be whole page - header. later footer might be added
 		width: '70vw',
 		marginLeft: '15vw',
@@ -59,6 +60,11 @@ var Styles = {
 			color: 'white'
 
 		}
+	},
+	orderButton: {
+		margin: 20, 
+		marginRight: 95, 
+		float:'right',
 	}
 }
 

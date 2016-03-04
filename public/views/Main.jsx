@@ -82,6 +82,24 @@ var data = {
 		},
 	],
 	yummy: [],
+	shoppingcart: [
+		{
+			name: 'Цветочки',
+			number: '1'
+		},
+		{
+			name: 'Не розочки',
+			number: '2'
+		},
+		{
+			name: 'Не цветочки',
+			number: '4'
+		},
+		{
+			name: 'Розочки',
+			number: '2'
+		},
+	]
 };
 
 export default class Main extends React.Component {
