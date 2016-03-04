@@ -30,27 +30,37 @@ var Styles = {
 			},
 		},
 	},
-	ContentWrapper: { //should be refactored with bootstrap
-		minHeight: 'calc(100vh - 50px)', // whole page - header. later footer might be added
+	HomePage: {
 		width: '70vw',
-		marginLeft: '15vw'
+		height: 'calc(100vh-50px)',
+		Carousel: {
+			
+		}
+	},
+	MainContentWrapper: { //should be refactored with bootstrap
+		minHeight: '70vh', // whole page - header. later footer might be added
+		width: '100%',
+		marginLeft: 'auto',
+		marginRight: 'auto',
 	},
 	Catalog: {
+		marginLeft: 'auto',
+		marginRight: 'auto',
 		elementWrapper: {
-			width: '23vw', 
+			width: 300, 
 			height: 350, 
 			margin: 2,
 			display: 'inline-block',
 		},
 		elementOnHover: {
 			position: 'absolute',
-			width: '23vw', //Must be equal to elementWrapper width
+			width:  300, //Must be equal to elementWrapper width
 			height: 350, //Must be equal to elementWrapper height
 			backgroundColor: 'rgba(0,0,0,0.4)',
 			color: 'white',
 		},
 		elementFooter: {
-			width: '23vw', //Must be equal to elementWrapper width
+			width: 300, //Must be equal to elementWrapper width
 			height: 80, //Must be equal to elementWrapper height
 			backgroundColor: 'rgba(0,0,0,0.8)',
 			position: 'absolute',

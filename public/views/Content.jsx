@@ -11,14 +11,14 @@ export default class Content extends React.Component {
 			switch (this.props.category) {
 				case 0:
 					return(
-					<div className={'MainContentWrapper'}>
+					<div className={'MainContentWrapper'} style={Styles.MainContentWrapper}>
 						<Home />
 					</div>
 					)
 					break;
 				case 1:
 					return(
-					<div className={'ContentWrapper'} style={Styles.ContentWrapper}>
+					<div className={'MainContentWrapper'} style={Styles.MainContentWrapper}>
 						<Catalog data={this.props.data.catalogData} />
 					</div>
 					)
