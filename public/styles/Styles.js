@@ -30,6 +30,10 @@ var Styles = {
 			},
 		},
 	},
+	HomeWrapper: {
+		minHeight:"80vh",
+		width: '100%',
+	},
 	ContentWrapper: { //should be refactored with bootstrap
 		paddingTop: 4,
 		minHeight: "calc(100vh - 100px)", // should be whole page - header. later footer might be added
@@ -67,7 +71,22 @@ var Styles = {
 		margin: 20, 
 		marginRight: 95, 
 		float:'right',
-	}
+	},
+	AboutUs: {
+		textWrapper: {
+			width: '25%',
+			backgroundColor: 'rgba(0,0,0,0.85)',
+			height: 'auto',
+			position: 'absolute',
+			zIndex: 9,
+			marginLeft: '75%',
+			padding: '10px'
+		},
+		text: {
+			color: Colors.white,
+			fontWeight: 200	
+		}
+	},
 }
 
 module.exports = Styles;
