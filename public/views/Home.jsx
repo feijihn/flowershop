@@ -21,8 +21,22 @@ var data = {
 export default class Events extends React.Component {
 	render() {
 		return (
-				<div>
-					Homepage	
+				<div className={'CarouselWrapper'} style={Styles.HomeWrapper.Carousel}>
+				<Carousel 
+				axis="horizontal" 
+				showThumbs={false} 
+				showArrows={true}
+				>
+                <div>
+                    <img src="../images/1.jpg" />
+                </div>
+                <div>
+                    <img src="../images/2.jpg" />
+                </div>
+                <div>
+                    <img src="../images/3.jpg" />
+                </div>
+            </Carousel>
 				</div>
 		);
 	}

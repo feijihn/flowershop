@@ -84,20 +84,19 @@ export default class AboutUs extends React.Component {
 	render() {
 		return (
 			<div style={Styles.AboutUsWrapper}>
+
 			<GoogleMapLoader
 				containerElement={
 					<div
 						{...this.props}
-						style={{
-							height: `100%`,
-						}}
+						style={Styles.AboutUsWrapper.GoogleMap}
 					/>
 				}
 				googleMapElement={
 					<GoogleMap
 						ref={(map) => (this._googleMapComponent = map) && console.log(map.getZoom())}
 						defaultZoom={14}
-						defaultCenter={{ lat: 55.7791206, lng:37.5594266}}
+						defaultCenter={{ lat:55.7926467, lng:37.6104601}}
 						onClick={::this.handleMapClick}
 					>
 						{this.state.markers.map((marker, index) => {
@@ -111,6 +110,12 @@ export default class AboutUs extends React.Component {
 					</GoogleMap>
 				}
 			/>
+			<p className={'AboutUsText'} style={Styles.AboutUsWrapper.text}>
+			MAJORGARDEN<br/>
+			Россия, Москва, ул. Сущевский Вал д.46<br/>
+			+7 968 400-41-41<br/>
+			Мы работаем круглосуточно<br/>
+			</p>
 			</div>
 		);
 	}

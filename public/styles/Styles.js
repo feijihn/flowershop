@@ -23,7 +23,8 @@ var Styles = {
 			paddingTop: 30,
 			Buttons: {
 				color: Colors.pink900,
-				fontSize: 11
+				fontSize: 11,
+				fontWeight: 400,
 			},
 			ButtonActive: {
 				borderBottom: '3px solid' + Colors.lightGreenA200,
@@ -31,8 +32,12 @@ var Styles = {
 		},
 	},
 	HomeWrapper: {
-		minHeight:"80vh",
+		height:'calc(100vh - 100px)',
 		width: '100%',
+		Carousel: {
+			height: '100%',
+			overflow: 'hidden',
+		},
 	},
 	ContentWrapper: { //should be refactored with bootstrap
 		paddingTop: 4,
@@ -58,12 +63,13 @@ var Styles = {
 			color: 'white',
 		},
 		elementFooter: {
-			width: '23vw', //Must be equal to elementWrapper width
+			width: '22vw', //Must be equal to elementWrapper width
 			height: 80, //Must be equal to elementWrapper height
 			backgroundColor: 'rgba(0,0,0,0.8)',
 			position: 'absolute',
 			bottom: '0px',
-			color: 'white'
+			color: 'white',
+			padding: '1vh'
 
 		}
 	},
@@ -72,17 +78,23 @@ var Styles = {
 		marginRight: 95, 
 		float:'right',
 	},
-	AboutUsWrapepr: {
-		textWrapper: {
-			backgroundColor: 'rgba(0,0,0,0.85)',
-			height: 'auto',
-			position: 'absolute',
-			zIndex: 9,
-			padding: '10px'
-		},
+	AboutUsWrapper: {
+		height: 'calc(100vh - 100px)',
+		padding: 20,
+		overflow: 'hidden',
 		text: {
-			color: Colors.white,
-			fontWeight: 200	
+			fontWeight: 200,
+			paddingLeft: 30,
+			fontFamily: 'Roboto, sans-serif',
+			lineHeight: '25px',
+			width: '12vw',
+			float: 'right'
+		},
+		GoogleMap: {
+			height: '80%',
+			border: '2px solid' + Colors.grey500,
+			minWidth: '570px',
+			float:  'left',
 		}
 	},
 }

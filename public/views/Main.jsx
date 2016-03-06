@@ -2,6 +2,9 @@ import React from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Header from './Header.jsx';
 import Content from './Content.jsx';
+import Cookie from 'react-cookie';
+import Keygen from 'keygen';
+import $ from 'jquery';
 
 
 injectTapEventPlugin(); //needed for material-ui to wrok untill react 1.0.0 would be released
@@ -105,9 +108,28 @@ var data = {
 export default class Main extends React.Component {
 	constructor(props){
 		super(props);
+		if (!Cookie.load('customerId')) {
+			let Exp = Date.now() + 30*24*60*60*1000
+			Cookie.save('customerId', Keygen.url(Keygen.small), { path: '/', expires: new Date(new Date().getTime() + 30*24 * 60 * 60 * 1000)});
+		}
 		this.state = {
 			category: 0,
+			customerId: Cookie.load('customerId'),
+			cartData: [],
 		};
+		$.ajax({
+			url: '/cart',
+			dataType: 'json',
+			data: {"customerId" : this.state.customerId, "a" : "b"},
+			success: function(data) {
+				this.setState({
+					cartData : data
+				});
+			}.bind(this),
+			error: function(xhr, status, err) {
+				console.error(this.props.url, status, err.toString());
+			}.bind(this)
+		});
 	};
 
 	menuClicked = (value) => {
@@ -116,11 +138,28 @@ export default class Main extends React.Component {
 		});
 	};
 
+	addToCart = (title) => {
+		$.ajax({
+			url: '/cartadd',
+			dataType: 'json',
+			method: 'post',
+			data:{"customerId": this.state.customerId, "title": title},
+			success: function(data) {
+				this.setState({
+					cartData: data
+				});
+			}.bind(this),
+			error: function(xhr, status, err) {
+				console.error(this.props.url, status, err.toString());
+			}.bind(this)
+		});
+	};
+
 	render() {
 		return (
-			<div className={'MainView'}>  
+			<div className={'MainView'}>
 				<Header clickEvent={this.menuClicked} />
-				<Content data={data} category={this.state.category} />
+				<Content data={data} cartData={this.state.cartData} category={this.state.category} addToCart={this.addToCart} />
 			</div>
 		)
 	}

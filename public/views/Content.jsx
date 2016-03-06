@@ -26,28 +26,28 @@ export default class Content extends React.Component {
 			case 1:
 				return(
 					<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
-						<Catalog data={this.props.data.bouquets} />
+						<Catalog data={this.props.data.bouquets} addToCart={this.props.addToCart} />
 					</Paper>
 				)
 				break;
 			case 2:
 				return(
 					<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
-						<Catalog data={this.props.data.wedding} />
+						<Catalog data={this.props.data.wedding} addToCart={this.props.addToCart} />
 					</Paper>
 				)
 				break;
 			case 3:
 				return(
 					<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
-						<Catalog data={this.props.data.liveplants} />
+						<Catalog data={this.props.data.liveplants} addToCart={this.props.addToCart} />
 					</Paper>
 				)
 				break;
 			case 4:
 				return(
 					<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
-						<Catalog data={this.props.data.gifts} />
+						<Catalog data={this.props.data.gifts} addToCart={this.props.addToCart} />
 					</Paper>
 				)
 				break;
@@ -60,7 +60,7 @@ export default class Content extends React.Component {
 				break;
 			case 6:
 				return(
-					<Paper className={'AboutUsWrapper'} style={Styles.ContentWrapper}>
+					<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
 						<AboutUs />
 					</Paper>
 				)
@@ -68,17 +68,13 @@ export default class Content extends React.Component {
 			case 7:
 				return(
 					<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
-						<ShoppingCart data={this.props.data.shoppingcart} />
+						<ShoppingCart data={this.props.cartData} />
 						{/*<Payment />*/}
 					</Paper>
 				)
 				break;
-			case 8:
-				return(
-					<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
-						<ShoppingCart data={this.props.data.shoppingcart} />
-					</Paper>
-				)
+			default:
+				return false;
 				break;
 		}
 	}

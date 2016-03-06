@@ -11,8 +11,8 @@ export default class Header extends React.Component {
 		super(props);
 	};
 
-	handleClick = (e) => {
-		this.props.clickEvent(e.target.value);
+	handleClick = (value) => {
+		this.props.clickEvent(value);
 	};
 
 	render(){
@@ -28,7 +28,7 @@ export default class Header extends React.Component {
 						value={0} 
 						label={'Главная'} 
 						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onClick={this.handleClick} 
+						onTouchTap={() => {this.handleClick(0)}} 
 					/>
 					<FlatButton
 						//linkButton={true}
@@ -36,7 +36,7 @@ export default class Header extends React.Component {
 					 	value={1}	
 						label={'Букеты и композиции'}
 					 	style={Styles.HeaderWrapper.Navigation.Buttons}
-					 	onClick={this.handleClick}
+					 	onTouchTap={() => {this.handleClick(1)}}
 					/>
 					<FlatButton 
 						//linkButton={true} 
@@ -44,15 +44,15 @@ export default class Header extends React.Component {
 						value={2}	
 						label={'Свадебная флористика'} 
 						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onClick={this.handleClick} 
+						onTouchTap={() => {this.handleClick(2)}} 
 					/>
 					<FlatButton 
 						//linkButton={true} 
-						href={'#liveplants'} //oh fuck how d i came up with this? 
+						href={'#plantsalive'} //oh fuck how d i came up with this? 
 						value={3}	
 						label={'Живые растения'} 
 						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onClick={this.handleClick} 
+						onTouchTap={() => {this.handleClick(3)}} 
 					/>					
 					<FlatButton 
 						//linkButton={true} 
@@ -60,7 +60,7 @@ export default class Header extends React.Component {
 						value={4}	
 						label={'Подарки и украшения'} 
 						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onClick={this.handleClick} 
+						onTouchTap={() => {this.handleClick(4)}} 
 					/>				
 					<FlatButton 
 						//linkButton={true} 
@@ -68,7 +68,7 @@ export default class Header extends React.Component {
 						value={5}	
 						label={'Вкусное'} 
 						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onClick={this.handleClick} 
+						onTouchTap={() => {this.handleClick(5)}} 
 					/>					
 					<FlatButton 
 						//linkButton={true} 
@@ -76,7 +76,7 @@ export default class Header extends React.Component {
 						value={6}	
 						label={'Наш магазин'} 
 						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onClick={this.handleClick} 
+						onTouchTap={() => {this.handleClick(6)}} 
 					/>
 						<FlatButton 
 						//linkButton={true} 
@@ -84,7 +84,7 @@ export default class Header extends React.Component {
 						value={7}	
 						label={'Оплата и Доставка'} 
 						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onClick={this.handleClick} 
+						onTouchTap={() => {this.handleClick(7)}} 
 					/>
 					</div>
 			</Paper>	

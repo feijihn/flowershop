@@ -1,7 +1,7 @@
 import React from 'react';
 import Styles from '../styles/Styles.js';
 import Colors from 'material-ui/lib/styles/colors';
-
+import FlatButton from 'material-ui/lib/flat-button';
 import Table from 'material-ui/lib/table/table';
 import TableHeaderColumn from 'material-ui/lib/table/table-header-column';
 import TableRow from 'material-ui/lib/table/table-row';
@@ -16,7 +16,6 @@ import RaisedButton from 'material-ui/lib/raised-button';
 export default class ShoppingCart extends React.Component {
     constructor(props) {
         super(props);
-        this.displayName = 'ShoppingCart';
     }
     render() {
       return (
@@ -38,7 +37,9 @@ export default class ShoppingCart extends React.Component {
 	                <TableRowColumn>{index+1}</TableRowColumn>
 	                <TableRowColumn>{row.name}</TableRowColumn>
 	                <TableRowColumn>{row.number}</TableRowColumn>
-	                <TableRowColumn>Удалить</TableRowColumn>
+	                <TableRowColumn>
+									<FlatButton label={'Удалить'} />
+									</TableRowColumn>
 	              </TableRow>
 	            ))}
 					  </TableBody>

@@ -1,14 +1,20 @@
 import React from 'react';
-import Styles from '../styles/Styles.js'
-
+import Styles from '../styles/Styles.js';
+import Keygen from 'keygen';
 import FlatButton from 'material-ui/lib/flat-button';
 import Paper from 'material-ui/lib/paper';
+import IconButton from 'material-ui/lib/icon-button';
+import FontIcon from 'material-ui/lib/font-icon';
 
 
 
 export default class Catalog extends React.Component {
+	constructor(props) {
+		super(props)
+	};
+
 	render() {
-		var CatalogElements = this.props.data.map(function (element, id){
+		var CatalogElements = this.props.data.map(function(element, id){
 			return (
 				<CatalogElement 
 					title={element.title}
@@ -16,9 +22,12 @@ export default class Catalog extends React.Component {
 					img={element.img}
 					id={id}
 					price={element.price}
+					key={Keygen.url(Keygen.small)}
+					addToCart={this.props.addToCart}
 				/>
-			)
-		});
+			);
+		}, this);
+
 		return (
 			<div>  
 				{CatalogElements}
@@ -51,6 +60,10 @@ class CatalogElement extends React.Component {
 		})
 	};
 
+	handleAddToCart = (title) => {
+		this.props.addToCart(title);
+	};
+
 	render() {
 		var id = this.props.id;
 		var img = this.props.img;
@@ -69,7 +82,8 @@ class CatalogElement extends React.Component {
 						</div>
 					:null}
 					<div style={Styles.Catalog.elementFooter}>
-						{this.props.title} {this.props.price}р
+						{this.props.title} {this.props.price} руб.
+						<i className="material-icons" onClick={() => {this.handleAddToCart(this.props.title)}} style={{cursor:'pointer',float: 'right'}}>add_shopping_cart</i>
 					</div>
 				</div>
 			</Paper>
