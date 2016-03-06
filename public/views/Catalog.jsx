@@ -16,19 +16,21 @@ export default class Catalog extends React.Component {
 	render() {
 		var CatalogElements = this.props.data.map(function (element, id){
 			return (
-				<CatalogElement 
-					title={element.title}
-					text={element.text}
-					img={element.img}
-					id={id}
-					price={element.price}
-				/>
+				<Col lg={2}>
+					<CatalogElement 
+						title={element.title}
+						text={element.text}
+						img={element.img}
+						id={id}
+						price={element.price}
+					/>
+				</Col>
 			)
 		});
 		return (
-			<div>
+			<Grid>
 				{CatalogElements}
-			</div>
+			</Grid>
 		)
 	}
 };
@@ -110,28 +112,27 @@ class CatalogElement extends React.Component {
 		var img = this.props.img;
 		return (
 			<div>
-			<Grid fluid={true}>
-			<Col lg={5}>
-				<ReactCSSTransitionGroup transitionName="example" transitionAppear={true} transitionEnterTimeout={500}><Paper
-					style={Styles.Catalog.elementWrapper} 
-					zDepth={this.state.zDepth}
-					onMouseEnter={this.handleMouseEnter}
-					onMouseLeave={this.handleMouseLeave}
-					onClick={this.openPreview}
-				>  
-					<div style={{width: '23vw', height: '350px', backgroundImage: 'url(' + img + ')', position: 'absolute'}}>
-						{this.state.onHover ?
-							<div style={Styles.Catalog.elementOnHover}>
-								<h2 style={{textAlign: 'center'}}>№{this.props.id+1}</h2>
-								<h3 style={{margin: 7, marginTop: 2}}>{this.props.text}</h3>
+				<ReactCSSTransitionGroup transitionName="example" transitionAppear={true} transitionEnterTimeout={500}>
+					<Paper
+						style={Styles.Catalog.elementWrapper} 
+						zDepth={this.state.zDepth}
+						onMouseEnter={this.handleMouseEnter}
+						onMouseLeave={this.handleMouseLeave}
+						onClick={this.openPreview}
+					>  
+						<div style={{width: '23vw', height: '350px', backgroundImage: 'url(' + img + ')', position: 'absolute'}}>
+							{this.state.onHover ?
+								<div style={Styles.Catalog.elementOnHover}>
+									<h2 style={{textAlign: 'center'}}>№{this.props.id+1}</h2>
+									<h3 style={{margin: 7, marginTop: 2}}>{this.props.text}</h3>
+								</div>
+							:null}
+							<div style={Styles.Catalog.elementFooter}>
+								{this.props.title} {this.props.price}р
 							</div>
-						:null}
-						<div style={Styles.Catalog.elementFooter}>
-							{this.props.title} {this.props.price}р
 						</div>
-					</div>
-				</Paper></ReactCSSTransitionGroup>
-			</Col>
+					</Paper>
+				</ReactCSSTransitionGroup>
 				{this.state.showPreview ?
 					<div style={Styles.Catalog.preview}>
 						<div style={Styles.Catalog.preview.background} onClick={this.closePreview}/>
@@ -166,7 +167,6 @@ class CatalogElement extends React.Component {
 						</div> 
 					</div>
 				:null}
-				</Grid>
 			</div>
 		)
 	}

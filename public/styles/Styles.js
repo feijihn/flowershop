@@ -38,12 +38,12 @@ var Styles = {
 		backgroundColor: Colors.grey50
 	},
 	Catalog: {
-		marginLeft: 'auto',
-		marginRight: 'auto',
 		elementWrapper: {
 			height: 350, 
-			margin: 2,
+			margin: 3,
 			display: 'inline-block',
+			boxSizing: 'content-box',
+			overflow: 'hidden',
 		},
 		elementOnHover: {
 			position: 'absolute',

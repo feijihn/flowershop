@@ -13,7 +13,7 @@ export default class Main extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			category: 0,
+			category: +window.location.hash[1],
 		};
 	};
 
@@ -21,6 +21,7 @@ export default class Main extends React.Component {
 		this.setState({
 			category: +value,
 		});
+		window.location.hash = value; // REACT-ROUTER or http://jamesknelson.com/push-state-vs-hash-based-routing-with-react-js/
 	};
 
 	render() {
