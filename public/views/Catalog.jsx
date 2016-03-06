@@ -119,10 +119,10 @@ class CatalogElement extends React.Component {
 				onMouseLeave={this.handleMouseLeave}
 				onTouchTap={this.openPreview}
 			>  
-				<div style={{width: '100%', height: '350px', backgroundImage: 'url(' + img + ')', position: 'absolute'}}>
+				<div style={{width: '100%', height: '300px', backgroundImage: 'url(' + img + ')', position: 'absolute'}}>
 					{this.state.onHover ?
 						<div style={Styles.Catalog.elementOnHover}>
-							<h2 style={{textAlign: 'center'}}>№{this.props.id+1}</h2>
+							<h2>№{this.props.id+1}</h2>
 							<h3 style={{margin: 7, marginTop: 2}}>{this.props.text}</h3>
 						</div>
 					:null}

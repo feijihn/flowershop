@@ -39,22 +39,24 @@ var Styles = {
 	},
 	Catalog: {
 		elementWrapper: {
-			height: 350, 
+			height: 300, 
 			margin: 3,
 		},
 		elementOnHover: {
 			position: 'absolute',
-			height: 350, //Must be equal to elementWrapper height
+			height: 300, //Must be equal to elementWrapper height
 			backgroundColor: 'rgba(0,0,0,0.5)',
 			color: 'white',
+			textAlign: 'center'
 		},
 		elementFooter: {
-			height: 80,
+			height: 60,
 			width: '100%',
-			backgroundColor: 'rgba(0,0,0,0.8)',
+			backgroundColor: 'rgba(0,0,0,0.6)',
 			position: 'absolute',
 			bottom: '0px',
-			color: 'white'
+			color: 'white',
+			textAlign: 'center',
 		},
 		preview: {
 			background: {
