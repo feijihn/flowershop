@@ -23,7 +23,7 @@ export default class Catalog extends React.Component {
 	render() {
 		var CatalogElements = this.props.data.map(function(element, id){
 			return (
-				<Col lg={3} md={4} sm={6} xs={6}>
+				<Col lg={4} md={6} sm={6} xs={12}>
 					<CatalogElement 
 						title={element.title}
 						text={element.text}
@@ -37,9 +37,11 @@ export default class Catalog extends React.Component {
 			)
 		}, this);
 		return (
-			<Grid><Row>
-				{CatalogElements}
-			</Row></Grid>
+			<Grid style={{width:'100%'}}>
+				<Row>
+					{CatalogElements}
+				</Row>
+			</Grid>
 		)
 	}
 };
@@ -100,7 +102,7 @@ class CatalogElement extends React.Component {
 				onMouseLeave={this.handleMouseLeave}
 				onTouchTap={this.openPreview}
 			>  
-				<div style={{width: '100%', height: '300px', backgroundImage: 'url(' + img + ')', position: 'absolute'}}>
+				<div style={{height: '300px', backgroundImage: 'url(' + img + ')', overflow: 'hidden'}}>
 					{this.state.onHover ?
 						<div style={Styles.Catalog.elementOnHover}>
 							<h2>№{this.props.id+1}</h2>

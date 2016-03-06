@@ -46,21 +46,18 @@ var Styles = {
 	Catalog: {
 		elementWrapper: {
 			height: 300, 
+			margin: 10,
+			overflow: 'hidden',
 		},
 		elementOnHover: {
-			position: 'absolute',
 			height: 300, //Must be equal to elementWrapper height
-			width: '100%',
 			backgroundColor: 'rgba(0,0,0,0.5)',
 			color: 'white',
 			textAlign: 'center'
 		},
 		elementFooter: {
 			height: 60,
-			width: '100%',
 			backgroundColor: 'rgba(0,0,0,0.6)',
-			position: 'absolute',
-			bottom: '0px',
 			color: 'white',
 			textAlign: 'center',
 		},
