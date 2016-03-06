@@ -32,13 +32,10 @@
     "material-design-icons": "^2.2.0",
     "material-ui": "^0.14.4",
     "react": "^0.14.7",
-<<<<<<< HEAD
     "react-cookie": "^0.4.5",
-=======
     "react-addons-css-transition-group": "^0.14.7",
     "react-addons-transition-group": "^0.14.7",
     "react-bootstrap": "^0.28.3",
->>>>>>> 55b972a3c82062361fefc454675b4dc42fad820e
     "react-dom": "^0.14.7",
     "react-google-maps": "^4.9.1",
     "react-responsive-carousel": "^3.0.9",

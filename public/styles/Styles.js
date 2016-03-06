@@ -55,16 +55,6 @@ var Styles = {
 			textAlign: 'center'
 		},
 		elementFooter: {
-<<<<<<< HEAD
-			width: '22vw', //Must be equal to elementWrapper width
-			height: 80, //Must be equal to elementWrapper height
-			backgroundColor: 'rgba(0,0,0,0.8)',
-			position: 'absolute',
-			bottom: '0px',
-			color: 'white',
-			padding: '1vh'
-
-=======
 			height: 60,
 			width: '100%',
 			backgroundColor: 'rgba(0,0,0,0.6)',
@@ -141,7 +131,6 @@ var Styles = {
 				display: 'inline-block',
 				cursor: 'pointer',
 			},
->>>>>>> 55b972a3c82062361fefc454675b4dc42fad820e
 		}
 	},
 	orderButton: {

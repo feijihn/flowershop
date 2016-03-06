@@ -22,7 +22,9 @@ export default class Content extends React.Component {
 		switch (this.props.category) {
 			case 0:
 				return(
+					<div style={Styles.HeaderWrapper}>
 					<Home />
+					</div>
 				)
 				break;
 			case 1:

@@ -1,13 +1,8 @@
 import React from 'react';
 import Styles from '../styles/Styles.js';
-<<<<<<< HEAD
 import Keygen from 'keygen';
-import FlatButton from 'material-ui/lib/flat-button';
-import Paper from 'material-ui/lib/paper';
 import IconButton from 'material-ui/lib/icon-button';
 import FontIcon from 'material-ui/lib/font-icon';
-
-=======
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ReactAddonsTransitionGroup from 'react-addons-transition-group';
 
@@ -18,7 +13,6 @@ import Col from 'react-bootstrap/lib/Col';
 import FlatButton from 'material-ui/lib/flat-button';
 import Paper from 'material-ui/lib/paper';
 import data from '../data/Data.js';
->>>>>>> 55b972a3c82062361fefc454675b4dc42fad820e
 
 
 export default class Catalog extends React.Component {

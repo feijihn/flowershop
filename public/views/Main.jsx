@@ -28,7 +28,7 @@ export default class Main extends React.Component {
 		$.ajax({
 			url: '/cart',
 			dataType: 'json',
-			data: {"customerId" : this.state.customerId, "a" : "b"},
+			data: {"customerId" : this.state.customerId},
 			success: function(data) {
 				this.setState({
 					cartData : data
