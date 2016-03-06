@@ -6,3 +6,20 @@
 body {
 	background-color: #F5F5F5;
 }
+
+i {
+	font-size: 40px;
+	color: white;
+	cursor: pointer;
+}
+
+
+.example-appear {
+	opacity: 0.01;
+}
+
+.example-appear.example-appear-active {
+	opacity: 1;
+	transition: opacity .5s ease-in;
+}
+
