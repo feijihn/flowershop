@@ -19,6 +19,7 @@ var Styles = {
 		},
 		Navigation: {
 			paddingTop: 30,
+			paddingBottom: 30,
 			Buttons: {
 				color: Colors.pink900,
 				fontSize: 11,
@@ -37,7 +38,7 @@ var Styles = {
 			overflow: 'hidden',
 		},
 	},
-	ContentWrapper: { //should be refactored with bootstrap
+	ContentWrapper: { 
 		paddingTop: 4,
 		minHeight: "calc(100vh - 100px)", // should be whole page - header. later footer might be added
 		backgroundColor: Colors.grey50
@@ -45,11 +46,11 @@ var Styles = {
 	Catalog: {
 		elementWrapper: {
 			height: 300, 
-			margin: 3,
 		},
 		elementOnHover: {
 			position: 'absolute',
 			height: 300, //Must be equal to elementWrapper height
+			width: '100%',
 			backgroundColor: 'rgba(0,0,0,0.5)',
 			color: 'white',
 			textAlign: 'center'
@@ -73,7 +74,7 @@ var Styles = {
 				backgroundColor: 'rgba(0,0,0,0.7)',
 				zIndex: 99,
 			},
-			contentContainer: {
+			contentContainer: { //gotta center it somehow
 				position: 'fixed',
 				top: '30vh',
 				left: '30vw',
@@ -81,6 +82,11 @@ var Styles = {
 				padding: 10,
 			},
 			closePreview: {
+				icon: {
+					right: '30px', 
+					top: '25px', 
+					position: 'fixed'
+				},
 				position: 'fixed',
 				top: 0,
 				right: 0,
@@ -89,11 +95,16 @@ var Styles = {
 				height: '10vh',
 				cursor: 'pointer',
 			},
-			moveNext: {
+			moveRight: {
+				icon: {
+					right: '30px', 
+					top: '46vh', 
+					position: 'fixed'
+				},
 				Hover: {
 					position: 'fixed',
 					height: '100vh',
-					width: '120px',
+					width: '100px',
 					right: 0,
 					top: 0,
 					zIndex: 100,
@@ -103,18 +114,23 @@ var Styles = {
 				},
 				position: 'fixed',
 				height: '100vh',
-				width: '120px',
+				width: '100px',
 				right: 0,
 				top: 0,
 				zIndex: 100,
 				display: 'inline-block',
 				cursor: 'pointer',
 			},
-			movePrevious: {
+			moveLeft: {
+				icon: {
+					left: '30px', 
+					top: '46vh', 
+					position: 'fixed'
+				},
 				Hover: {
 					position: 'fixed',
 					height: '100vh',
-					width: '120px',
+					width: '100px',
 					left: 0,
 					zIndex: 100,
 					backgroundColor: 'rgba(0,0,0,0.3)',
@@ -124,7 +140,7 @@ var Styles = {
 				},
 				position: 'fixed',
 				height: '100vh',
-				width: '120px',
+				width: '100px',
 				left: 0,
 				zIndex: 100,
 				top: 0,

@@ -57,7 +57,7 @@ export default class Header extends React.Component {
 						</Col>
 					</Row>
 					<Row>
-						<Col xsHidden smHidden md={2} lg={2}>
+						<Col xsHidden smHidden md={1} lg={2}>
 							<h className={'Label'} style={Styles.HeaderWrapper.Title.Label}>Majorgarden</h>
 						</Col>
 						<Col xsHidden sm={12} md={10} lg={10}>

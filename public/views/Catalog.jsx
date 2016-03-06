@@ -31,7 +31,7 @@ export default class Catalog extends React.Component {
 						id={id}
 						price={element.price}
 						responsive
-					addToCart={this.props.addToCart}
+						addToCart={this.props.addToCart}
 					/>
 				</Col>
 			)
@@ -53,8 +53,6 @@ class CatalogElement extends React.Component {
 			zDepth: 2,
 			showPreview: false,
 			id: this.props.id,
-			hoverNext: false,
-			hoverPrevious: false,
 		}
 	};
 
@@ -79,40 +77,8 @@ class CatalogElement extends React.Component {
 	};
 
 	closePreview = () => {
-		this.setState({
+		this.setState ({
 			showPreview: false,
-			id: this.props.id,
-		})
-	};
-
-	moveNext = () => {
-		this.setState({
-			id: this.state.id + 1,
-		})
-	};
-
-	movePrevious = () => {
-		this.setState({
-			id: this.state.id - 1,
-		})
-	};
-
-	hoverNext = () => {
-		this.setState({
-			hoverNext: true,
-		})
-	};
-
-	hoverPrevious = () => {
-		this.setState({
-			hoverPrevious: true,
-		})
-	};
-
-	handleMouseLeaveNavigation = () => {
-		this.setState({
-			hoverNext: false,
-			hoverPrevious: false,
 		})
 	};
 
@@ -121,8 +87,11 @@ class CatalogElement extends React.Component {
 	};
 
 	render() {
+
 		var id = this.props.id;
+
 		var img = this.props.img;
+
 		var Element = 					
 			<Paper
 				style={Styles.Catalog.elementWrapper} 
@@ -140,49 +109,107 @@ class CatalogElement extends React.Component {
 					:null}
 					<div style={Styles.Catalog.elementFooter}>
 						{this.props.title} {this.props.price} руб.
-						<i className="material-icons" onClick={() => {this.handleAddToCart(this.props.title)}} style={{cursor:'pointer',float: 'right'}}>add_shopping_cart</i>
+						<i className="material-icons" onTouchTop={() => {this.handleAddToCart(this.props.title)}} style={{cursor:'pointer',float: 'right'}}>add_shopping_cart</i>
 					</div>
 				</div>
 			</Paper>;
+
 		return (
 			<div>
-				<ReactCSSTransitionGroup transitionName="example" transitionAppear={true} transitionEnterTimeout={500}>
-					{Element}
-				</ReactCSSTransitionGroup>
-				{this.state.showPreview ?
-					<div style={Styles.Catalog.preview}>
-						<div style={Styles.Catalog.preview.background} onTouchTap={this.closePreview}/>
-						<Paper zDepth={5} style={Styles.Catalog.preview.contentContainer}>
-							<img src={data.bouquets[this.state.id].img}/>				
-						</Paper>
-						{this.state.id != data.bouquets.length - 1 ? 
-							<div 
-								style={this.state.hoverNext ? Styles.Catalog.preview.moveNext.Hover :Styles.Catalog.preview.moveNext}  
-								onTouchTap={this.moveNext}
-								onMouseEnter={this.hoverNext}
-								onMouseLeave={this.handleMouseLeaveNavigation}
-							>
-								<i className="material-icons md-48" style={{right: '30px', top: '46vh', position: 'fixed'}}>chevron_right</i>
-							</div>
-						 :null}
-						{this.state.id ? 
-							<div 
-								style={this.state.hoverPrevious ? Styles.Catalog.preview.movePrevious.Hover :Styles.Catalog.preview.movePrevious} 
-								onTouchTap={this.movePrevious}
-								onMouseEnter={this.hoverPrevious}
-								onMouseLeave={this.handleMouseLeaveNavigation}
-							>
-								<i className="material-icons md-48" style={{left: '30px', top: '46vh', position: 'fixed'}}>chevron_left</i>
-							</div> 
-						:null}
-						<div 
-							style={Styles.Catalog.preview.closePreview} 
-							onTouchTap={this.closePreview}
-						>
-							<i className="material-icons md-48" style={{right: '30px', top: '3vh', position: 'fixed'}}>close</i>
-						</div> 
-					</div>
+				{Element}
+				{this.state.showPreview ? 
+					<PreviewMode 
+						closePreview={this.closePreview} 
+						id={this.state.id}
+						title={this.props.title}
+						text={this.props.text}
+						price={this.props.price}
+					/> 
 				:null}
+			</div>
+		)
+	}
+};
+
+class PreviewMode extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			id: this.props.id,
+			hoverLeft: false,
+			hoverRight: false,
+		}
+	};
+
+	moveLeft = () => {
+		this.setState ({
+			id: this.state.id - 1
+		})
+	};
+
+	moveRight = () => {
+		this.setState ({
+			id: this.state.id + 1
+		})
+	};
+
+	hoverLeft = () => {
+		this.setState({
+			hoverLeft: true,
+		})
+	};
+
+	hoverRight = () => {
+		this.setState({
+			hoverRight: true,
+		})
+	};
+
+	unHover = () => {
+		this.setState({
+			hoverLeft: false,
+			hoverRight: false,			
+		})
+	};
+
+	render() {
+		return (
+			<div> 
+				<div style={Styles.Catalog.preview}>
+					<div style={Styles.Catalog.preview.background} onTouchTap={this.props.closePreview}/>
+					<Paper zDepth={5} style={Styles.Catalog.preview.contentContainer}>
+						<h2>№{this.props.id+1}</h2>
+						<h3 style={{margin: 7, marginTop: 2}}>{this.props.text}</h3>
+						<img src={data.bouquets[this.state.id].img}/>	
+						{this.props.title} {this.props.price} руб.			
+					</Paper>
+					{this.state.id != data.bouquets.length - 1 ? 
+						<div 
+							style={this.state.hoverRight ? Styles.Catalog.preview.moveRight.Hover :Styles.Catalog.preview.moveRight}  
+							onTouchTap={this.moveRight}
+							onMouseEnter={this.hoverRight}
+							onMouseLeave={this.unHover}
+						>
+							<i className="material-icons md-48" style={Styles.Catalog.preview.moveRight.icon}>chevron_right</i>
+						</div>
+					:null}
+					{this.state.id ? 
+						<div 
+							style={this.state.hoverLeft ? Styles.Catalog.preview.moveLeft.Hover :Styles.Catalog.preview.moveLeft} 
+							onTouchTap={this.moveLeft}
+							onMouseEnter={this.hoverLeft}
+							onMouseLeave={this.handleMouseLeaveNavigation}
+						>
+							<i className="material-icons md-48" style={Styles.Catalog.preview.moveLeft.icon}>chevron_left</i>
+						</div> 
+					:null}
+					<div 
+						style={Styles.Catalog.preview.closePreview} 
+						onTouchTap={this.props.closePreview}
+					>
+						<i className="material-icons md-48" style={Styles.Catalog.preview.closePreview.icon}>close</i>
+					</div> 
+				</div>
 			</div>
 		)
 	}
