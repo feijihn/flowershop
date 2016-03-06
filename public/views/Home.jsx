@@ -21,9 +21,9 @@ var data = {
 export default class Events extends React.Component {
 	render() {
 		return (
-				<div>
-					Homepage	
-				</div>
+			<div>
+				Homepage	
+			</div>
 		);
 	}
 }

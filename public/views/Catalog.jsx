@@ -1,5 +1,11 @@
 import React from 'react';
-import Styles from '../styles/Styles.js'
+import Styles from '../styles/Styles.js';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import ReactAddonsTransitionGroup from 'react-addons-transition-group';
+
+import Grid from 'react-bootstrap/lib/Grid';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
 
 import FlatButton from 'material-ui/lib/flat-button';
 import Paper from 'material-ui/lib/paper';
@@ -20,7 +26,7 @@ export default class Catalog extends React.Component {
 			)
 		});
 		return (
-			<div>  
+			<div>
 				{CatalogElements}
 			</div>
 		)
@@ -103,8 +109,10 @@ class CatalogElement extends React.Component {
 		var id = this.props.id;
 		var img = this.props.img;
 		return (
-			<div style={{display: 'inline-block'}}>
-				<Paper 
+			<div>
+			<Grid fluid={true}>
+			<Col lg={5}>
+				<ReactCSSTransitionGroup transitionName="example" transitionAppear={true} transitionEnterTimeout={500}><Paper
 					style={Styles.Catalog.elementWrapper} 
 					zDepth={this.state.zDepth}
 					onMouseEnter={this.handleMouseEnter}
@@ -122,7 +130,8 @@ class CatalogElement extends React.Component {
 							{this.props.title} {this.props.price}р
 						</div>
 					</div>
-				</Paper>
+				</Paper></ReactCSSTransitionGroup>
+			</Col>
 				{this.state.showPreview ?
 					<div style={Styles.Catalog.preview}>
 						<div style={Styles.Catalog.preview.background} onClick={this.closePreview}/>
@@ -157,6 +166,7 @@ class CatalogElement extends React.Component {
 						</div> 
 					</div>
 				:null}
+				</Grid>
 			</div>
 		)
 	}

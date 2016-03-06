@@ -4,12 +4,10 @@ import Colors from 'material-ui/lib/styles/colors';
 var Styles = {
 	HeaderWrapper : {
 		width: '100%',
-		position: 'relative',
-		height: 100,
+		height: 'auto',
 		backgroundColor: Colors.lightGreen100,
 		Title:{
 			float: 'left',
-			width: '20%',
 			height: 100,
 			Label : {
 				fontFamily: '\'Pacifico\', cursive',
@@ -37,15 +35,12 @@ var Styles = {
 	ContentWrapper: { //should be refactored with bootstrap
 		paddingTop: 4,
 		minHeight: "calc(100vh - 100px)", // should be whole page - header. later footer might be added
-		width: '70vw',
-		marginLeft: '15vw',
 		backgroundColor: Colors.grey50
 	},
 	Catalog: {
 		marginLeft: 'auto',
 		marginRight: 'auto',
 		elementWrapper: {
-			width: '23vw', 
 			height: 350, 
 			margin: 2,
 			display: 'inline-block',
