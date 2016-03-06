@@ -16,21 +16,22 @@ export default class Catalog extends React.Component {
 	render() {
 		var CatalogElements = this.props.data.map(function (element, id){
 			return (
-				<Col lg={2}>
+				<Col lg={3} md={4} sm={6} xs={6}>
 					<CatalogElement 
 						title={element.title}
 						text={element.text}
 						img={element.img}
 						id={id}
 						price={element.price}
+						responsive
 					/>
 				</Col>
 			)
 		});
 		return (
-			<Grid>
+			<Grid><Row>
 				{CatalogElements}
-			</Grid>
+			</Row></Grid>
 		)
 	}
 };
@@ -110,39 +111,41 @@ class CatalogElement extends React.Component {
 	render() {
 		var id = this.props.id;
 		var img = this.props.img;
+		var Element = 					
+			<Paper
+				style={Styles.Catalog.elementWrapper} 
+				zDepth={this.state.zDepth}
+				onMouseEnter={this.handleMouseEnter}
+				onMouseLeave={this.handleMouseLeave}
+				onTouchTap={this.openPreview}
+			>  
+				<div style={{width: '100%', height: '350px', backgroundImage: 'url(' + img + ')', position: 'absolute'}}>
+					{this.state.onHover ?
+						<div style={Styles.Catalog.elementOnHover}>
+							<h2 style={{textAlign: 'center'}}>№{this.props.id+1}</h2>
+							<h3 style={{margin: 7, marginTop: 2}}>{this.props.text}</h3>
+						</div>
+					:null}
+					<div style={Styles.Catalog.elementFooter}>
+						{this.props.title} {this.props.price}р
+					</div>
+				</div>
+			</Paper>;
 		return (
 			<div>
 				<ReactCSSTransitionGroup transitionName="example" transitionAppear={true} transitionEnterTimeout={500}>
-					<Paper
-						style={Styles.Catalog.elementWrapper} 
-						zDepth={this.state.zDepth}
-						onMouseEnter={this.handleMouseEnter}
-						onMouseLeave={this.handleMouseLeave}
-						onClick={this.openPreview}
-					>  
-						<div style={{width: '23vw', height: '350px', backgroundImage: 'url(' + img + ')', position: 'absolute'}}>
-							{this.state.onHover ?
-								<div style={Styles.Catalog.elementOnHover}>
-									<h2 style={{textAlign: 'center'}}>№{this.props.id+1}</h2>
-									<h3 style={{margin: 7, marginTop: 2}}>{this.props.text}</h3>
-								</div>
-							:null}
-							<div style={Styles.Catalog.elementFooter}>
-								{this.props.title} {this.props.price}р
-							</div>
-						</div>
-					</Paper>
+					{Element}
 				</ReactCSSTransitionGroup>
 				{this.state.showPreview ?
 					<div style={Styles.Catalog.preview}>
-						<div style={Styles.Catalog.preview.background} onClick={this.closePreview}/>
+						<div style={Styles.Catalog.preview.background} onTouchTap={this.closePreview}/>
 						<Paper zDepth={5} style={Styles.Catalog.preview.contentContainer}>
 							<img src={data.bouquets[this.state.id].img}/>				
 						</Paper>
 						{this.state.id != data.bouquets.length - 1 ? 
 							<div 
 								style={this.state.hoverNext ? Styles.Catalog.preview.moveNext.Hover :Styles.Catalog.preview.moveNext}  
-								onClick={this.moveNext}
+								onTouchTap={this.moveNext}
 								onMouseEnter={this.hoverNext}
 								onMouseLeave={this.handleMouseLeaveNavigation}
 							>
@@ -152,7 +155,7 @@ class CatalogElement extends React.Component {
 						{this.state.id ? 
 							<div 
 								style={this.state.hoverPrevious ? Styles.Catalog.preview.movePrevious.Hover :Styles.Catalog.preview.movePrevious} 
-								onClick={this.movePrevious}
+								onTouchTap={this.movePrevious}
 								onMouseEnter={this.hoverPrevious}
 								onMouseLeave={this.handleMouseLeaveNavigation}
 							>
@@ -161,7 +164,7 @@ class CatalogElement extends React.Component {
 						:null}
 						<div 
 							style={Styles.Catalog.preview.closePreview} 
-							onClick={this.closePreview}
+							onTouchTap={this.closePreview}
 						>
 							<i className="material-icons md-48" style={{right: '30px', top: '3vh', position: 'fixed'}}>close</i>
 						</div> 

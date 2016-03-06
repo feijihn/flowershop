@@ -41,20 +41,16 @@ var Styles = {
 		elementWrapper: {
 			height: 350, 
 			margin: 3,
-			display: 'inline-block',
-			boxSizing: 'content-box',
-			overflow: 'hidden',
 		},
 		elementOnHover: {
 			position: 'absolute',
-			width:  '23vw', //Must be equal to elementWrapper width
 			height: 350, //Must be equal to elementWrapper height
 			backgroundColor: 'rgba(0,0,0,0.5)',
 			color: 'white',
 		},
 		elementFooter: {
-			width: '23vw', //Must be equal to elementWrapper width
-			height: 80, //Must be equal to elementWrapper height
+			height: 80,
+			width: '100%',
 			backgroundColor: 'rgba(0,0,0,0.8)',
 			position: 'absolute',
 			bottom: '0px',

@@ -13,7 +13,7 @@ export default class Main extends React.Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			category: +window.location.hash[1],
+			category: 0 /*+window.location.hash[1]*/,
 		};
 	};
 
