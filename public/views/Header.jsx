@@ -31,6 +31,43 @@ export default class Header extends React.Component {
 	handleClose = () => this.setState({open: false});
 
 	render(){
+		let buttons = [ 
+			{
+				href: '#home',
+				value: 0,
+				label: 'Главная'
+			},
+			{
+				href: '#bouquets',
+				value: 1,
+				label: 'Букеты и композиции'
+			},
+			{
+				href: '#wedding',
+				value: 2,
+				label: 'Свадебная флористика'
+			},
+			{
+				href: '#plantsalive',
+				value: 3,
+				label: 'Живые растения'
+			},
+			{
+				href: '#gifts',
+				value: 4,
+				label: 'Подарки и украшение'
+			},
+			{
+				href: '#aboutus',
+				value: 6,
+				label: 'Наш магазин'
+			},
+			{
+				href: '#payment',
+				value: 7,
+				label: 'Оплата и Доставка'
+			},
+		];	
 		return(
 			<Paper className={'Header'} style={Styles.HeaderWrapper}>
 				<Grid fluid={true}>
@@ -69,78 +106,21 @@ export default class Header extends React.Component {
 							>
 								close
 							</i>
-							<MenuItem onTouchTap={this.handleClose}>
-								<FlatButton 
-									//linkButton={true} 
-									href={'#home'} 
-									value={0} 
-									label={'Главная'} 
-									style={Styles.HeaderWrapper.Navigation.Buttons} 
-									onTouchTap={() => {this.handleClick(0)}} 
-								/>
-							</MenuItem>
-							<MenuItem onTouchTap={this.handleClose}>
-								<FlatButton
-									//linkButton={true}
-								 	href={'#bouquets'}
-								 	value={1}	
-									label={'Букеты и композиции'}
-								 	style={Styles.HeaderWrapper.Navigation.Buttons}
-								 	onTouchTap={() => {this.handleClick(1)}}
-								/>
-							</MenuItem>
-							<MenuItem onTouchTap={this.handleClose}>
-								<FlatButton 
-									//linkButton={true} 
-									href={'#wedding'} 
-									value={2}	
-									label={'Свадебная флористика'} 
-									style={Styles.HeaderWrapper.Navigation.Buttons} 
-									onTouchTap={() => {this.handleClick(2)}} 
-								/>
-							</MenuItem>
-							<MenuItem onTouchTap={this.handleClose}>
-								<FlatButton 
-									//linkButton={true} 
-									href={'#plantsalive'} //oh fuck how d i came up with this? 
-									value={3}	
-									label={'Живые растения'} 
-									style={Styles.HeaderWrapper.Navigation.Buttons} 
-									onTouchTap={() => {this.handleClick(3)}} 
-								/>	
-							</MenuItem>
-							<MenuItem onTouchTap={this.handleClose}>
-								<FlatButton 
-									//linkButton={true} 
-									href={'#gifts'} 
-									value={4}	
-									label={'Подарки и украшения'} 
-									style={Styles.HeaderWrapper.Navigation.Buttons} 
-									onTouchTap={() => {this.handleClick(4)}} 
-								/>	
-							</MenuItem>
-							<MenuItem onTouchTap={this.handleClose}>
-								<FlatButton 
-									//linkButton={true} 
-									href={'#aboutus'} 
-									value={6}	
-									label={'Наш магазин'} 
-									style={Styles.HeaderWrapper.Navigation.Buttons} 
-									onTouchTap={() => {this.handleClick(6)}} 
-								/>
-							</MenuItem>
-							<MenuItem onTouchTap={this.handleClose}>
-								<FlatButton 
-									//linkButton={true} 
-									href={'#payment'} 
-									value={7}	
-									label={'Оплата и Доставка'} 
-									style={Styles.HeaderWrapper.Navigation.Buttons} 
-									onTouchTap={() => {this.handleClick(7)}} 
-								/>
-							</MenuItem>
+							{buttons.map(function(element, id) {
+								return(
+									<MenuItem onTouchTap={this.handleClose}>
+										<FlatButton  
+											href={element.href} 
+											value={element.value} 
+											label={element.label} 
+											style={Styles.HeaderWrapper.Navigation.Buttons} 
+											onTouchTap={() => {this.handleClick(element.value)}} 
+										/>
+									</MenuItem>
+								)
+							},this)}
 						</LeftNav>
-						<Col xs={10} sm={12} mdHidden lgHidden style={{textAlign: 'center'}}>
+						<Col xs={12} sm={12} mdHidden lgHidden style={{textAlign: 'center'}}>
 							<h className={'Label'} style={Styles.HeaderWrapper.Title.Label}>Majorgarden</h>
 							<p style={{color: Colors.pink900, marginLeft: -55, marginTop: -20}}>+7(968)400-41-41</p>
 						</Col>
@@ -154,62 +134,17 @@ export default class Header extends React.Component {
 						<Col xsHidden sm={12} md={10} lg={10}>
 
 				<div className={'Navigation'} style={Styles.HeaderWrapper.Navigation}>
-					<FlatButton 
-						//linkButton={true} 
-						href={'#home'} 
-						value={0} 
-						label={'Главная'} 
-						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onTouchTap={() => {this.handleClick(0)}} 
-					/>
-					<FlatButton
-						//linkButton={true}
-					 	href={'#bouquets'}
-					 	value={1}	
-						label={'Букеты и композиции'}
-					 	style={Styles.HeaderWrapper.Navigation.Buttons}
-					 	onTouchTap={() => {this.handleClick(1)}}
-					/>
-					<FlatButton 
-						//linkButton={true} 
-						href={'#wedding'} 
-						value={2}	
-						label={'Свадебная флористика'} 
-						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onTouchTap={() => {this.handleClick(2)}} 
-					/>
-					<FlatButton 
-						//linkButton={true} 
-						href={'#plantsalive'} //oh fuck how d i came up with this? 
-						value={3}	
-						label={'Живые растения'} 
-						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onTouchTap={() => {this.handleClick(3)}} 
-					/>					
-					<FlatButton 
-						//linkButton={true} 
-						href={'#gifts'} 
-						value={4}	
-						label={'Подарки и украшения'} 
-						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onTouchTap={() => {this.handleClick(4)}} 
-					/>					
-					<FlatButton 
-						//linkButton={true} 
-						href={'#aboutus'} 
-						value={6}	
-						label={'Наш магазин'} 
-						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onTouchTap={() => {this.handleClick(6)}} 
-					/>
-						<FlatButton 
-						//linkButton={true} 
-						href={'#payment'} 
-						value={7}	
-						label={'Оплата и Доставка'} 
-						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onTouchTap={() => {this.handleClick(7)}} 
-					/>
+					{buttons.map(function(element, id) {
+						return(
+								<FlatButton  
+									href={element.href} 
+									value={element.value} 
+									label={element.label} 
+									style={Styles.HeaderWrapper.Navigation.Buttons} 
+									onTouchTap={() => {this.handleClick(element.value)}} 
+								/>
+						)
+					},this)}
 					</div>
 					</Col>
 						</Row>

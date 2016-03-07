@@ -123,9 +123,6 @@ class CatalogElement extends React.Component {
 					<PreviewMode 
 						closePreview={this.closePreview} 
 						id={this.state.id}
-						title={this.props.title}
-						text={this.props.text}
-						price={this.props.price}
 					/> 
 				:null}
 			</div>
@@ -186,15 +183,14 @@ class PreviewMode extends React.Component {
 							position: 'fixed',
 							top: '50vh',
 							left: '50vw',
-							/*marginBottom: 'calc(-data.bouquets[this.state.id].img.style.height / 2)',
-							marginRight: -(data.bouquets[this.state.id].img.width/2),*/
+							transform: 'translate(-50%, -50%)',
 							zIndex: 100,
 							textAlign: 'center'
 					}}>
-						<h2>№{this.props.id+1}</h2>
-						<h3 style={{margin: 7, marginTop: 2}}>{this.props.text}</h3>
+						<h2>№{this.state.id+1}</h2>
+						<h3 style={{margin: 7, marginTop: 2}}>{data.bouquets[this.state.id].title}</h3>
 						<img src={data.bouquets[this.state.id].img}/>	
-						<p>{this.props.title} {this.props.price} руб.</p>			
+						<p>{data.bouquets[this.state.id].text} {data.bouquets[this.state.id].price} руб.</p>			
 					</Paper>
 					{this.state.id != data.bouquets.length - 1 ? 
 						<div 
