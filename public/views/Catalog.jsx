@@ -5,23 +5,40 @@ import IconButton from 'material-ui/lib/icon-button';
 import FontIcon from 'material-ui/lib/font-icon';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import ReactAddonsTransitionGroup from 'react-addons-transition-group';
+import $ from 'jquery';
 
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
+import Colors from 'material-ui/lib/styles/colors';
 
 import FlatButton from 'material-ui/lib/flat-button';
 import Paper from 'material-ui/lib/paper';
-import data from '../data/Data.js';
 
 
 export default class Catalog extends React.Component {
 	constructor(props) {
 		super(props)
+		this.state = {
+			data: []
+		}
+		$.ajax({
+			url: '/catalog',
+			dataType: 'json',
+			data: {"category": this.props.category},
+			success: function(data) {
+				this.setState({
+					data : data
+				});
+			}.bind(this),
+			error: function(xhr, status, err) {
+				console.error(this.props.url, status, err.toString());
+			}.bind(this)
+		});
 	};
 
 	render() {
-		var CatalogElements = this.props.data.map(function(element, id){
+		var CatalogElements = this.state.data.map(function(element, id){
 			return (
 				<Col lg={4} md={6} sm={6} xs={12}>
 					<CatalogElement 
@@ -37,10 +54,27 @@ export default class Catalog extends React.Component {
 			)
 		}, this);
 		return (
+
+			<Grid fluid={true} style={{backgroundColor: Colors.grey200}}>
+			<Row>
+			<Col 
+			lg={8}  
+			lgOffset={2}
+			md={8}
+			mdOffset={2} 
+			sm={10} 
+			smOffset={1}
+			xs={12}
+			>
+			<Paper className={'ContentWrapper'} style={Styles.ContentWrapper} responsive>
 			<Grid style={{width:'100%'}}>
 				<Row>
 					{CatalogElements}
 				</Row>
+			</Grid>
+			</Paper>
+			</Col>
+			</Row>
 			</Grid>
 		)
 	}
@@ -182,7 +216,7 @@ class PreviewMode extends React.Component {
 					<Paper zDepth={5} style={Styles.Catalog.preview.contentContainer}>
 						<h2>№{this.props.id+1}</h2>
 						<h3 style={{margin: 7, marginTop: 2}}>{this.props.text}</h3>
-						<img src={data.bouquets[this.state.id].img}/>	
+						<img src={this.state.data.bouquets[this.state.id].img}/>	
 						{this.props.title} {this.props.price} руб.			
 					</Paper>
 					{this.state.id != data.bouquets.length - 1 ? 

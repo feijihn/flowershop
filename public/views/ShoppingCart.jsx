@@ -8,14 +8,31 @@ import TableRow from 'material-ui/lib/table/table-row';
 import TableHeader from 'material-ui/lib/table/table-header';
 import TableRowColumn from 'material-ui/lib/table/table-row-column';
 import TableBody from 'material-ui/lib/table/table-body';
-
+import Content from './Content.jsx';
 import Divider from 'material-ui/lib/divider';
+import $ from 'jquery';
 import RaisedButton from 'material-ui/lib/raised-button';
 
 
 export default class ShoppingCart extends React.Component {
     constructor(props) {
         super(props);
+				this.state={
+					cartData: []
+				}
+				$.ajax({
+					url: '/cart',
+					dataType: 'json',
+					data: {"customerId" : this.state.customerId},
+					success: function(data) {
+						this.setState({
+							cartData : data
+						});
+					}.bind(this),
+					error: function(xhr, status, err) {
+						console.error(this.props.url, status, err.toString());
+					}.bind(this)
+				});
     }
     render() {
       return (
@@ -32,7 +49,7 @@ export default class ShoppingCart extends React.Component {
 					    </TableRow>
 					  </TableHeader>
 					  <TableBody displayRowCheckbox={false} showRowHover={true}>
-					  	{this.props.data.map( (row, index) => (
+					  	{this.state.cartData.map( (row, index) => (
 	              <TableRow>
 	                <TableRowColumn>{index+1}</TableRowColumn>
 	                <TableRowColumn>{row.name}</TableRowColumn>

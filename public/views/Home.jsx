@@ -18,9 +18,10 @@ var data = {
 	],
 };
 
-export default class Events extends React.Component {
+export default class Home extends React.Component {
 	render() {
 		return (
+			<div className={'HomePageWrapper'} style={Styles.HomeWrapper}>
 				<div className={'CarouselWrapper'} style={Styles.HomeWrapper.Carousel}>
 				<Carousel 
 				axis="horizontal" 
@@ -37,6 +38,7 @@ export default class Events extends React.Component {
                     <img src="../images/3.jpg" />
                 </div>
             </Carousel>
+				</div>
 				</div>
 		);
 	}

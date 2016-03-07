@@ -14,6 +14,7 @@ import MenuItem from 'material-ui/lib/menus/menu-item';
 import IconButton from 'material-ui/lib/icon-button';
 import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
 import LeftNav from 'material-ui/lib/left-nav';
+import {Link} from 'react-router-component';
 
 export default class Header extends React.Component {
 	constructor(props){
@@ -64,68 +65,53 @@ export default class Header extends React.Component {
 
 				<div className={'Navigation'} style={Styles.HeaderWrapper.Navigation}>
 					<FlatButton 
-						//linkButton={true} 
-						href={'#home'} 
-						value={0} 
+						linkButton={true} 
+						href={'#/home'}
 						label={'Главная'} 
 						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onTouchTap={() => {this.handleClick(0)}} 
+						//onTouchTap={() => {this.handleClick('home')}} 
 					/>
 					<FlatButton
-						//linkButton={true}
-					 	href={'#bouquets'}
-					 	value={1}	
+						linkButton={true}
+						href={'#/bouquets'}
 						label={'Букеты и композиции'}
 					 	style={Styles.HeaderWrapper.Navigation.Buttons}
-					 	onTouchTap={() => {this.handleClick(1)}}
+						 onTouchTap={() => {this.handleClick('catalog/bouquets')}}
 					/>
 					<FlatButton 
-						//linkButton={true} 
-						href={'#wedding'} 
-						value={2}	
+						linkButton={true}
+						href={'#/wedding'}
 						label={'Свадебная флористика'} 
 						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onTouchTap={() => {this.handleClick(2)}} 
+						onTouchTap={() => {this.handleClick('catalog/wedding')}} 
 					/>
 					<FlatButton 
-						//linkButton={true} 
-						href={'#plantsalive'} //oh fuck how d i came up with this? 
-						value={3}	
+						linkButton={true}
+						href={'#/liveplants'}
 						label={'Живые растения'} 
 						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onTouchTap={() => {this.handleClick(3)}} 
+						//onTouchTap={() => {this.handleClick('catalog/plantsalive')}} 
 					/>					
 					<FlatButton 
-						//linkButton={true} 
-						href={'#gifts'} 
-						value={4}	
+						linkButton={true}
+						href={'#/gifts'}
 						label={'Подарки и украшения'} 
 						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onTouchTap={() => {this.handleClick(4)}} 
+						//onTouchTap={() => {this.handleClick('catalog/gifts')}} 
 					/>				
 					<FlatButton 
-						//linkButton={true} 
-						href={'#yummy'} //:3 
-						value={5}	
-						label={'Вкусное'} 
-						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onTouchTap={() => {this.handleClick(5)}} 
-					/>					
-					<FlatButton 
-						//linkButton={true} 
-						href={'#aboutus'} 
-						value={6}	
+						linkButton={true}
+						href={'#/aboutus'}
 						label={'Наш магазин'} 
 						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onTouchTap={() => {this.handleClick(6)}} 
+						//onTouchTap={() => {this.handleClick('aboutus')}} 
 					/>
 						<FlatButton 
-						//linkButton={true} 
-						href={'#payment'} 
-						value={7}	
-						label={'Оплата и Доставка'} 
+						linkButton={true}
+						href={'#/payment'}
+						label={'Корзина'} 
 						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onTouchTap={() => {this.handleClick(7)}} 
+						onTouchTap={() => {this.handleClick('payment')}} 
 					/>
 					</div>
 					</Col>
