@@ -34,44 +34,37 @@ export default class Header extends React.Component {
 	render(){
 		let buttons = [ 
 			{
-				linkButton={true}
-				href: '#home',
+				href: '#/home',
 				value: 0,
 				label: 'Главная'
 			},
 			{
-				linkButton={true}
-				href: '#bouquets',
+				href: '#/bouquets',
 				value: 1,
 				label: 'Букеты и композиции'
 			},
 			{
-				linkButton={true}
-				href: '#wedding',
+				href: '#/wedding',
 				value: 2,
 				label: 'Свадебная флористика'
 			},
 			{
-				linkButton={true}
-				href: '#plantsalive',
+				href: '#/liveplants',
 				value: 3,
 				label: 'Живые растения'
 			},
 			{
-				linkButton={true}
-				href: '#gifts',
+				href: '#/gifts',
 				value: 4,
 				label: 'Подарки и украшение'
 			},
 			{
-				linkButton={true}
-				href: '#aboutus',
+				href: '#/aboutus',
 				value: 6,
 				label: 'Наш магазин'
 			},
 			{
-				linkButton={true}
-				href: '#payment',
+				href: '#/payment',
 				value: 7,
 				label: 'Оплата и Доставка'
 			},
@@ -140,6 +133,7 @@ export default class Header extends React.Component {
 					{buttons.map(function(element, id) {
 						return(
 								<FlatButton  
+									linkButton={true}
 									href={element.href} 
 									value={element.value} 
 									label={element.label} 
