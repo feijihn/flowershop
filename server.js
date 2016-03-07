@@ -12,7 +12,7 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/cart', function(req,res){
+app.get('/cart', (req,res) =>	{
 	if(req.query.customerId){
 	let dataFilePath = 'data/' + req.query.customerId + '.json'
 	fs.access(dataFilePath, fs.R_OK | fs.W_OK, (err) => { //check if customerId.json file exists
@@ -31,7 +31,7 @@ app.get('/cart', function(req,res){
 	}	
 });
 
-app.post('/cartadd', function(req,res){
+app.post('/cartadd', (req,res) => {
 	if(req.body.customerId){
 		let dataFilePath = 'data/' + req.body.customerId + '.json'
 		fs.readFile(dataFilePath, (err,data) => {
@@ -49,6 +49,16 @@ app.post('/cartadd', function(req,res){
 			});	
 		});
 	}	
+});
+
+app.get('/catalog', (req,res) => {
+	let dataFilePath = 'data/catalog.json'
+	fs.readFile(dataFilePath, (err,data) => {
+		if(err) throw err;
+		let catalog = JSON.parse(data);
+		let category = req.query.category;
+		res.json(catalog[category]);
+	});
 });
 
 app.listen(app.get('port'), function() {

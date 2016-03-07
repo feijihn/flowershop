@@ -1,11 +1,13 @@
 import React from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import Header from './Header.jsx';
+import Footer from './Footer.jsx';
 import Content from './Content.jsx';
 import Cookie from 'react-cookie';
 import Keygen from 'keygen';
 import $ from 'jquery';
 import data from '../data/Data.js';
+import Router from 'react-router-component';
 
 
 
@@ -25,26 +27,14 @@ export default class Main extends React.Component {
 			cartData: [],
 
 		};
-		$.ajax({
-			url: '/cart',
-			dataType: 'json',
-			data: {"customerId" : this.state.customerId},
-			success: function(data) {
-				this.setState({
-					cartData : data
-				});
-			}.bind(this),
-			error: function(xhr, status, err) {
-				console.error(this.props.url, status, err.toString());
-			}.bind(this)
-		});
-	};
+		window.location.hash = '/' + 'home'
+			};
 
 	menuClicked = (value) => {
-		this.setState({
-			category: +value,
-		});
-		window.location.hash = value; // REACT-ROUTER or http://jamesknelson.com/push-state-vs-hash-based-routing-with-react-js/
+		//this.setState({
+			//category: +value,
+		//});
+		//window.location.hash = '/' + value; // REACT-ROUTER or http://jamesknelson.com/push-state-vs-hash-based-routing-with-react-js/
 	};
 
 	addToCart = (title) => {
@@ -68,7 +58,8 @@ export default class Main extends React.Component {
 		return (
 			<div className={'MainView'}>
 				<Header clickEvent={this.menuClicked} />
-				<Content data={data} cartData={this.state.cartData} category={this.state.category} addToCart={this.addToCart} />
+				<Content />
+				<Footer className={'Footer'} />
 			</div>
 		)
 	}

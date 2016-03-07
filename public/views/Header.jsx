@@ -15,6 +15,7 @@ import MenuItem from 'material-ui/lib/menus/menu-item';
 import IconButton from 'material-ui/lib/icon-button';
 import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
 import LeftNav from 'material-ui/lib/left-nav';
+import {Link} from 'react-router-component';
 
 export default class Header extends React.Component {
 	constructor(props){
@@ -33,36 +34,43 @@ export default class Header extends React.Component {
 	render(){
 		let buttons = [ 
 			{
+				linkButton={true}
 				href: '#home',
 				value: 0,
 				label: 'Главная'
 			},
 			{
+				linkButton={true}
 				href: '#bouquets',
 				value: 1,
 				label: 'Букеты и композиции'
 			},
 			{
+				linkButton={true}
 				href: '#wedding',
 				value: 2,
 				label: 'Свадебная флористика'
 			},
 			{
+				linkButton={true}
 				href: '#plantsalive',
 				value: 3,
 				label: 'Живые растения'
 			},
 			{
+				linkButton={true}
 				href: '#gifts',
 				value: 4,
 				label: 'Подарки и украшение'
 			},
 			{
+				linkButton={true}
 				href: '#aboutus',
 				value: 6,
 				label: 'Наш магазин'
 			},
 			{
+				linkButton={true}
 				href: '#payment',
 				value: 7,
 				label: 'Оплата и Доставка'

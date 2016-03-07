@@ -51,9 +51,10 @@ var Styles = {
 		},
 	},
 	ContentWrapper: { 
-		paddingTop: 4,
 		minHeight: "calc(100vh - 100px)", // should be whole page - header. later footer might be added
-		backgroundColor: Colors.grey50
+		backgroundColor: Colors.grey50,
+		marginBottom: 4,
+		marginTop: 4,
 	},
 	Catalog: {
 		elementWrapper: {

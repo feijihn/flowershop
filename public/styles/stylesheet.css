@@ -7,8 +7,26 @@ body {
 	background-color: #F5F5F5;
 }
 
+html,body{
+	height:100%;
+}
 i {
 	font-size: 40px;
 	color: white;
 	cursor: pointer;
+}
+
+.MainView {
+	min-height: 100%;
+	margin-bottom: -150px;
+}
+
+.MainView:after{
+	content:"";
+	display: block;
+	height:150px;
+}
+
+.Footer{
+	height:150px;
 }
