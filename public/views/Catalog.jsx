@@ -179,11 +179,22 @@ class PreviewMode extends React.Component {
 			<div> 
 				<div style={Styles.Catalog.preview}>
 					<div style={Styles.Catalog.preview.background} onTouchTap={this.props.closePreview}/>
-					<Paper zDepth={5} style={Styles.Catalog.preview.contentContainer}>
+					<Paper 
+						id="previewMode"
+						zDepth={5} 
+						style={{
+							position: 'fixed',
+							top: '50vh',
+							left: '50vw',
+							/*marginBottom: 'calc(-data.bouquets[this.state.id].img.style.height / 2)',
+							marginRight: -(data.bouquets[this.state.id].img.width/2),*/
+							zIndex: 100,
+							textAlign: 'center'
+					}}>
 						<h2>№{this.props.id+1}</h2>
 						<h3 style={{margin: 7, marginTop: 2}}>{this.props.text}</h3>
 						<img src={data.bouquets[this.state.id].img}/>	
-						{this.props.title} {this.props.price} руб.			
+						<p>{this.props.title} {this.props.price} руб.</p>			
 					</Paper>
 					{this.state.id != data.bouquets.length - 1 ? 
 						<div 

@@ -54,11 +54,14 @@ export default class Header extends React.Component {
 						</LeftNav>
 						<Col xs={10} sm={12} mdHidden lgHidden>
 							<h className={'Label'} style={Styles.HeaderWrapper.Title.Label}>Majorgarden</h>
+							<p>+7(968)400-41-41</p>
 						</Col>
 					</Row>
 					<Row>
 						<Col xsHidden smHidden md={1} lg={2}>
 							<h className={'Label'} style={Styles.HeaderWrapper.Title.Label}>Majorgarden</h>
+							<h4 style={Styles.HeaderWrapper.Phone}>Cтудия дизайна цветов и украшений</h4>
+							<h3>+7(968)400-41-41</h3>
 						</Col>
 						<Col xsHidden sm={12} md={10} lg={10}>
 
@@ -102,14 +105,6 @@ export default class Header extends React.Component {
 						label={'Подарки и украшения'} 
 						style={Styles.HeaderWrapper.Navigation.Buttons} 
 						onTouchTap={() => {this.handleClick(4)}} 
-					/>				
-					<FlatButton 
-						//linkButton={true} 
-						href={'#yummy'} //:3 
-						value={5}	
-						label={'Вкусное'} 
-						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onTouchTap={() => {this.handleClick(5)}} 
 					/>					
 					<FlatButton 
 						//linkButton={true} 

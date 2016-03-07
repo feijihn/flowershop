@@ -29,6 +29,9 @@ var Styles = {
 				borderBottom: '3px solid' + Colors.lightGreenA200,
 			},
 		},
+		Phone: {
+			color: 'rgba(0,0,0,0.5)'
+		},
 	},
 	HomeWrapper: {
 		height:'calc(100vh - 100px)',
@@ -53,7 +56,7 @@ var Styles = {
 			height: 300, //Must be equal to elementWrapper height
 			backgroundColor: 'rgba(0,0,0,0.5)',
 			color: 'white',
-			textAlign: 'center'
+			textAlign: 'center',
 		},
 		elementFooter: {
 			height: 60,
@@ -70,13 +73,6 @@ var Styles = {
 				height: '100vh',
 				backgroundColor: 'rgba(0,0,0,0.7)',
 				zIndex: 99,
-			},
-			contentContainer: { //gotta center it somehow
-				position: 'fixed',
-				top: '30vh',
-				left: '30vw',
-				zIndex: 100,
-				padding: 10,
 			},
 			closePreview: {
 				icon: {

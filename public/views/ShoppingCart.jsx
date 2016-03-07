@@ -14,39 +14,39 @@ import RaisedButton from 'material-ui/lib/raised-button';
 
 
 export default class ShoppingCart extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-      return (
-	      <div>
-	      	<h3 style={{textAlign: 'center', margin: 15}}> Список покупок </h3>
-	      	<Divider />
-					<Table>
-					  <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
-					    <TableRow>
-					      <TableHeaderColumn>ID</TableHeaderColumn>
-					      <TableHeaderColumn>Название</TableHeaderColumn>
-					      <TableHeaderColumn>Количество</TableHeaderColumn>
-					      <TableHeaderColumn>Удалить</TableHeaderColumn>
-					    </TableRow>
-					  </TableHeader>
-					  <TableBody displayRowCheckbox={false} showRowHover={true}>
-					  	{this.props.data.map( (row, index) => (
-	              <TableRow>
-	                <TableRowColumn>{index+1}</TableRowColumn>
-	                <TableRowColumn>{row.name}</TableRowColumn>
-	                <TableRowColumn>{row.number}</TableRowColumn>
-	                <TableRowColumn>
-									<FlatButton label={'Удалить'} />
-									</TableRowColumn>
-	              </TableRow>
-	            ))}
-					  </TableBody>
-					</Table>
-					<Divider />
-					<RaisedButton label="Оформить заказ" style={Styles.orderButton} backgroundColor={Colors.lightGreen200}/>
-				</div>
-      )
-    }
+	constructor(props) {
+		super(props);
+	}
+	render() {
+		return (
+			<div>
+				<h3 style={{textAlign: 'center', margin: 15}}> Список покупок </h3>
+				<Divider />
+				<Table>
+					<TableHeader displaySelectAll={false} adjustForCheckbox={false}>
+						<TableRow>
+							<TableHeaderColumn>ID</TableHeaderColumn>
+							<TableHeaderColumn>Название</TableHeaderColumn>
+							<TableHeaderColumn>Количество</TableHeaderColumn>
+							<TableHeaderColumn>Удалить</TableHeaderColumn>
+						</TableRow>
+					</TableHeader>
+					<TableBody displayRowCheckbox={false} showRowHover={true}>
+						{this.props.data.map( (row, index) => (
+							<TableRow>
+								<TableRowColumn>{index+1}</TableRowColumn>
+								<TableRowColumn>{row.name}</TableRowColumn>
+								<TableRowColumn>{row.number}</TableRowColumn>
+								<TableRowColumn>
+								<FlatButton label={'Удалить'} />
+								</TableRowColumn>
+							</TableRow>
+						))}
+					</TableBody>
+				</Table>
+				<Divider />
+				<RaisedButton label="Оформить заказ" style={Styles.orderButton} backgroundColor={Colors.lightGreen200}/>
+			</div>
+		)
+	}
 }
