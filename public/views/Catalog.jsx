@@ -15,6 +15,9 @@ import Paper from 'material-ui/lib/paper';
 import data from '../data/Data.js';
 
 
+import ReactSwipe from 'react-swipe';
+
+
 export default class Catalog extends React.Component {
 	constructor(props) {
 		super(props)
@@ -173,53 +176,53 @@ class PreviewMode extends React.Component {
 
 	render() {
 		return (
-			<div> 
-				<div style={Styles.Catalog.preview}>
-					<div style={Styles.Catalog.preview.background} onTouchTap={this.props.closePreview}/>
-					<Paper 
-						id="previewMode"
-						zDepth={5} 
-						style={{
-							position: 'fixed',
-							top: '50vh',
-							left: '50vw',
-							transform: 'translate(-50%, -50%)',
-							zIndex: 100,
-							textAlign: 'center'
-					}}>
-						<h2>№{this.state.id+1}</h2>
-						<h3 style={{margin: 7, marginTop: 2}}>{data.bouquets[this.state.id].title}</h3>
-						<img src={data.bouquets[this.state.id].img}/>	
-						<p>{data.bouquets[this.state.id].text} {data.bouquets[this.state.id].price} руб.</p>			
-					</Paper>
-					{this.state.id != data.bouquets.length - 1 ? 
-						<div 
-							style={this.state.hoverRight ? Styles.Catalog.preview.moveRight.Hover :Styles.Catalog.preview.moveRight}  
-							onTouchTap={this.moveRight}
-							onMouseEnter={this.hoverRight}
-							onMouseLeave={this.unHover}
-						>
-							<i className="material-icons md-48" style={Styles.Catalog.preview.moveRight.icon}>chevron_right</i>
-						</div>
-					:null}
-					{this.state.id ? 
-						<div 
-							style={this.state.hoverLeft ? Styles.Catalog.preview.moveLeft.Hover :Styles.Catalog.preview.moveLeft} 
-							onTouchTap={this.moveLeft}
-							onMouseEnter={this.hoverLeft}
-							onMouseLeave={this.handleMouseLeaveNavigation}
-						>
-							<i className="material-icons md-48" style={Styles.Catalog.preview.moveLeft.icon}>chevron_left</i>
-						</div> 
-					:null}
+		<div>
+			<div style={Styles.Catalog.preview}>
+				<div style={Styles.Catalog.preview.background} onTouchTap={this.props.closePreview}/>
+				<Paper 
+					id="previewMode"
+					zDepth={5} 
+					style={{
+						position: 'fixed',
+						top: '50vh',
+						left: '50vw',
+						transform: 'translate(-50%, -50%)',
+						zIndex: 100,
+						textAlign: 'center'
+				}}>
+					<h2>№{this.state.id+1}</h2>
+					<h3 style={{margin: 7, marginTop: 2}}>{data.bouquets[this.state.id].title}</h3>
+					<img src={data.bouquets[this.state.id].img}/>	
+					<p>{data.bouquets[this.state.id].text} {data.bouquets[this.state.id].price} руб.</p>			
+				</Paper>
+				{this.state.id != data.bouquets.length - 1 ? 
 					<div 
-						style={Styles.Catalog.preview.closePreview} 
-						onTouchTap={this.props.closePreview}
+						style={this.state.hoverRight ? Styles.Catalog.preview.moveRight.Hover :Styles.Catalog.preview.moveRight}  
+						onTouchTap={this.moveRight}
+						onMouseEnter={this.hoverRight}
+						onMouseLeave={this.unHover}
 					>
-						<i className="material-icons md-48" style={Styles.Catalog.preview.closePreview.icon}>close</i>
+						<i className="material-icons md-48" style={Styles.Catalog.preview.moveRight.icon}>chevron_right</i>
+					</div>
+				:null}
+				{this.state.id ? 
+					<div 
+						style={this.state.hoverLeft ? Styles.Catalog.preview.moveLeft.Hover :Styles.Catalog.preview.moveLeft} 
+						onTouchTap={this.moveLeft}
+						onMouseEnter={this.hoverLeft}
+						onMouseLeave={this.handleMouseLeaveNavigation}
+					>
+						<i className="material-icons md-48" style={Styles.Catalog.preview.moveLeft.icon}>chevron_left</i>
 					</div> 
-				</div>
+				:null}
+				<div 
+					style={Styles.Catalog.preview.closePreview} 
+					onTouchTap={this.props.closePreview}
+				>
+					<i className="material-icons md-48" style={Styles.Catalog.preview.closePreview.icon}>close</i>
+				</div> 
 			</div>
+		</div>
 		)
 	}
 };

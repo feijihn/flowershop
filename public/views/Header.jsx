@@ -71,24 +71,7 @@ export default class Header extends React.Component {
 		return(
 			<Paper className={'Header'} style={Styles.HeaderWrapper}>
 				<Grid fluid={true}>
-					<Row>
-						<Col 
-							xs={2} 
-							smHidden 
-							mdHidden 
-							lgHidden
-						>
-							<i 
-								className="material-icons" 
-								style={{
-									color: 'black',
-									marginTop: 10,
-								}} 
-								onTouchTap={this.handleToggle}
-							>
-								menu
-							</i>
-						</Col>  
+					<Row> 
 						<LeftNav
 							docked={false}
 							width={200}
@@ -96,10 +79,10 @@ export default class Header extends React.Component {
 							onRequestChange={open => this.setState({open})}
 						>
 							<i 
-								className="material-icons md-48" 
+								className="material-icons md-36" 
 								style={{
 									color: 'black',
-									marginTop: 10,
+									marginTop: 42,
 									marginLeft: 16,
 								}} 
 								onTouchTap={this.handleClose}
@@ -120,7 +103,19 @@ export default class Header extends React.Component {
 								)
 							},this)}
 						</LeftNav>
-						<Col xs={12} sm={12} mdHidden lgHidden style={{textAlign: 'center'}}>
+						<Col xs={12} sm={12} mdHidden lgHidden style={{textAlign: 'center',}}>
+							<i 
+								className="material-icons" 
+								style={{
+									position: 'absolute',
+									color: 'black',
+									top: 42,
+									left: 16,
+								}} 
+								onTouchTap={this.handleToggle}
+							>
+								menu
+							</i>
 							<h className={'Label'} style={Styles.HeaderWrapper.Title.Label}>Majorgarden</h>
 							<p style={{color: Colors.pink900, marginLeft: -55, marginTop: -20}}>+7(968)400-41-41</p>
 						</Col>
@@ -131,7 +126,7 @@ export default class Header extends React.Component {
 							<p style={Styles.HeaderWrapper.Discription}>Cтудия дизайна цветов и украшений</p>
 							<h4 style={Styles.HeaderWrapper.Phone}>+7(968)400-41-41</h4>
 						</Col>
-						<Col xsHidden sm={12} md={10} lg={10}>
+						<Col xsHidden smHidden md={10} lg={10}>
 
 				<div className={'Navigation'} style={Styles.HeaderWrapper.Navigation}>
 					{buttons.map(function(element, id) {
