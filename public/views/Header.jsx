@@ -34,43 +34,43 @@ export default class Header extends React.Component {
 	render(){
 		let buttons = [ 
 			{
-				linkButton={true}
+				linkButton={true},
 				href: '#home',
 				value: 0,
 				label: 'Главная'
 			},
 			{
-				linkButton={true}
+				linkButton={true},
 				href: '#bouquets',
 				value: 1,
 				label: 'Букеты и композиции'
 			},
 			{
-				linkButton={true}
+				linkButton={true},
 				href: '#wedding',
 				value: 2,
 				label: 'Свадебная флористика'
 			},
 			{
-				linkButton={true}
+				linkButton={true},
 				href: '#plantsalive',
 				value: 3,
 				label: 'Живые растения'
 			},
 			{
-				linkButton={true}
+				linkButton={true},
 				href: '#gifts',
 				value: 4,
 				label: 'Подарки и украшение'
 			},
 			{
-				linkButton={true}
+				linkButton={true},
 				href: '#aboutus',
 				value: 6,
 				label: 'Наш магазин'
 			},
 			{
-				linkButton={true}
+				linkButton={true},
 				href: '#payment',
 				value: 7,
 				label: 'Оплата и Доставка'
