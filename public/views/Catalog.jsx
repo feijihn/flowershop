@@ -157,9 +157,6 @@ class CatalogElement extends React.Component {
 					<PreviewMode 
 						closePreview={this.closePreview} 
 						id={this.state.id}
-						title={this.props.title}
-						text={this.props.text}
-						price={this.props.price}
 					/> 
 				:null}
 			</div>
@@ -213,11 +210,22 @@ class PreviewMode extends React.Component {
 			<div> 
 				<div style={Styles.Catalog.preview}>
 					<div style={Styles.Catalog.preview.background} onTouchTap={this.props.closePreview}/>
-					<Paper zDepth={5} style={Styles.Catalog.preview.contentContainer}>
-						<h2>№{this.props.id+1}</h2>
-						<h3 style={{margin: 7, marginTop: 2}}>{this.props.text}</h3>
-						<img src={this.state.data.bouquets[this.state.id].img}/>	
-						{this.props.title} {this.props.price} руб.			
+
+					<Paper 
+						id="previewMode"
+						zDepth={5} 
+						style={{
+							position: 'fixed',
+							top: '50vh',
+							left: '50vw',
+							transform: 'translate(-50%, -50%)',
+							zIndex: 100,
+							textAlign: 'center'
+					}}>
+						<h2>№{this.state.id+1}</h2>
+						<h3 style={{margin: 7, marginTop: 2}}>{data.bouquets[this.state.id].title}</h3>
+						<img src={data.bouquets[this.state.id].img}/>	
+						<p>{data.bouquets[this.state.id].text} {data.bouquets[this.state.id].price} руб.</p>			
 					</Paper>
 					{this.state.id != data.bouquets.length - 1 ? 
 						<div 

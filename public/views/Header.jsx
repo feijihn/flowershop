@@ -1,6 +1,7 @@
 import React from 'react';
 import Styles from '../styles/Styles.js';
 import Catalog from './Catalog.jsx';
+import Colors from 'material-ui/lib/styles/colors';
 
 import FlatButton from 'material-ui/lib/flat-button';
 import Paper from 'material-ui/lib/paper';
@@ -31,6 +32,50 @@ export default class Header extends React.Component {
 	handleClose = () => this.setState({open: false});
 
 	render(){
+		let buttons = [ 
+			{
+				linkButton={true}
+				href: '#home',
+				value: 0,
+				label: 'Главная'
+			},
+			{
+				linkButton={true}
+				href: '#bouquets',
+				value: 1,
+				label: 'Букеты и композиции'
+			},
+			{
+				linkButton={true}
+				href: '#wedding',
+				value: 2,
+				label: 'Свадебная флористика'
+			},
+			{
+				linkButton={true}
+				href: '#plantsalive',
+				value: 3,
+				label: 'Живые растения'
+			},
+			{
+				linkButton={true}
+				href: '#gifts',
+				value: 4,
+				label: 'Подарки и украшение'
+			},
+			{
+				linkButton={true}
+				href: '#aboutus',
+				value: 6,
+				label: 'Наш магазин'
+			},
+			{
+				linkButton={true}
+				href: '#payment',
+				value: 7,
+				label: 'Оплата и Доставка'
+			},
+		];	
 		return(
 			<Paper className={'Header'} style={Styles.HeaderWrapper}>
 				<Grid fluid={true}>
@@ -41,7 +86,16 @@ export default class Header extends React.Component {
 							mdHidden 
 							lgHidden
 						>
-							<i className="material-icons" style={{color: 'black'}} onTouchTap={this.handleToggle}>menu</i>
+							<i 
+								className="material-icons" 
+								style={{
+									color: 'black',
+									marginTop: 10,
+								}} 
+								onTouchTap={this.handleToggle}
+							>
+								menu
+							</i>
 						</Col>  
 						<LeftNav
 							docked={false}
@@ -49,70 +103,56 @@ export default class Header extends React.Component {
 							open={this.state.open}
 							onRequestChange={open => this.setState({open})}
 						>
-							<i className="material-icons md-48" style={{color: 'black'}} onTouchTap={this.handleClose}>close</i>
-							<MenuItem onTouchTap={this.handleClose}>Menu Item</MenuItem>
-							<MenuItem onTouchTap={this.handleClose}>Menu Item 2</MenuItem>
+							<i 
+								className="material-icons md-48" 
+								style={{
+									color: 'black',
+									marginTop: 10,
+									marginLeft: 16,
+								}} 
+								onTouchTap={this.handleClose}
+							>
+								close
+							</i>
+							{buttons.map(function(element, id) {
+								return(
+									<MenuItem onTouchTap={this.handleClose}>
+										<FlatButton  
+											href={element.href} 
+											value={element.value} 
+											label={element.label} 
+											style={Styles.HeaderWrapper.Navigation.Buttons} 
+											onTouchTap={() => {this.handleClick(element.value)}} 
+										/>
+									</MenuItem>
+								)
+							},this)}
 						</LeftNav>
-						<Col xs={10} sm={12} mdHidden lgHidden>
+						<Col xs={12} sm={12} mdHidden lgHidden style={{textAlign: 'center'}}>
 							<h className={'Label'} style={Styles.HeaderWrapper.Title.Label}>Majorgarden</h>
+							<p style={{color: Colors.pink900, marginLeft: -55, marginTop: -20}}>+7(968)400-41-41</p>
 						</Col>
 					</Row>
 					<Row>
 						<Col xsHidden smHidden md={1} lg={2}>
 							<h className={'Label'} style={Styles.HeaderWrapper.Title.Label}>Majorgarden</h>
+							<p style={Styles.HeaderWrapper.Discription}>Cтудия дизайна цветов и украшений</p>
+							<h4 style={Styles.HeaderWrapper.Phone}>+7(968)400-41-41</h4>
 						</Col>
 						<Col xsHidden sm={12} md={10} lg={10}>
 
 				<div className={'Navigation'} style={Styles.HeaderWrapper.Navigation}>
-					<FlatButton 
-						linkButton={true} 
-						href={'#/home'}
-						label={'Главная'} 
-						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						//onTouchTap={() => {this.handleClick('home')}} 
-					/>
-					<FlatButton
-						linkButton={true}
-						href={'#/bouquets'}
-						label={'Букеты и композиции'}
-					 	style={Styles.HeaderWrapper.Navigation.Buttons}
-						 onTouchTap={() => {this.handleClick('catalog/bouquets')}}
-					/>
-					<FlatButton 
-						linkButton={true}
-						href={'#/wedding'}
-						label={'Свадебная флористика'} 
-						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onTouchTap={() => {this.handleClick('catalog/wedding')}} 
-					/>
-					<FlatButton 
-						linkButton={true}
-						href={'#/liveplants'}
-						label={'Живые растения'} 
-						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						//onTouchTap={() => {this.handleClick('catalog/plantsalive')}} 
-					/>					
-					<FlatButton 
-						linkButton={true}
-						href={'#/gifts'}
-						label={'Подарки и украшения'} 
-						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						//onTouchTap={() => {this.handleClick('catalog/gifts')}} 
-					/>				
-					<FlatButton 
-						linkButton={true}
-						href={'#/aboutus'}
-						label={'Наш магазин'} 
-						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						//onTouchTap={() => {this.handleClick('aboutus')}} 
-					/>
-						<FlatButton 
-						linkButton={true}
-						href={'#/payment'}
-						label={'Корзина'} 
-						style={Styles.HeaderWrapper.Navigation.Buttons} 
-						onTouchTap={() => {this.handleClick('payment')}} 
-					/>
+					{buttons.map(function(element, id) {
+						return(
+								<FlatButton  
+									href={element.href} 
+									value={element.value} 
+									label={element.label} 
+									style={Styles.HeaderWrapper.Navigation.Buttons} 
+									onTouchTap={() => {this.handleClick(element.value)}} 
+								/>
+						)
+					},this)}
 					</div>
 					</Col>
 						</Row>

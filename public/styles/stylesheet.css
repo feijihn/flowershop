@@ -10,7 +10,6 @@ body {
 html,body{
 	height:100%;
 }
-
 i {
 	font-size: 40px;
 	color: white;
@@ -32,3 +31,7 @@ i {
 	height:150px;
 }
 
+#previewMode {
+	display: block;
+	margin: 1em auto;
+}

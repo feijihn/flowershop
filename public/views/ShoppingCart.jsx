@@ -66,4 +66,5 @@ export default class ShoppingCart extends React.Component {
 				</div>
       )
     }
+
 }
