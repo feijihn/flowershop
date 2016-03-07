@@ -8,19 +8,20 @@ var Styles = {
 		backgroundColor: Colors.lightGreen100,
 		Title:{
 			float: 'left',
-			height: 100,
+			height: 'auto',
 			Label : {
 				fontFamily: '\'Pacifico\', cursive',
-				fontSize: '1.75em',
+				fontSize: '2.5em',
 				color: Colors.pink500,
 				lineHeight: '3em',
-				marginLeft: 50,
+				marginLeft: 20,
 			},
 		},
 		Navigation: {
 			paddingTop: 30,
 			paddingBottom: 30,
 			Buttons: {
+				marginTop: 15,
 				color: Colors.pink900,
 				fontSize: 11,
 				fontWeight: 400,
@@ -29,12 +30,20 @@ var Styles = {
 				borderBottom: '3px solid' + Colors.lightGreenA200,
 			},
 		},
+		Discription: {
+			color: 'rgba(0,0,0,0.5)',
+			marginLeft: 20,
+			marginTop: -20,
+		},
 		Phone: {
-			color: 'rgba(0,0,0,0.5)'
+			marginLeft: 20,
+			marginTop: -5,
+			marginBottom: 30,
+			color: Colors.pink900,
 		},
 	},
 	HomeWrapper: {
-		height:'calc(100vh - 100px)',
+		height:'calc(100vh - 200px)',
 		width: '100%',
 		Carousel: {
 			height: '100%',
