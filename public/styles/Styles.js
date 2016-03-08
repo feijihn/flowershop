@@ -2,7 +2,7 @@ import Colors from 'material-ui/lib/styles/colors';
 
 
 var Styles = {
-	HeaderWrapper : {
+	Header : {
 		display: 'flex',
 		display: 'flexbox',
 		width: '100%',
@@ -14,8 +14,9 @@ var Styles = {
 			Container: {
 				display: 'inline-block',
 				verticalAlign: 'middle', 
-				height: 120, 
+				height: 160, 
 				margin: '20px',
+				marginBottom: 0,
 			},
 			Label : {
 				fontFamily: '\'Pacifico\', cursive',
@@ -26,9 +27,12 @@ var Styles = {
 			},
 		},
 		Navigation: {
+			width: 'calc(100vw - 270px)',
 			verticalAlign: 'middle',
 			display: 'inline-block',
+			textAlign: 'center',
 			Buttons: {
+				display: 'inline-block',
 				color: Colors.black,
 				fontSize: 11,
 				fontWeight: 400,

@@ -70,7 +70,7 @@ export default class Header extends React.Component {
 			},
 		];	
 		return(
-			<Paper className={'Header'} style={Styles.HeaderWrapper}>
+			<Paper className={'Header'} style={Styles.Header}>
 				<Grid fluid={true}>
 					<Row> 
 						<LeftNav
@@ -80,7 +80,7 @@ export default class Header extends React.Component {
 							onRequestChange={open => this.setState({open})}
 						>
 							<i className="material-icons" 
-								style={Styles.HeaderWrapper.navIcon.closeMenu} 
+								style={Styles.Header.navIcon.closeMenu} 
 								onTouchTap={this.handleClose}
 							>close</i>
 
@@ -92,7 +92,7 @@ export default class Header extends React.Component {
 											href={element.href} 
 											value={element.value} 
 											label={element.label} 
-											style={Styles.HeaderWrapper.Navigation.ButtonsMobileVersion} 
+											style={Styles.Header.Navigation.ButtonsMobileVersion} 
 										/>
 									</MenuItem>
 								)
@@ -102,22 +102,22 @@ export default class Header extends React.Component {
 						<Col xs={12} sm={12} mdHidden lgHidden style={{textAlign: 'center',}}>
 
 							<i className="material-icons" 
-								style={Styles.HeaderWrapper.navIcon.openMenu} 
+								style={Styles.Header.navIcon.openMenu} 
 								onTouchTap={this.handleToggle}
 							>menu</i>
 
-							<h className={'Label'} style={Styles.HeaderWrapper.Title.Label}>Majorgarden</h>
+							<h className={'Label'} style={Styles.Header.Title.Label}>Majorgarden</h>
 							<p style={{color: Colors.pink900, marginLeft: -55, marginTop: -20}}>+7(968)400-41-41</p>
 						</Col>
 
 					</Row></Grid>
 					<Col xsHidden smHidden >
-							<div style={Styles.HeaderWrapper.Title.Container}>
-								<h className={'Label'} style={Styles.HeaderWrapper.Title.Label}>Majorgarden</h>
-								<p style={Styles.HeaderWrapper.Discription}>Cтудия дизайна цветов и украшений</p>
-								<h4 style={Styles.HeaderWrapper.Phone}>+7(968)400-41-41</h4>
+							<div style={Styles.Header.Title.Container}>
+								<h className={'Label'} style={Styles.Header.Title.Label}>Majorgarden</h>
+								<p style={Styles.Header.Discription}>Cтудия дизайна цветов и украшений</p>
+								<h4 style={Styles.Header.Phone}>+7(968)400-41-41</h4>
 							</div>
-							<div className={'Navigation'} style={Styles.HeaderWrapper.Navigation}>
+							<div className={'Navigation'} style={Styles.Header.Navigation}>
 								{buttons.map(function(element, id) {
 									return(
 										<FlatButton  
@@ -125,7 +125,7 @@ export default class Header extends React.Component {
 											href={element.href} 
 											value={element.value} 
 											label={element.label} 
-											style={Styles.HeaderWrapper.Navigation.Buttons} 
+											style={Styles.Header.Navigation.Buttons} 
 											onTouchTap={() => {this.handleClick(element.value)}} 
 										/>
 									)
