@@ -38,11 +38,11 @@ var Styles = {
 			color: Colors.grey600,
 			whiteSpace: 'nowrap',
 			fontSize: '0.75em',
-			marginLeft: 20,
+			marginLeft: 25,
 			marginTop: -20,
 		},
 		Phone: {
-			marginLeft: 20,
+			marginLeft: -7,
 			marginTop: -5,
 			marginBottom: 30,
 			color: Colors.pink900,
@@ -63,8 +63,9 @@ var Styles = {
 
 	ContentWrapper: { 
 		backgroundColor: Colors.white,
-		marginBottom: 8,
-		marginTop: 8,
+		marginBottom: 16,
+		marginTop: 16,
+		minHeight: 700,
 		CatalogText: {
 			paddingTop: 50,
 			marginRight:50,
@@ -192,9 +193,23 @@ var Styles = {
 		GoogleMap: {
 			width: '100%',
 			border: '2px solid' + Colors.grey500,
-		}
-
+		},
+		mobileVersion: {
+			color: 'white',
+			width: '100%', 
+			backgroundColor: "#333",
+			borderBottom: '2px solid white',
+		},
 	},
+	Footer: {
+		borderTop: '1px solid rgba(0,0,0,0.3)', 
+		padding: 10, 
+		width: '100%', 
+		textWeight: 900,
+		maxHeight: 100,
+		fontFamily:'\'Roboto\', sans-serif', 
+		fontSize: 15,	
+	}
 }
 
 module.exports = Styles;

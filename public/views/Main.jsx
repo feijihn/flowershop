@@ -17,24 +17,17 @@ injectTapEventPlugin(); //needed for material-ui to wrok untill react 1.0.0 woul
 export default class Main extends React.Component {
 	constructor(props){
 		super(props);
-		if (!Cookie.load('customerId')) {
-			let Exp = Date.now() + 30*24*60*60*1000
-			Cookie.save('customerId', Keygen.url(Keygen.small), { path: '/', expires: new Date(new Date().getTime() + 30*24 * 60 * 60 * 1000)});
-		}
-		this.state = {
-			category: 0,
-			customerId: Cookie.load('customerId'),
-			cartData: [],
+			if (!Cookie.load('customerId')) {
+				let Exp = Date.now() + 30*24*60*60*1000
+				Cookie.save('customerId', Keygen.url(Keygen.small), { path: '/', expires: new Date(new Date().getTime() + 30*24 * 60 * 60 * 1000)});
+			}
+			this.state = {
+				category: 0,
+				customerId: Cookie.load('customerId'),
+				cartData: [],
 
-		};
 			};
-
-	menuClicked = (value) => {
-		//this.setState({
-			//category: +value,
-		//});
-		//window.location.hash = '/' + value; // REACT-ROUTER or http://jamesknelson.com/push-state-vs-hash-based-routing-with-react-js/
-	};
+		};
 
 	addToCart = (title) => {
 		$.ajax({
