@@ -57,8 +57,8 @@ export default class Catalog extends React.Component {
 			)
 		}, this);
 		return (
-
-			<Grid fluid={true} style={{backgroundColor: Colors.grey200}}>
+		<div className={'BodyWrapper'} style={Styles.BodyWrapper}>
+			<Grid fluid={true}>
 			<Row>
 			<Col 
 			lg={8}  
@@ -70,6 +70,8 @@ export default class Catalog extends React.Component {
 			xs={12}
 			>
 			<Paper className={'ContentWrapper'} style={Styles.ContentWrapper} responsive>
+			<div className={'CatalogText'} style={Styles.ContentWrapper.CatalogText}>
+			</div>
 			<Grid style={{width:'100%'}}>
 				<Row>
 					{CatalogElements}
@@ -79,6 +81,7 @@ export default class Catalog extends React.Component {
 			</Col>
 			</Row>
 			</Grid>
+			</div>
 		)
 	}
 };
@@ -246,11 +249,11 @@ class PreviewMode extends React.Component {
 							textAlign: 'center'
 					}}>
 						<h2>№{this.state.id+1}</h2>
-						<h3 style={{margin: 7, marginTop: 2}}>{data.bouquets[this.state.id].title}</h3>
-						<img src={data.bouquets[this.state.id].img}/>	
-						<p>{data.bouquets[this.state.id].text} {data.bouquets[this.state.id].price} руб.</p>			
+						<h3 style={{margin: 7, marginTop: 2}}>{this.props.data.bouquets[this.state.id].title}</h3>
+						<img src={this.props.data.bouquets[this.state.id].img}/>	
+						<p>{this.props.data.bouquets[this.state.id].text} {this.props.data.bouquets[this.state.id].price} руб.</p>			
 					</Paper>
-					{this.state.id != data.bouquets.length - 1 ? 
+					{this.state.id != this.props.data.bouquets.length - 1 ? 
 						<div 
 							style={this.state.hoverRight ? Styles.Catalog.preview.moveRight.Hover :Styles.Catalog.preview.moveRight}  
 							onTouchTap={this.moveRight}

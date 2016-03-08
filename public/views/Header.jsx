@@ -94,6 +94,7 @@ export default class Header extends React.Component {
 								return(
 									<MenuItem onTouchTap={this.handleClose}>
 										<FlatButton  
+											linkButton
 											href={element.href} 
 											value={element.value} 
 											label={element.label} 
@@ -133,7 +134,7 @@ export default class Header extends React.Component {
 					{buttons.map(function(element, id) {
 						return(
 								<FlatButton  
-									linkButton={true}
+									linkButton
 									href={element.href} 
 									value={element.value} 
 									label={element.label} 
