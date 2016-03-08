@@ -22,6 +22,7 @@ export default class Content extends React.Component {
 	render(){
 		return(
 			<Locations hash >
+				<Location path="/" handler={Home} />
 				<Location path="/home" handler={Home} />
 				<Location path="/bouquets" handler={() => {return <Catalog category={'bouquets'} /> }} />
 				<Location path="/wedding" handler={() => {return <Catalog category={'wedding'} />}} />

@@ -27,7 +27,6 @@ export default class Main extends React.Component {
 			cartData: [],
 
 		};
-		window.location.hash = '/' + 'home'
 			};
 
 	menuClicked = (value) => {

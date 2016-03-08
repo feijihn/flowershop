@@ -3,16 +3,18 @@ import Colors from 'material-ui/lib/styles/colors';
 
 var Styles = {
 	HeaderWrapper : {
+		display: 'flex',
+		display: 'flexbox',
 		width: '100%',
 		height: 'auto',
-		backgroundColor: Colors.lightGreen100,
+		backgroundColor: Colors.white,
 		Title:{
 			float: 'left',
 			height: 'auto',
 			Label : {
 				fontFamily: '\'Pacifico\', cursive',
 				fontSize: '2.5em',
-				color: Colors.pink500,
+				color: Colors.black,
 				lineHeight: '3em',
 				marginLeft: 20,
 			},
@@ -20,18 +22,22 @@ var Styles = {
 		Navigation: {
 			paddingTop: 30,
 			paddingBottom: 30,
+			margin: '0 auto',
 			Buttons: {
 				marginTop: 15,
-				color: Colors.pink900,
+				color: Colors.black,
 				fontSize: 11,
 				fontWeight: 400,
+				minWidth: '0px',
 			},
 			ButtonActive: {
 				borderBottom: '3px solid' + Colors.lightGreenA200,
 			},
 		},
 		Discription: {
-			color: 'rgba(0,0,0,0.5)',
+			color: Colors.grey600,
+			whiteSpace: 'nowrap',
+			fontSize: '0.75em',
 			marginLeft: 20,
 			marginTop: -20,
 		},
@@ -40,30 +46,42 @@ var Styles = {
 			marginTop: -5,
 			marginBottom: 30,
 			color: Colors.pink900,
+			textAlign: 'center',
 		},
 	},
+	BodyWrapper:{
+		backgroundColor: 'rgba(238,238,238,0.3)',
+	},
 	HomeWrapper: {
-		height:'calc(100vh - 200px)',
+		height: 'auto',
 		width: '100%',
 		Carousel: {
-			height: '100%',
+			maxHeight: '700px',
 			overflow: 'hidden',
 		},
 	},
+
 	ContentWrapper: { 
-		minHeight: "calc(100vh - 100px)", // should be whole page - header. later footer might be added
-		backgroundColor: Colors.grey50,
-		marginBottom: 4,
-		marginTop: 4,
+		backgroundColor: Colors.white,
+		marginBottom: 8,
+		marginTop: 8,
+		CatalogText: {
+			paddingTop: 50,
+			marginRight:50,
+			marginLeft:50,
+			paddingBottom: 10,
+			boxSizing: 'border-box',
+			borderBottom: '1px solid rgba(0,0,0,0.1)',
+		},
 	},
 	Catalog: {
 		elementWrapper: {
-			height: 300, 
+			height: 250, 
 			margin: 10,
 			overflow: 'hidden',
 		},
 		elementOnHover: {
-			height: 300, //Must be equal to elementWrapper height
+			height: 250, //Must be equal to elementWrapper height
 			backgroundColor: 'rgba(0,0,0,0.5)',
 			color: 'white',
 			textAlign: 'center',
@@ -158,23 +176,24 @@ var Styles = {
 		float:'right',
 	},
 	AboutUsWrapper: {
-		height: 'calc(100vh - 100px)',
 		padding: 20,
+		display: 'flex',
+		minHeight: '500px',
 		overflow: 'hidden',
+		background: "#333",
 		text: {
 			fontWeight: 200,
 			paddingLeft: 30,
 			fontFamily: 'Roboto, sans-serif',
+			color: Colors.white,
 			lineHeight: '25px',
 			width: '12vw',
-			float: 'right'
 		},
 		GoogleMap: {
-			height: '80%',
+			width: '100%',
 			border: '2px solid' + Colors.grey500,
-			minWidth: '570px',
-			float:  'left',
 		}
+
 	},
 }
 
