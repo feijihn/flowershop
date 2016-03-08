@@ -33,7 +33,7 @@ export default class Main extends React.Component {
 		//this.setState({
 			//category: +value,
 		//});
-		//window.location.hash = '/' + value; // REACT-ROUTER or http://jamesknelson.com/push-state-vs-hash-based-routing-with-react-js/
+		window.location.hash = '/' + value; // REACT-ROUTER or http://jamesknelson.com/push-state-vs-hash-based-routing-with-react-js/
 	};
 
 	addToCart = (title) => {

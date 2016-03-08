@@ -27,17 +27,18 @@ export default class Home extends React.Component {
 				axis="horizontal" 
 				showThumbs={false} 
 				showArrows={true}
+				style={{maxHeight: 700}}
 				>
-                <div>
+                <div style={Styles.HomeWrapper.Carousel}>
                     <img src="../images/1.jpg" />
                 </div>
-                <div>
+                <div style={Styles.HomeWrapper.Carousel}>
                     <img src="../images/2.jpg" />
                 </div>
-                <div>
+                <div style={Styles.HomeWrapper.Carousel}>
                     <img src="../images/3.jpg" />
                 </div>
-            </Carousel>
+        </Carousel>
 				</div>
 				</div>
 		);

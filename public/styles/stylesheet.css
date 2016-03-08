@@ -36,3 +36,6 @@ i {
 	display: block;
 	margin: 1em auto;
 }
+.caruosel {
+	max-width: 700px;
+}
