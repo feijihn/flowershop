@@ -79,20 +79,47 @@ export default class Header extends React.Component {
 							open={this.state.open}
 							onRequestChange={open => this.setState({open})}
 						>
-							<i 
-								className="material-icons md-36" 
-								style={{
-									color: 'black',
-									marginTop: 42,
-									marginLeft: 16,
-								}} 
+							<i className="material-icons" 
+								style={Styles.HeaderWrapper.navIcon.closeMenu} 
 								onTouchTap={this.handleClose}
-							>
-								close
-							</i>
+							>close</i>
+
 							{buttons.map(function(element, id) {
 								return(
-									<MenuItem onTouchTap={this.handleClose}>
+									<MenuItem onTouchTap={() => {this.handleClick(element.value)}}>
+										<FlatButton  
+											linkButton
+											href={element.href} 
+											value={element.value} 
+											label={element.label} 
+											style={Styles.HeaderWrapper.Navigation.ButtonsMobileVersion} 
+										/>
+									</MenuItem>
+								)
+							},this)}
+						</LeftNav>
+
+						<Col xs={12} sm={12} mdHidden lgHidden style={{textAlign: 'center',}}>
+
+							<i className="material-icons" 
+								style={Styles.HeaderWrapper.navIcon.openMenu} 
+								onTouchTap={this.handleToggle}
+							>menu</i>
+
+							<h className={'Label'} style={Styles.HeaderWrapper.Title.Label}>Majorgarden</h>
+							<p style={{color: Colors.pink900, marginLeft: -55, marginTop: -20}}>+7(968)400-41-41</p>
+						</Col>
+
+					</Row></Grid>
+					<Col xsHidden smHidden >
+							<div style={Styles.HeaderWrapper.Title.Container}>
+								<h className={'Label'} style={Styles.HeaderWrapper.Title.Label}>Majorgarden</h>
+								<p style={Styles.HeaderWrapper.Discription}>Cтудия дизайна цветов и украшений</p>
+								<h4 style={Styles.HeaderWrapper.Phone}>+7(968)400-41-41</h4>
+							</div>
+							<div className={'Navigation'} style={Styles.HeaderWrapper.Navigation}>
+								{buttons.map(function(element, id) {
+									return(
 										<FlatButton  
 											linkButton
 											href={element.href} 
@@ -101,53 +128,11 @@ export default class Header extends React.Component {
 											style={Styles.HeaderWrapper.Navigation.Buttons} 
 											onTouchTap={() => {this.handleClick(element.value)}} 
 										/>
-									</MenuItem>
-								)
-							},this)}
-						</LeftNav>
-						<Col xs={12} sm={12} mdHidden lgHidden style={{textAlign: 'center',}}>
-							<i 
-								className="material-icons" 
-								style={{
-									position: 'absolute',
-									color: 'black',
-									top: 42,
-									left: 16,
-								}} 
-								onTouchTap={this.handleToggle}
-							>
-								menu
-							</i>
-							<h className={'Label'} style={Styles.HeaderWrapper.Title.Label}>Majorgarden</h>
-							<p style={{color: Colors.pink900, marginLeft: -55, marginTop: -20}}>+7(968)400-41-41</p>
-						</Col>
-					</Row>
-					<Row>
-						<Col xsHidden smHidden md={1} lg={2}>
-							<h className={'Label'} style={Styles.HeaderWrapper.Title.Label}>Majorgarden</h>
-							<p style={Styles.HeaderWrapper.Discription}>Cтудия дизайна цветов и украшений</p>
-							<h4 style={Styles.HeaderWrapper.Phone}>+7(968)400-41-41</h4>
-						</Col>
-						<Col xsHidden smHidden md={10} lg={10}>
-
-				<div className={'Navigation'} style={Styles.HeaderWrapper.Navigation}>
-					{buttons.map(function(element, id) {
-						return(
-								<FlatButton  
-									linkButton
-									href={element.href} 
-									value={element.value} 
-									label={element.label} 
-									style={Styles.HeaderWrapper.Navigation.Buttons} 
-									onTouchTap={() => {this.handleClick(element.value)}} 
-								/>
-						)
-					},this)}
-					</div>
+									)
+								},this)}
+						</div>
 					</Col>
-						</Row>
-					</Grid>
-				</Paper>	
+			</Paper>	
 		)
 	}
 }

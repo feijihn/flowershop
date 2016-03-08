@@ -7,10 +7,16 @@ var Styles = {
 		display: 'flexbox',
 		width: '100%',
 		height: 'auto',
+		paddingBottom: 30,
 		backgroundColor: Colors.white,
 		Title:{
 			float: 'left',
-			height: 'auto',
+			Container: {
+				display: 'inline-block',
+				verticalAlign: 'middle', 
+				height: 120, 
+				margin: '20px',
+			},
 			Label : {
 				fontFamily: '\'Pacifico\', cursive',
 				fontSize: '2.5em',
@@ -20,15 +26,18 @@ var Styles = {
 			},
 		},
 		Navigation: {
-			paddingTop: 30,
-			paddingBottom: 30,
-			margin: '0 auto',
+			verticalAlign: 'middle',
+			display: 'inline-block',
 			Buttons: {
-				marginTop: 15,
 				color: Colors.black,
 				fontSize: 11,
 				fontWeight: 400,
-				minWidth: '0px',
+			},
+			ButtonsMobileVersion: {
+				fontSize: 11,
+				fontWeight: 400,
+				width: '100%',
+				height: '100%',
 			},
 			ButtonActive: {
 				borderBottom: '3px solid' + Colors.lightGreenA200,
@@ -42,11 +51,22 @@ var Styles = {
 			marginTop: -20,
 		},
 		Phone: {
-			marginLeft: -7,
-			marginTop: -5,
-			marginBottom: 30,
 			color: Colors.pink900,
-			textAlign: 'center',
+			marginLeft: 66,
+			marginTop: -5
+		},
+		navIcon: {
+			openMenu: {
+				position: 'absolute',
+				color: 'black',
+				top: 42,
+				left: 16,
+			},
+			closeMenu: {
+				color: 'black',
+				marginTop: 42,
+				marginLeft: 16,
+			},
 		},
 	},
 	BodyWrapper:{

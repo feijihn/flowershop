@@ -23,7 +23,8 @@ export default class Catalog extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			data: []
+			data: [],
+			showPreview: false,
 		}
 		$.ajax({
 			url: '/catalog',
@@ -40,6 +41,10 @@ export default class Catalog extends React.Component {
 		});
 	};
 
+	showPreview = (id) => {
+		alert('id');
+	};
+
 	render() {
 		var CatalogElements = this.state.data.map(function(element, id){
 			return (
@@ -52,6 +57,7 @@ export default class Catalog extends React.Component {
 						price={element.price}
 						responsive
 						addToCart={this.props.addToCart}
+						onTouchTap={this.showPreview}
 					/>
 				</Col>
 			)
@@ -112,18 +118,6 @@ class CatalogElement extends React.Component {
 		})
 	};
 
-	openPreview = () => {
-		this.setState({
-			showPreview: true,
-		})
-	};
-
-	closePreview = () => {
-		this.setState ({
-			showPreview: false,
-		})
-	};
-
 	handleAddToCart = (title) => {
 		this.props.addToCart(title);
 	};
@@ -140,7 +134,6 @@ class CatalogElement extends React.Component {
 				zDepth={this.state.zDepth}
 				onMouseEnter={this.handleMouseEnter}
 				onMouseLeave={this.handleMouseLeave}
-				onTouchTap={this.openPreview}
 			>  
 				<div style={{height: '300px', backgroundImage: 'url(' + img + ')', overflow: 'hidden'}}>
 					{this.state.onHover ?
@@ -151,7 +144,12 @@ class CatalogElement extends React.Component {
 					:null}
 					<div style={Styles.Catalog.elementFooter}>
 						{this.props.title} {this.props.price} руб.
-						<i className="material-icons" onTouchTop={() => {this.handleAddToCart(this.props.title)}} style={{cursor:'pointer',float: 'right'}}>add_shopping_cart</i>
+						<i className="material-icons" 
+							onTouchTop={() => {this.handleAddToCart(this.props.title)}} 
+							style={{cursor:'pointer',float: 'right'}}
+						>
+							add_shopping_cart
+						</i>
 					</div>
 				</div>
 			</Paper>;
@@ -159,18 +157,12 @@ class CatalogElement extends React.Component {
 		return (
 			<div>
 				{Element}
-				{this.state.showPreview ? 
-					<PreviewMode 
-						closePreview={this.closePreview} 
-						id={this.state.id}
-					/> 
-				:null}
 			</div>
 		)
 	}
 };
 
-class PreviewMode extends React.Component {
+/*class PreviewMode extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -263,4 +255,4 @@ class PreviewMode extends React.Component {
 			</div>
 		)
 	}
-};
+};*/
