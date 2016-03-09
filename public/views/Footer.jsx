@@ -7,7 +7,7 @@ export default class Footer extends React.Component {
 		return(
 			<Paper zDepth={8} style={Styles.Footer}>
 				<div style={{float: 'left', marginBottom: 15}}>
-					<p>©2016. MAJORGARDER. ALL RIGHTS RESERVED.</p>
+					<p>©2016. MAJORGARDEN. ALL RIGHTS RESERVED.</p>
 					<a href='#' 
 						style={{
 							color: 'rgba(0,0,0,0.5)', 
@@ -22,6 +22,7 @@ export default class Footer extends React.Component {
 				<div style={{float: 'right', color: 'rgba(0,0,0,0.5)',}}>
 					webpage created by <a href="#" style={{borderBottom: '1px dashed rgba(0,0,0,0.3)'}}>min.web</a>
 				</div>
+				<div style={{clear: 'both'}} />
 			</Paper>
 		)
 	}
