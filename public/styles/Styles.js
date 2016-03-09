@@ -91,10 +91,9 @@ var Styles = {
 		marginTop: 16,
 		minHeight: 700,
 		CatalogText: {
-			paddingTop: 50,
-			marginRight:50,
-			marginLeft:50,
-			paddingBottom: 10,
+			textAlign: 'center',
+			paddingTop: 1,
+			paddingBottom: 8,
 			boxSizing: 'border-box',
 			borderBottom: '1px solid rgba(0,0,0,0.1)',
 		},

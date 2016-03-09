@@ -57,7 +57,6 @@ export default class Catalog extends React.Component {
 						price={element.price}
 						responsive
 						addToCart={this.props.addToCart}
-						onTouchTap={this.showPreview}
 					/>
 				</Col>
 			)
@@ -77,6 +76,7 @@ export default class Catalog extends React.Component {
 			>
 			<Paper className={'ContentWrapper'} style={Styles.ContentWrapper} responsive>
 			<div className={'CatalogText'} style={Styles.ContentWrapper.CatalogText}>
+			<h2>Каталог</h2>
 			</div>
 			<Grid style={{width:'100%'}}>
 				<Row>
@@ -144,13 +144,16 @@ class CatalogElement extends React.Component {
 			>  
 				<div style={{height: '250px', backgroundImage: 'url(' + img + ')', overflow: 'hidden'}}>
 					{this.state.onHover ?
-					<div className={'captionActive'} style={{backgroundColor: 'rgba(0,0,0,0.4)',height: '80%'}}>
-					</div>
-					 	: 
-					<div className={'captionHidden'} style={{backgroundColor: 'rgba(0,0,0,0)',height: '80%'}}>
-					</div>
+						<div className={'captionActive'} style={{backgroundColor: 'rgba(0,0,0,0.5)',height: '80%', }}>
+							<div style={{margin: 0, textAlign: 'center', color: 'white'}}>
+							<h2 style={{margin: 0,}}>№{this.props.id}</h2>
+							<h3 style={{margin: 0,}}>{this.props.text}</h3>
+							</div>
+						</div>
+					 : 
+						<div className={'captionHidden'} style={{backgroundColor: 'rgba(0,0,0,0)',height: '80%'}} />
 					}
-					<div className={'captionFooter'} style={{height:'20%', backgroundColor:'rgba(0,0,0,0.5)', color: 'white'}}>
+					<div className={'captionFooter'} style={{height:'20%', backgroundColor:'rgba(0,0,0,0.7)', color: 'white'}}>
 						{this.props.title} {this.props.price} руб -.
 							<image src={'../images/icons/add-to-cart.svg'} style={{height:24,width:24}} onClick={()=>{this.props.addToCart(this.props.title)}}></image>
 					</div>
