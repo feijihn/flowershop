@@ -48,7 +48,7 @@ export default class Catalog extends React.Component {
 	render() {
 		var CatalogElements = this.state.data.map(function(element, id){
 			return (
-				<Col lg={4} md={6} sm={6} xs={12}>
+				<Col lg={3} md={6} sm={6} xs={12}>
 					<CatalogElement 
 						title={element.title}
 						text={element.text}
