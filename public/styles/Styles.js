@@ -78,7 +78,7 @@ var Styles = {
 		},
 	},
 	BodyWrapper:{
-		backgroundColor: 'rgba(238,238,238,0.3)',
+		backgroundColor: '#333',
 	},
 	HomeWrapper: {
 		height: 'auto',

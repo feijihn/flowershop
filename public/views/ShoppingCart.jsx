@@ -42,6 +42,8 @@ export default class ShoppingCart extends React.Component {
 	}
 	render() {
 		return (
+			<Grid fluid={true}>
+			<Row>
 			<Col 
 			lg={8}  
 			lgOffset={2}
@@ -81,6 +83,8 @@ export default class ShoppingCart extends React.Component {
 					<RaisedButton label="Оформить заказ" style={Styles.orderButton} backgroundColor={Colors.lightGreen200}/>
 				</Paper>
 			</Col>
+			</Row>
+			</Grid>
 		)
 	}
 }

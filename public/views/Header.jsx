@@ -57,7 +57,7 @@ export default class Header extends React.Component {
 			{
 				href: '#/gifts',
 				value: 'gifts',
-				label: 'Подарки и украшение'
+				label: 'Подарки и украшения'
 			},
 			{
 				href: '#/aboutus',
