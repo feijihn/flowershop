@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/cart', (req,res) =>	{
+	console.log(req);
 	if(req.query.customerId){
 	let dataFilePath = 'data/' + req.query.customerId + '.json'
 	fs.access(dataFilePath, fs.R_OK | fs.W_OK, (err) => { //check if customerId.json file exists
@@ -25,7 +26,7 @@ app.get('/cart', (req,res) =>	{
 			fs.readFile(dataFilePath, (err,data) => { //send it to client if exists
 				if(err) throw(err);
 				console.log(data);
-				res.send(JSON.parse(data));
+				res.json(JSON.parse(data));
 			});
 		}
 	});

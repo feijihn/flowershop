@@ -28,7 +28,8 @@ export default class ShoppingCart extends React.Component {
 		$.ajax({
 			url: '/cart',
 			dataType: 'json',
-			data: {"customerId" : this.state.customerId},
+			method: 'GET',
+			data: {"customerId" : this.props.customerId},
 			success: function(data) {
 				this.setState({
 					cartData : data

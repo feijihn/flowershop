@@ -29,7 +29,7 @@ export default class Content extends React.Component {
 				<Location path="/liveplants" handler={() => {return <Catalog category={'liveplants'} />}} />
 				<Location path="/gifts" handler={() => {return <Catalog category={'gifts'} />}} />
 				<Location path="/aboutus" handler={AboutUs} />
-				<Location path="/payment" handler={ShoppingCart} />
+				<Location path="/payment" handler={() => {return <ShoppingCart customerId={this.props.customerId}/>}} />
 			</Locations>
 		)
 	}
