@@ -23,21 +23,22 @@ export default class Home extends React.Component {
 		return (
 			<div className={'HomePageWrapper'} style={Styles.HomeWrapper}>
 				<div className={'CarouselWrapper'} style={Styles.HomeWrapper.Carousel}>
-					<Carousel 
-						axis="horizontal" 
-						showThumbs={false} 
-						showArrows={true}
-					>
-						<div>
-							<img src="../images/1.jpg" />
-						</div>
-						<div>
-							<img src="../images/2.jpg" />
-						</div>
-						<div>
-							<img src="../images/3.jpg" />
-						</div>
-					</Carousel>
+				<Carousel 
+				axis="horizontal" 
+				showThumbs={false} 
+				showArrows={true}
+				style={{maxHeight: 700}}
+				>
+                <div style={Styles.HomeWrapper.Carousel}>
+                    <img src="../images/1.jpg" />
+                </div>
+                <div style={Styles.HomeWrapper.Carousel}>
+                    <img src="../images/2.jpg" />
+                </div>
+                <div style={Styles.HomeWrapper.Carousel}>
+                    <img src="../images/3.jpg" />
+                </div>
+        </Carousel>
 				</div>
 			</div>
 		);

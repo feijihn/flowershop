@@ -128,6 +128,13 @@ class CatalogElement extends React.Component {
 
 		var img = this.props.img;
 
+		var ShowCaption = 
+					<div className={'Caption'} style={{backgroundColor: 'rgba(0,0,0,0.4)',height: '80%'}}>
+					</div>;
+		var HideCaption = 
+					<div className={'Caption'} style={{backgroundColor: 'rgba(0,0,0,0)',height: '80%'}}>
+					</div>;
+
 		var Element = 					
 			<Paper
 				style={Styles.Catalog.elementWrapper} 
@@ -135,24 +142,20 @@ class CatalogElement extends React.Component {
 				onMouseEnter={this.handleMouseEnter}
 				onMouseLeave={this.handleMouseLeave}
 			>  
-				<div style={{height: '300px', backgroundImage: 'url(' + img + ')', overflow: 'hidden'}}>
+				<div style={{height: '250px', backgroundImage: 'url(' + img + ')', overflow: 'hidden'}}>
 					{this.state.onHover ?
-						<div style={Styles.Catalog.elementOnHover}>
-							<h2>№{this.props.id+1}</h2>
-							<h3 style={{margin: 7, marginTop: 2}}>{this.props.text}</h3>
-						</div>
-					:null}
-					<div style={Styles.Catalog.elementFooter}>
-						{this.props.title} {this.props.price} руб.
-						<i className="material-icons" 
-							onTouchTop={() => {this.handleAddToCart(this.props.title)}} 
-							style={{cursor:'pointer',float: 'right'}}
-						>
-							add_shopping_cart
-						</i>
+					<div className={'captionActive'} style={{backgroundColor: 'rgba(0,0,0,0.4)',height: '80%'}}>
+					</div>
+					 	: 
+					<div className={'captionHidden'} style={{backgroundColor: 'rgba(0,0,0,0)',height: '80%'}}>
+					</div>
+					}
+					<div className={'captionFooter'} style={{height:'20%', backgroundColor:'rgba(0,0,0,0.5)', color: 'white'}}>
+						{this.props.title} {this.props.price} руб -.
+							<image src={'../images/icons/add-to-cart.svg'} style={{height:24,width:24}} onClick={()=>{this.props.addToCart(this.props.title)}}></image>
 					</div>
 				</div>
-			</Paper>;
+			</Paper>
 
 		return (
 			<div>

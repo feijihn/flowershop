@@ -27,7 +27,14 @@ export default class Main extends React.Component {
 				cartData: [],
 
 			};
-		};
+	};
+
+	menuClicked = (value) => {
+		//this.setState({
+			//category: +value,
+		//});
+		window.location.hash = '/' + value; // REACT-ROUTER or http://jamesknelson.com/push-state-vs-hash-based-routing-with-react-js/
+	};
 
 	addToCart = (title) => {
 		$.ajax({
@@ -45,14 +52,13 @@ export default class Main extends React.Component {
 			}.bind(this)
 		});
 	};
-
-	render() {
+	render(){
 		return (
 			<div className={'MainView'}>
 				<Header clickEvent={this.menuClicked} />
-				<Content />
+				<Content addToCart={this.addToCart}/>
 				<Footer className={'Footer'} />
 			</div>
 		)
-	}
+	};
 }

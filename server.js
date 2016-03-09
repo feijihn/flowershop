@@ -24,6 +24,7 @@ app.get('/cart', (req,res) =>	{
 		}else{
 			fs.readFile(dataFilePath, (err,data) => { //send it to client if exists
 				if(err) throw(err);
+				console.log(data);
 				res.send(JSON.parse(data));
 			});
 		}
@@ -44,7 +45,6 @@ app.post('/cartadd', (req,res) => {
 			cart.push(newItem);
 			fs.writeFile(dataFilePath, JSON.stringify(cart, null, 4),	(err) => {
 				if(err) throw err;
-				console.log('writing' + JSON.stringify(cart,null,4) + ' to ' + dataFilePath)
 				res.json(cart);
 			});	
 		});

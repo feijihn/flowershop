@@ -26,3 +26,28 @@ i {
 	max-height:100px;
 	border-top: 2px solid grey;
 }
+#previewMode {
+	display: block;
+	margin: 1em auto;
+}
+
+.captionFooter {
+	padding: 5px;
+	text-align: center;
+}
+
+.captionFooter span {
+	font-family: 'Roboto', bold;
+	font-weight: 900;
+	color: white;
+}
+
+.captionFooter img {
+	width: 48px;
+	height: 48px;
+	float: right;
+	background-color: rgba(200,0,100,0.6);
+	padding: 2px;
+	border-radius: 5px;
+	cursor: pointer;
+}

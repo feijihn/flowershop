@@ -35,38 +35,38 @@ export default class Header extends React.Component {
 		let buttons = [ 
 			{
 				href: '#/home',
-				value: 0,
+				value: 'home',
 				label: 'Главная'
 			},
 			{
 				href: '#/bouquets',
-				value: 1,
+				value: 'bouquets',
 				label: 'Букеты и композиции'
 			},
 			{
 				href: '#/wedding',
-				value: 2,
+				value: 'wedding',
 				label: 'Свадебная флористика'
 			},
 			{
 				href: '#/liveplants',
-				value: 3,
+				value: 'liveplants',
 				label: 'Живые растения'
 			},
 			{
 				href: '#/gifts',
-				value: 4,
+				value: 'gifts',
 				label: 'Подарки и украшение'
 			},
 			{
 				href: '#/aboutus',
-				value: 6,
+				value: 'aboutus',
 				label: 'Наш магазин'
 			},
 			{
 				href: '#/payment',
-				value: 7,
-				label: 'Оплата и Доставка'
+				value: 'payment',
+				label: 'Корзина'
 			},
 		];	
 		return(

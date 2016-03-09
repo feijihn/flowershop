@@ -112,6 +112,9 @@ var Styles = {
 			textAlign: 'center',
 		},
 		elementFooter: {
+			position: 'absolute',
+			bottom: 10,
+			width: '100%',
 			height: 60,
 			backgroundColor: 'rgba(0,0,0,0.6)',
 			color: 'white',
