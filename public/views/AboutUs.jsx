@@ -5,6 +5,10 @@ import Styles from '../styles/Styles.js';
 import { default as canUseDOM } from "can-use-dom";
 import { default as _ } from "lodash";
 
+import Grid from 'react-bootstrap/lib/Grid';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
+
 export default class AboutUs extends React.Component {
 	state = {
 		markers: [{
@@ -83,39 +87,50 @@ export default class AboutUs extends React.Component {
 
 	render() {
 		return (
-			<div style={Styles.AboutUsWrapper}>
-
-			<GoogleMapLoader
-				containerElement={
-					<div
-						{...this.props}
-						style={Styles.AboutUsWrapper.GoogleMap}
+			<div>
+				<Col xs={12} sm={12} mdHidden lgHidden style={Styles.AboutUsWrapper.mobileVersion}>
+					<div>
+						<h2>MAJORGARDEN</h2>
+						<p>Россия, Москва, ул. Сущевский Вал д.46</p>
+						<p>+7 968 400-41-41</p>
+						<p>Мы работаем круглосуточно</p>
+					</div>
+				</Col>	
+				<div style={Styles.AboutUsWrapper}>
+					<GoogleMapLoader
+						containerElement={
+							<div
+								{...this.props}
+								style={Styles.AboutUsWrapper.GoogleMap}
+							/>
+						}
+						googleMapElement={
+							<GoogleMap
+								ref={(map) => (this._googleMapComponent = map) && console.log(map.getZoom())}
+								defaultZoom={14}
+								defaultCenter={{ lat:55.7926467, lng:37.6104601}}
+								onClick={::this.handleMapClick}
+							>
+								{this.state.markers.map((marker, index) => {
+									return (
+										<Marker
+											{...marker}
+											onRightclick={this.handleMarkerRightclick.bind(this, index)}
+										/>
+									);
+								})}
+							</GoogleMap>
+						}
 					/>
-				}
-				googleMapElement={
-					<GoogleMap
-						ref={(map) => (this._googleMapComponent = map) && console.log(map.getZoom())}
-						defaultZoom={14}
-						defaultCenter={{ lat:55.7926467, lng:37.6104601}}
-						onClick={::this.handleMapClick}
-					>
-						{this.state.markers.map((marker, index) => {
-							return (
-								<Marker
-									{...marker}
-									onRightclick={this.handleMarkerRightclick.bind(this, index)}
-								/>
-							);
-						})}
-					</GoogleMap>
-				}
-			/>
-			<p className={'AboutUsText'} style={Styles.AboutUsWrapper.text}>
-			MAJORGARDEN<br/>
-			Россия, Москва, ул. Сущевский Вал д.46<br/>
-			+7 968 400-41-41<br/>
-			Мы работаем круглосуточно<br/>
-			</p>
+					<Col xsHidden smHidden md={4} lg={4}>
+						<div className={'AboutUsText'} style={Styles.AboutUsWrapper.text}>
+						<h2>MAJORGARDEN</h2>
+						Россия, Москва, ул. Сущевский Вал д.46<br/>
+						+7 968 400-41-41<br/>
+						Мы работаем круглосуточно<br/>
+						</div>
+					</Col>		
+				</div>
 			</div>
 		);
 	}

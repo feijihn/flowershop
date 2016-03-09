@@ -17,17 +17,17 @@ injectTapEventPlugin(); //needed for material-ui to wrok untill react 1.0.0 woul
 export default class Main extends React.Component {
 	constructor(props){
 		super(props);
-		if (!Cookie.load('customerId')) {
-			let Exp = Date.now() + 30*24*60*60*1000
-			Cookie.save('customerId', Keygen.url(Keygen.small), { path: '/', expires: new Date(new Date().getTime() + 30*24 * 60 * 60 * 1000)});
-		}
-		this.state = {
-			category: 0,
-			customerId: Cookie.load('customerId'),
-			cartData: [],
+			if (!Cookie.load('customerId')) {
+				let Exp = Date.now() + 30*24*60*60*1000
+				Cookie.save('customerId', Keygen.url(Keygen.small), { path: '/', expires: new Date(new Date().getTime() + 30*24 * 60 * 60 * 1000)});
+			}
+			this.state = {
+				category: 0,
+				customerId: Cookie.load('customerId'),
+				cartData: [],
 
-		};
 			};
+	};
 
 	menuClicked = (value) => {
 		//this.setState({
@@ -52,8 +52,7 @@ export default class Main extends React.Component {
 			}.bind(this)
 		});
 	};
-
-	render() {
+	render(){
 		return (
 			<div className={'MainView'}>
 				<Header clickEvent={this.menuClicked} />
@@ -61,5 +60,5 @@ export default class Main extends React.Component {
 				<Footer className={'Footer'} />
 			</div>
 		)
-	}
+	};
 }

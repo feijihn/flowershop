@@ -13,58 +13,73 @@ import Divider from 'material-ui/lib/divider';
 import $ from 'jquery';
 import RaisedButton from 'material-ui/lib/raised-button';
 
+import Grid from 'react-bootstrap/lib/Grid';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
+
+import Paper from 'material-ui/lib/paper';
 
 export default class ShoppingCart extends React.Component {
-    constructor(props) {
-        super(props);
-				this.state={
-					cartData: []
-				}
-				$.ajax({
-					url: '/cart',
-					dataType: 'json',
-					data: {"customerId" : this.state.customerId},
-					success: function(data) {
-						this.setState({
-							cartData : data
-						});
-					}.bind(this),
-					error: function(xhr, status, err) {
-						console.error(this.props.url, status, err.toString());
-					}.bind(this)
+	constructor(props) {
+		super(props);
+		this.state={
+			cartData: []
+		}
+		$.ajax({
+			url: '/cart',
+			dataType: 'json',
+			data: {"customerId" : this.state.customerId},
+			success: function(data) {
+				this.setState({
+					cartData : data
 				});
-    }
-    render() {
-      return (
-	      <div>
-	      	<h3 style={{textAlign: 'center', margin: 15}}> Список покупок </h3>
-	      	<Divider />
+			}.bind(this),
+			error: function(xhr, status, err) {
+				console.error(this.props.url, status, err.toString());
+			}.bind(this)
+		});
+	}
+	render() {
+		return (
+			<Col 
+			lg={8}  
+			lgOffset={2}
+			md={8}
+			mdOffset={2} 
+			sm={10} 
+			smOffset={1}
+			xs={12}
+			>
+			
+				<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
+					<h3 style={{textAlign: 'center', margin: 15, paddingTop: 20}}> Список покупок </h3>
+					<Divider />
 					<Table>
-					  <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
-					    <TableRow>
-					      <TableHeaderColumn>ID</TableHeaderColumn>
-					      <TableHeaderColumn>Название</TableHeaderColumn>
-					      <TableHeaderColumn>Количество</TableHeaderColumn>
-					      <TableHeaderColumn>Удалить</TableHeaderColumn>
-					    </TableRow>
-					  </TableHeader>
-					  <TableBody displayRowCheckbox={false} showRowHover={true}>
-					  	{this.state.cartData.map( (row, index) => (
-	              <TableRow>
-	                <TableRowColumn>{index+1}</TableRowColumn>
-	                <TableRowColumn>{row.name}</TableRowColumn>
-	                <TableRowColumn>{row.number}</TableRowColumn>
-	                <TableRowColumn>
+						<TableHeader displaySelectAll={false} adjustForCheckbox={false}>
+							<TableRow>
+								<TableHeaderColumn>ID</TableHeaderColumn>
+								<TableHeaderColumn>Название</TableHeaderColumn>
+								<TableHeaderColumn>Количество</TableHeaderColumn>
+								<TableHeaderColumn>Удалить</TableHeaderColumn>
+							</TableRow>
+						</TableHeader>
+						<TableBody displayRowCheckbox={false} showRowHover={true}>
+							{this.state.cartData.map( (row, index) => (
+								<TableRow>
+									<TableRowColumn>{index+1}</TableRowColumn>
+									<TableRowColumn>{row.name}</TableRowColumn>
+									<TableRowColumn>{row.number}</TableRowColumn>
+									<TableRowColumn>
 									<FlatButton label={'Удалить'} />
 									</TableRowColumn>
-	              </TableRow>
-	            ))}
-					  </TableBody>
+								</TableRow>
+							))}
+						</TableBody>
 					</Table>
 					<Divider />
 					<RaisedButton label="Оформить заказ" style={Styles.orderButton} backgroundColor={Colors.lightGreen200}/>
-				</div>
-      )
-    }
-
+				</Paper>
+			</Col>
+		)
+	}
 }

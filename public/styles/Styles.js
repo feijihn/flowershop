@@ -7,10 +7,16 @@ var Styles = {
 		display: 'flexbox',
 		width: '100%',
 		height: 'auto',
+		paddingBottom: 30,
 		backgroundColor: Colors.white,
 		Title:{
 			float: 'left',
-			height: 'auto',
+			Container: {
+				display: 'inline-block',
+				verticalAlign: 'middle', 
+				height: 120, 
+				margin: '20px',
+			},
 			Label : {
 				fontFamily: '\'Pacifico\', cursive',
 				fontSize: '2.5em',
@@ -20,15 +26,18 @@ var Styles = {
 			},
 		},
 		Navigation: {
-			paddingTop: 30,
-			paddingBottom: 30,
-			margin: '0 auto',
+			verticalAlign: 'middle',
+			display: 'inline-block',
 			Buttons: {
-				marginTop: 15,
 				color: Colors.black,
 				fontSize: 11,
 				fontWeight: 400,
-				minWidth: '0px',
+			},
+			ButtonsMobileVersion: {
+				fontSize: 11,
+				fontWeight: 400,
+				width: '100%',
+				height: '100%',
 			},
 			ButtonActive: {
 				borderBottom: '3px solid' + Colors.lightGreenA200,
@@ -38,15 +47,26 @@ var Styles = {
 			color: Colors.grey600,
 			whiteSpace: 'nowrap',
 			fontSize: '0.75em',
-			marginLeft: 20,
+			marginLeft: 25,
 			marginTop: -20,
 		},
 		Phone: {
-			marginLeft: 20,
-			marginTop: -5,
-			marginBottom: 30,
 			color: Colors.pink900,
-			textAlign: 'center',
+			marginLeft: 66,
+			marginTop: -5
+		},
+		navIcon: {
+			openMenu: {
+				position: 'absolute',
+				color: 'black',
+				top: 42,
+				left: 16,
+			},
+			closeMenu: {
+				color: 'black',
+				marginTop: 42,
+				marginLeft: 16,
+			},
 		},
 	},
 	BodyWrapper:{
@@ -63,8 +83,9 @@ var Styles = {
 
 	ContentWrapper: { 
 		backgroundColor: Colors.white,
-		marginBottom: 8,
-		marginTop: 8,
+		marginBottom: 16,
+		marginTop: 16,
+		minHeight: 700,
 		CatalogText: {
 			paddingTop: 50,
 			marginRight:50,
@@ -87,6 +108,8 @@ var Styles = {
 			textAlign: 'center',
 		},
 		elementFooter: {
+			position: 'absolute',
+			bottom: 0,
 			height: 60,
 			backgroundColor: 'rgba(0,0,0,0.6)',
 			color: 'white',
@@ -192,9 +215,23 @@ var Styles = {
 		GoogleMap: {
 			width: '100%',
 			border: '2px solid' + Colors.grey500,
-		}
-
+		},
+		mobileVersion: {
+			color: 'white',
+			width: '100%', 
+			backgroundColor: "#333",
+			borderBottom: '2px solid white',
+		},
 	},
+	Footer: {
+		borderTop: '1px solid rgba(0,0,0,0.3)', 
+		padding: 10, 
+		width: '100%', 
+		textWeight: 900,
+		maxHeight: 100,
+		fontFamily:'\'Roboto\', sans-serif', 
+		fontSize: 15,	
+	}
 }
 
 module.exports = Styles;
