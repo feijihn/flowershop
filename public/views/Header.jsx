@@ -111,7 +111,7 @@ export default class Header extends React.Component {
 						</Col>
 
 					</Row></Grid>
-					<Col xsHidden smHidden >
+					<Col xsHidden smHidden style={{textAlign: 'center'}}>
 							<div style={Styles.Header.Title.Container}>
 								<h className={'Label'} style={Styles.Header.Title.Label}>Majorgarden</h>
 								<p style={Styles.Header.Discription}>Cтудия дизайна цветов и украшений</p>

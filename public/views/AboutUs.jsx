@@ -92,7 +92,7 @@ export default class AboutUs extends React.Component {
 					<div>
 						<h2>MAJORGARDEN</h2>
 						<p>Россия, Москва, ул. Сущевский Вал д.46</p>
-						<p>+7 968 400-41-41</p>
+						<p>+7(968)400-41-41</p>
 						<p>Мы работаем круглосуточно</p>
 					</div>
 				</Col>	
@@ -126,7 +126,7 @@ export default class AboutUs extends React.Component {
 						<div className={'AboutUsText'} style={Styles.AboutUsWrapper.text}>
 						<h2>MAJORGARDEN</h2>
 						Россия, Москва, ул. Сущевский Вал д.46<br/>
-						+7 968 400-41-41<br/>
+						+7(968)400-41-41<br/>
 						Мы работаем круглосуточно<br/>
 						</div>
 					</Col>		
