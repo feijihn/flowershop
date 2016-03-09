@@ -24,7 +24,7 @@ export default class Content extends React.Component {
 			<Locations hash >
 				<Location path="/" handler={Home} />
 				<Location path="/home" handler={Home} />
-				<Location path="/bouquets" handler={() => {return <Catalog category={'bouquets'} /> }} />
+				<Location path="/bouquets" handler={() => {return <Catalog category={'bouquets'} addToCart={this.props.addToCart}/> }} />
 				<Location path="/wedding" handler={() => {return <Catalog category={'wedding'} />}} />
 				<Location path="/liveplants" handler={() => {return <Catalog category={'liveplants'} />}} />
 				<Location path="/gifts" handler={() => {return <Catalog category={'gifts'} />}} />
