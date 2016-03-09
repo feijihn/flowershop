@@ -236,6 +236,7 @@ var Styles = {
 		maxHeight: 100,
 		fontFamily:'\'Roboto\', sans-serif', 
 		fontSize: 15,	
+		color: 'rgba(0,0,0,0.7)',
 	}
 }
 
