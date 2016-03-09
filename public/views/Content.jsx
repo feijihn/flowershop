@@ -8,6 +8,8 @@ import Yummy from './Yummy.jsx';
 import ShoppingCart from './ShoppingCart.jsx';
 import Payment from './Payment.jsx';
 import AboutUs from './AboutUs.jsx';
+import Admin from './Admin.jsx';
+import AdminControl from './AdminControl.jsx';
 
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
@@ -30,6 +32,8 @@ export default class Content extends React.Component {
 				<Location path="/gifts" handler={() => {return <Catalog category={'gifts'} />}} />
 				<Location path="/aboutus" handler={AboutUs} />
 				<Location path="/payment" handler={() => {return <ShoppingCart customerId={this.props.customerId}/>}} />
+				<Location path="/admin" handler={Admin}/>
+				<Location path="/admin-control" handler={AdminControl}/>
 			</Locations>
 		)
 	}

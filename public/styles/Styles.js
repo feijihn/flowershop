@@ -44,7 +44,11 @@ var Styles = {
 				height: '100%',
 			},
 			ButtonActive: {
-				borderBottom: '3px solid' + Colors.lightGreenA200,
+				display: 'inline-block',
+				color: Colors.black,
+				backgroundColor: 'rgba(0,0,0,0.165)',
+				fontSize: 11,
+				fontWeight: 400,
 			},
 		},
 		Discription: {

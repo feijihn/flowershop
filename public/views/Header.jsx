@@ -25,6 +25,7 @@ export default class Header extends React.Component {
 
 	handleClick = (value) => {
 		this.props.clickEvent(value);
+		forceReload();
 	};
 	
 	handleToggle = () => this.setState({open: !this.state.open});
@@ -110,25 +111,39 @@ export default class Header extends React.Component {
 							<p style={{color: Colors.pink900, marginLeft: -55, marginTop: -20}}>+7(968)400-41-41</p>
 						</Col>
 
-					</Row></Grid>
+					</Row>
+					</Grid>
 					<Col xsHidden smHidden style={{textAlign: 'center'}}>
 							<div style={Styles.Header.Title.Container}>
 								<h className={'Label'} style={Styles.Header.Title.Label}>Majorgarden</h>
 								<p style={Styles.Header.Discription}>Cтудия дизайна цветов и украшений</p>
 								<h4 style={Styles.Header.Phone}>+7(968)400-41-41</h4>
-							</div>
-							<div className={'Navigation'} style={Styles.Header.Navigation}>
+								</div>
+								<div className={'Navigation'} style={Styles.Header.Navigation}>
 								{buttons.map(function(element, id) {
-									return(
-										<FlatButton  
+									if(this.props.activeButton === element.value){
+										return(
+											<FlatButton  
+											linkButton
+											href={element.href} 
+											value={element.value} 
+											label={element.label} 
+											style={Styles.Header.Navigation.ButtonActive} 
+											onTouchTap={() => {this.handleClick(element.value)}} 
+											/>
+										)
+									}else{
+										return(
+											<FlatButton  
 											linkButton
 											href={element.href} 
 											value={element.value} 
 											label={element.label} 
 											style={Styles.Header.Navigation.Buttons} 
 											onTouchTap={() => {this.handleClick(element.value)}} 
-										/>
-									)
+											/>
+										)
+									}
 								},this)}
 						</div>
 					</Col>

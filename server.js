@@ -5,12 +5,39 @@ var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
 var fs = require('fs');
+var passport = require('passport')
+var Strategy = require('passport-local').Strategy;
+var db = require('./data');
+
+passport.use(new Strategy(
+  function(username, password, cb) {
+    db.users.findByUsername(username, function(err, user) {
+      if (err) { return cb(err); }
+      if (!user) { return cb(null, false); }
+      if (user.password != password) { return cb(null, false); }
+      return cb(null, user);
+    });
+  }));
+
+passport.serializeUser(function(user, cb) {
+  cb(null, user.id);
+});
+
+passport.deserializeUser(function(id, cb) {
+  db.users.findById(id, function (err, user) {
+    if (err) { return cb(err); }
+    cb(null, user);
+  });
+});
+
 
 app.set('port', (process.env.PORT || 3000));
 
 app.use('/', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.get('/cart', (req,res) =>	{
 	console.log(req);
@@ -36,18 +63,38 @@ app.get('/cart', (req,res) =>	{
 app.post('/cartadd', (req,res) => {
 	if(req.body.customerId){
 		let dataFilePath = 'data/' + req.body.customerId + '.json'
-		fs.readFile(dataFilePath, (err,data) => {
-			if(err) throw err;
-			var cart = JSON.parse(data);
-			let newItem = {
-				"name" : req.body.title,
-				"number" : "1",
-			}
-			cart.push(newItem);
-			fs.writeFile(dataFilePath, JSON.stringify(cart, null, 4),	(err) => {
-				if(err) throw err;
-				res.json(cart);
+		fs.access(dataFilePath, fs.R_OK | fs.W_OK, (err) => {
+			if(err){
+				fs.writeFile(dataFilePath, '[]', (err) => {
+					if(err) throw err;
+					fs.readFile(dataFilePath, (err,data) => {
+						if(err) throw err;
+						var cart = JSON.parse(data);
+						let newItem = {
+							"name" : req.body.title,
+							"number" : 1,
+						}
+						cart.push(newItem);
+						fs.writeFile(dataFilePath, JSON.stringify(cart, null, 4),	(err) => {
+							if(err) throw err;
+							res.json(cart);
+						});	
+					});
+				});
+			}else{
+			fs.readFile(dataFilePath, (err,data) => {
+				var cart = JSON.parse(data);
+				let newItem = {
+					"name" : req.body.title,
+					"number" : 1,
+				}
+				cart.push(newItem);
+				fs.writeFile(dataFilePath, JSON.stringify(cart, null, 4),	(err) => {
+					if(err) throw err;
+					res.json(cart);
+				});	
 			});	
+			}
 		});
 	}	
 });
@@ -60,6 +107,19 @@ app.get('/catalog', (req,res) => {
 		let category = req.query.category;
 		res.json(catalog[category]);
 	});
+});
+
+app.post('/login',
+  passport.authenticate('local'),
+  function(req, res) {
+    // If this function gets called, authentication was successful.
+    // `req.user` contains the authenticated user.
+    res.send(true);
+  });
+
+
+app.get('/#/admin-control', (req,res) => {
+	res.send('NO AUTH');
 });
 
 app.listen(app.get('port'), function() {

@@ -22,7 +22,7 @@ export default class Main extends React.Component {
 				Cookie.save('customerId', Keygen.url(Keygen.small), { path: '/', expires: new Date(new Date().getTime() + 30*24 * 60 * 60 * 1000)});
 			}
 			this.state = {
-				category: 0,
+				category: window.location.hash.substring(2) || 'home',
 				customerId: Cookie.load('customerId'),
 				cartData: [],
 
@@ -30,9 +30,9 @@ export default class Main extends React.Component {
 	};
 
 	menuClicked = (value) => {
-		//this.setState({
-			//category: +value,
-		//});
+		this.setState({
+			category: value,
+		});
 		window.location.hash = '/' + value; // REACT-ROUTER or http://jamesknelson.com/push-state-vs-hash-based-routing-with-react-js/
 	};
 
@@ -55,7 +55,7 @@ export default class Main extends React.Component {
 	render(){
 		return (
 			<div className={'MainView'}>
-				<Header clickEvent={this.menuClicked} />
+				<Header clickEvent={this.menuClicked} activeButton={this.state.category}/>
 				<Content addToCart={this.addToCart} customerId={this.state.customerId}/>
 				<Footer className={'Footer'} />
 			</div>
