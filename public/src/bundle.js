@@ -20447,7 +20447,7 @@
 			backgroundColor: _colors2.default.white,
 			marginBottom: 16,
 			marginTop: 16,
-			minHeight: 700,
+			minHeight: 668,
 			CatalogText: {
 				textAlign: 'center',
 				paddingTop: 1,
@@ -76016,95 +76016,99 @@
 			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
-					_Grid2.default,
-					{ fluid: true },
+					'div',
+					{ className: 'BodyWrapper', style: _Styles2.default.BodyWrapper },
 					_react2.default.createElement(
-						_Row2.default,
-						null,
+						_Grid2.default,
+						{ fluid: true },
 						_react2.default.createElement(
-							_Col2.default,
-							{
-								lg: 8,
-								lgOffset: 2,
-								md: 8,
-								mdOffset: 2,
-								sm: 10,
-								smOffset: 1,
-								xs: 12
-							},
+							_Row2.default,
+							null,
 							_react2.default.createElement(
-								_paper2.default,
-								{ className: 'ContentWrapper', style: _Styles2.default.ContentWrapper },
+								_Col2.default,
+								{
+									lg: 8,
+									lgOffset: 2,
+									md: 8,
+									mdOffset: 2,
+									sm: 10,
+									smOffset: 1,
+									xs: 12
+								},
 								_react2.default.createElement(
-									'h3',
-									{ style: { textAlign: 'center', margin: 15, paddingTop: 20 } },
-									' Список покупок '
-								),
-								_react2.default.createElement(_divider2.default, null),
-								_react2.default.createElement(
-									_table2.default,
-									null,
+									_paper2.default,
+									{ className: 'ContentWrapper', style: _Styles2.default.ContentWrapper },
 									_react2.default.createElement(
-										_tableHeader2.default,
-										{ displaySelectAll: false, adjustForCheckbox: false },
-										_react2.default.createElement(
-											_tableRow2.default,
-											null,
-											_react2.default.createElement(
-												_tableHeaderColumn2.default,
-												null,
-												'ID'
-											),
-											_react2.default.createElement(
-												_tableHeaderColumn2.default,
-												null,
-												'Название'
-											),
-											_react2.default.createElement(
-												_tableHeaderColumn2.default,
-												null,
-												'Количество'
-											),
-											_react2.default.createElement(
-												_tableHeaderColumn2.default,
-												null,
-												'Удалить'
-											)
-										)
+										'h3',
+										{ style: { textAlign: 'center', margin: 15, paddingTop: 20 } },
+										' Список покупок '
 									),
+									_react2.default.createElement(_divider2.default, null),
 									_react2.default.createElement(
-										_tableBody2.default,
-										{ displayRowCheckbox: false, showRowHover: true },
-										this.state.cartData.map(function (row, index) {
-											return _react2.default.createElement(
+										_table2.default,
+										null,
+										_react2.default.createElement(
+											_tableHeader2.default,
+											{ displaySelectAll: false, adjustForCheckbox: false },
+											_react2.default.createElement(
 												_tableRow2.default,
 												null,
 												_react2.default.createElement(
-													_tableRowColumn2.default,
+													_tableHeaderColumn2.default,
 													null,
-													index + 1
+													'ID'
 												),
 												_react2.default.createElement(
-													_tableRowColumn2.default,
+													_tableHeaderColumn2.default,
 													null,
-													row.name
+													'Название'
 												),
 												_react2.default.createElement(
-													_tableRowColumn2.default,
+													_tableHeaderColumn2.default,
 													null,
-													row.number
+													'Количество'
 												),
 												_react2.default.createElement(
-													_tableRowColumn2.default,
+													_tableHeaderColumn2.default,
 													null,
-													_react2.default.createElement(_flatButton2.default, { label: 'Удалить' })
+													'Удалить'
 												)
-											);
-										})
-									)
-								),
-								_react2.default.createElement(_divider2.default, null),
-								_react2.default.createElement(_raisedButton2.default, { label: 'Оформить заказ', style: _Styles2.default.orderButton, backgroundColor: _colors2.default.lightGreen200 })
+											)
+										),
+										_react2.default.createElement(
+											_tableBody2.default,
+											{ displayRowCheckbox: false, showRowHover: true },
+											this.state.cartData.map(function (row, index) {
+												return _react2.default.createElement(
+													_tableRow2.default,
+													null,
+													_react2.default.createElement(
+														_tableRowColumn2.default,
+														null,
+														index + 1
+													),
+													_react2.default.createElement(
+														_tableRowColumn2.default,
+														null,
+														row.name
+													),
+													_react2.default.createElement(
+														_tableRowColumn2.default,
+														null,
+														row.number
+													),
+													_react2.default.createElement(
+														_tableRowColumn2.default,
+														null,
+														_react2.default.createElement(_flatButton2.default, { label: 'Удалить' })
+													)
+												);
+											})
+										)
+									),
+									_react2.default.createElement(_divider2.default, null),
+									_react2.default.createElement(_raisedButton2.default, { label: 'Оформить заказ', style: _Styles2.default.orderButton, backgroundColor: _colors2.default.lightGreen200 })
+								)
 							)
 						)
 					)

@@ -42,6 +42,7 @@ export default class ShoppingCart extends React.Component {
 	}
 	render() {
 		return (
+			<div className={'BodyWrapper'} style={Styles.BodyWrapper}>
 			<Grid fluid={true}>
 			<Row>
 			<Col 
@@ -85,6 +86,7 @@ export default class ShoppingCart extends React.Component {
 			</Col>
 			</Row>
 			</Grid>
+			</div>
 		)
 	}
 }

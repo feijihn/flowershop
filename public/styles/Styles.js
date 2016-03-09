@@ -93,7 +93,7 @@ var Styles = {
 		backgroundColor: Colors.white,
 		marginBottom: 16,
 		marginTop: 16,
-		minHeight: 700,
+		minHeight: 668,
 		CatalogText: {
 			textAlign: 'center',
 			paddingTop: 1,
