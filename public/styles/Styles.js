@@ -14,7 +14,7 @@ var Styles = {
 			Container: {
 				display: 'inline-block',
 				verticalAlign: 'middle', 
-				height: 160, 
+				height: 140, 
 				margin: '20px',
 				marginBottom: 0,
 			},
@@ -230,7 +230,7 @@ var Styles = {
 		padding: 10, 
 		width: '100%', 
 		textWeight: 900,
-		maxHeight: 100,
+		maxHeight: 140,
 		fontFamily:'\'Roboto\', sans-serif', 
 		fontSize: 15,	
 		color: 'rgba(0,0,0,0.7)',
