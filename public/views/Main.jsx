@@ -56,7 +56,7 @@ export default class Main extends React.Component {
 		return (
 			<div className={'MainView'}>
 				<Header clickEvent={this.menuClicked} />
-				<Content addToCart={this.addToCart}/>
+				<Content addToCart={this.addToCart} customerId={this.state.customerId}/>
 				<Footer className={'Footer'} />
 			</div>
 		)
