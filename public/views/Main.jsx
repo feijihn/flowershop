@@ -9,7 +9,7 @@ import $ from 'jquery';
 import data from '../data/Data.js';
 import Router from 'react-router-component';
 
-
+//This is an abroad comment i made to keep the streak on github. Enjoy life, enjoy streaks, enjoy stats, get 60 bucks per minute!
 
 injectTapEventPlugin(); //needed for material-ui to wrok untill react 1.0.0 would be released
 

@@ -48,7 +48,7 @@ export default class Catalog extends React.Component {
 	render() {
 		var CatalogElements = this.state.data.map(function(element, id){
 			return (
-				<Col lg={3} md={6} sm={6} xs={12}>
+				<Col lg={4} md={6} sm={6} xs={12}>
 					<CatalogElement 
 						title={element.title}
 						text={element.text}
@@ -144,19 +144,20 @@ class CatalogElement extends React.Component {
 			>  
 				<div style={{height: '250px', backgroundImage: 'url(' + img + ')', overflow: 'hidden'}}>
 					{this.state.onHover ?
-						<div className={'captionActive'} style={{backgroundColor: 'rgba(0,0,0,0.5)',height: '80%', }}>
+						<div className={'captionActive'} style={{backgroundColor: 'rgba(0,0,0,0.5)',height: '70%', }}>
 							<div style={{margin: 0, textAlign: 'center', color: 'white'}}>
-							<h2 style={{margin: 0,}}>№{this.props.id}</h2>
+							<h2 style={{margin: 0,}}>№{this.props.id+1}</h2>
 							<h3 style={{margin: 0,}}>{this.props.text}</h3>
 							</div>
 						</div>
 					 : 
-						<div className={'captionHidden'} style={{backgroundColor: 'rgba(0,0,0,0)',height: '80%'}} />
+						<div className={'captionHidden'} style={{backgroundColor: 'rgba(0,0,0,0)',height: '70%'}} />
 					}
-					<div className={'captionFooter'} style={{height:'20%', backgroundColor:'rgba(0,0,0,0.7)', color: 'white'}}>
-						{this.props.title} {this.props.price} руб -.
-							<image src={'../images/icons/add-to-cart.svg'} style={{height:24,width:24}} onClick={()=>{this.props.addToCart(this.props.title)}}></image>
-					</div>
+					<div className={'captionFooter'} style={{height:'30%', backgroundColor:'rgba(0,0,0,0.7)', color: 'white'}}>
+						<p>{this.props.title}<image src={'../images/icons/add-to-cart.svg'} style={{height:24,width:24}} onClick={()=>{this.props.addToCart(this.props.title)}}></image>
+</p> 
+						<p>{this.props.price} руб -.</p>
+												</div>
 				</div>
 			</Paper>
 

@@ -69,6 +69,8 @@ var Styles = {
 				color: 'black',
 				top: 42,
 				left: 16,
+				width: 64,
+				height: 64,
 			},
 			closeMenu: {
 				color: 'black',
