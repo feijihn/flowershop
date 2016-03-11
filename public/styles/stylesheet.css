@@ -51,3 +51,15 @@ i {
 	border-radius: 5px;
 	cursor: pointer;
 }
+
+
+#logo {
+	font-weight: normal;
+	font-family: "futura-pt";
+	line-height: 1.2em;
+	text-transform: uppercase;
+	letter-spacing: 0px;
+	font-weight: 700;
+	font-style: normal;
+	font-size: 32px;	
+}
