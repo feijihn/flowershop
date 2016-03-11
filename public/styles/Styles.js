@@ -55,13 +55,13 @@ var Styles = {
 			color: Colors.grey600,
 			whiteSpace: 'nowrap',
 			fontSize: '0.75em',
-			marginLeft: 25,
-			marginTop: -20,
+			marginLeft: 100,
+			marginTop: -15,
 		},
 		Phone: {
 			color: Colors.pink900,
-			marginLeft: 66,
-			marginTop: -5
+			marginLeft: 145,
+			marginTop: -10
 		},
 		navIcon: {
 			openMenu: {

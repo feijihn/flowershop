@@ -20274,13 +20274,13 @@
 									'menu'
 								),
 								_react2.default.createElement(
-									'h',
-									{ className: 'Label', style: _Styles2.default.Header.Title.Label },
+									'h1',
+									{ id: 'logo' },
 									'Majorgarden'
 								),
 								_react2.default.createElement(
 									'p',
-									{ style: { color: _colors2.default.pink900, marginLeft: -55, marginTop: -20 } },
+									{ style: { color: _colors2.default.pink900, marginLeft: 170, marginTop: -10 } },
 									'+7(968)400-41-41'
 								)
 							)
@@ -20293,8 +20293,8 @@
 							'div',
 							{ style: _Styles2.default.Header.Title.Container },
 							_react2.default.createElement(
-								'h',
-								{ className: 'Label', style: _Styles2.default.Header.Title.Label },
+								'h1',
+								{ id: 'logo' },
 								'Majorgarden'
 							),
 							_react2.default.createElement(
@@ -20412,12 +20412,12 @@
 			color: _colors2.default.grey600,
 			whiteSpace: 'nowrap',
 			fontSize: '0.75em',
-			marginLeft: 25,
-			marginTop: -20
+			marginLeft: 100,
+			marginTop: -15
 		}), _defineProperty(_Header, 'Phone', {
 			color: _colors2.default.pink900,
-			marginLeft: 66,
-			marginTop: -5
+			marginLeft: 145,
+			marginTop: -10
 		}), _defineProperty(_Header, 'navIcon', {
 			openMenu: {
 				position: 'absolute',

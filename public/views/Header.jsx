@@ -107,44 +107,44 @@ export default class Header extends React.Component {
 								onTouchTap={this.handleToggle}
 							>menu</i>
 
-							<h className={'Label'} style={Styles.Header.Title.Label}>Majorgarden</h>
-							<p style={{color: Colors.pink900, marginLeft: -55, marginTop: -20}}>+7(968)400-41-41</p>
+							<h1 id="logo">Majorgarden</h1>
+							<p style={{color: Colors.pink900, marginLeft: 170, marginTop: -10}}>+7(968)400-41-41</p>
 						</Col>
 
 					</Row>
 					</Grid>
 					<Col xsHidden smHidden style={{textAlign: 'center'}}>
-							<div style={Styles.Header.Title.Container}>
-								<h className={'Label'} style={Styles.Header.Title.Label}>Majorgarden</h>
-								<p style={Styles.Header.Discription}>Cтудия дизайна цветов и украшений</p>
-								<h4 style={Styles.Header.Phone}>+7(968)400-41-41</h4>
-								</div>
-								<div className={'Navigation'} style={Styles.Header.Navigation}>
-								{buttons.map(function(element, id) {
-									if(this.props.activeButton === element.value){
-										return(
-											<FlatButton  
-											linkButton
-											href={element.href} 
-											value={element.value} 
-											label={element.label} 
-											style={Styles.Header.Navigation.ButtonActive} 
-											onTouchTap={() => {this.handleClick(element.value)}} 
-											/>
-										)
-									}else{
-										return(
-											<FlatButton  
-											linkButton
-											href={element.href} 
-											value={element.value} 
-											label={element.label} 
-											style={Styles.Header.Navigation.Buttons} 
-											onTouchTap={() => {this.handleClick(element.value)}} 
-											/>
-										)
-									}
-								},this)}
+						<div style={Styles.Header.Title.Container}>
+							<h1 id="logo">Majorgarden</h1>
+							<p style={Styles.Header.Discription}>Cтудия дизайна цветов и украшений</p>
+							<h4 style={Styles.Header.Phone}>+7(968)400-41-41</h4>
+						</div>
+						<div className={'Navigation'} style={Styles.Header.Navigation}>
+							{buttons.map(function(element, id) {
+								if(this.props.activeButton === element.value){
+									return(
+										<FlatButton  
+										linkButton
+										href={element.href} 
+										value={element.value} 
+										label={element.label} 
+										style={Styles.Header.Navigation.ButtonActive} 
+										onTouchTap={() => {this.handleClick(element.value)}} 
+										/>
+									)
+								}else{
+									return(
+										<FlatButton  
+										linkButton
+										href={element.href} 
+										value={element.value} 
+										label={element.label} 
+										style={Styles.Header.Navigation.Buttons} 
+										onTouchTap={() => {this.handleClick(element.value)}} 
+										/>
+									)
+								}
+							},this)}
 						</div>
 					</Col>
 			</Paper>	
