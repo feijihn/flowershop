@@ -1,0 +1,76 @@
+{
+	"bouquets": [
+		{
+			"title": "Розы",
+			"text": "Описание роз",
+			"img": "https://static.wixstatic.com/media/9a9509_ba44cdf7e9b24c68bb28e6070dc1f5ce.jpg/v1/fill/w_560,h_463,al_c,q_90,usm_0.66_1.00_0.01/9a9509_ba44cdf7e9b24c68bb28e6070dc1f5ce.jpg",
+			"price": "1000"
+		},
+		{
+			"title": "Тюльпаны",
+			"text": "Описание тюльпанов",
+			"img": "https://static.wixstatic.com/media/9a9509_04beb86942c343f1adb9684b25657af3.jpg/v1/fill/w_570,h_463,al_c,q_90,usm_0.66_1.00_0.01/9a9509_04beb86942c343f1adb9684b25657af3.jpg",
+			"price": "930"
+		},
+		{
+			"title": "Лилии",
+			"text": "Описание лилий",
+			"img": "https://static.wixstatic.com/media/9a9509_77e7370d65524b72b19b4de6c0ccc249.jpg/v1/fill/w_493,h_463,al_c,q_90,usm_0.66_1.00_0.01/9a9509_77e7370d65524b72b19b4de6c0ccc249.jpg",
+			"price": "2320"
+		},
+		{
+			"title": "Нарциссы",
+			"text": "Описание нарциссов",
+			"img": "https://static.wixstatic.com/media/9a9509_352585c71ffd48c19cd541f6ca00b513.jpg/v1/fill/w_427,h_446,al_c,q_90,usm_0.66_1.00_0.01/9a9509_352585c71ffd48c19cd541f6ca00b513.jpg",
+			"price": "1200"
+		},
+		{
+			"title": "Букет Роккоко",
+			"text": "из 9 Ранункулюсов, 10 веток сирени и Эвкалипта",
+			"img": "http://www.rozaufa.ru/buket/rose-ufa-62.jpg",
+			"price": "4321"
+		},
+		{
+			"title": "Букет из 29 Ранункулюсов!",
+			"text": "Он шикарен",
+			"img": "http://www.shafaliufa.ru/assets/images/tulips/5cd9478f5d68b27_main_foto460.jpg",
+			"price": "1234"
+		}
+	],
+	"wedding": [
+		{
+			"title": "Розы",
+			"text": "Описание роз",
+			"img": "http://www.rozaufa.ru/buket/rose-ufa-62.jpg",
+			"price": "4321"
+		},
+		{
+			"title": "Букет",
+			"text": "Описание букеты",
+			"img": "http://www.shafaliufa.ru/assets/images/tulips/5cd9478f5d68b27_main_foto460.jpg",
+			"price": "1234"
+		}
+	],
+	"liveplants": [
+		{
+			"title": "Цветы",
+			"text": "Описание цветов",
+			"img": "https://static.wixstatic.com/media/9a9509_77e7370d65524b72b19b4de6c0ccc249.jpg/v1/fill/w_493,h_463,al_c,q_90,usm_0.66_1.00_0.01/9a9509_77e7370d65524b72b19b4de6c0ccc249.jpg",
+			"price": "2320"
+		},
+		{
+			"title": "Букеты",
+			"text": "Описание букетов",
+			"img": "https://static.wixstatic.com/media/9a9509_352585c71ffd48c19cd541f6ca00b513.jpg/v1/fill/w_427,h_446,al_c,q_90,usm_0.66_1.00_0.01/9a9509_352585c71ffd48c19cd541f6ca00b513.jpg",
+			"price": "1200"
+		}
+	],
+	"gifts": [
+		{
+			"title": "Цветы",
+			"text": "эти цветочки просто восхитительны",
+			"img": "https://static.wixstatic.com/media/9a9509_ba44cdf7e9b24c68bb28e6070dc1f5ce.jpg/v1/fill/w_560,h_463,al_c,q_90,usm_0.66_1.00_0.01/9a9509_ba44cdf7e9b24c68bb28e6070dc1f5ce.jpg",
+			"price": "420"
+		}
+	]
+}
