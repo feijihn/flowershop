@@ -7,10 +7,22 @@ export default class AdminControl extends React.Component {
 		this.state = {
 			authed: false
 		};
+	};
+	inputUsername = (e) => {
+		this.setState({
+			username: e.target.value,
+		})
+	};
+	inputPassword = (e) => {
+		this.setState({
+			password: e.target.value,
+		})
+	};
+	handleAuth = () => {
 		$.ajax({
 			url: '/login',
 			method: 'POST',
-			data: {"username" : "root", "password": "root"},
+			data: {"username" : this.state.username, "password": this.state.password},
 			success: () => {
 				this.setState({
 					authed: true
@@ -21,11 +33,6 @@ export default class AdminControl extends React.Component {
 			}
 		});
 	};
-
-	handleChange = (value) => {
-		·¸
-	};
-
 	render(){
 		if(this.state.authed){
 		return(
@@ -35,19 +42,19 @@ export default class AdminControl extends React.Component {
 		)
 		}else{
 			return(
-			<form>
+			<div>
 			<div>
 			<label>Username:</label>
-			<input type="text" name="username" onChange={() => {this.handleChange(value)}}/>
+			<input type="text" name="username" onChange={this.inputUsername} value={this.state.text}/>
 			</div>
 			<div>
 			<label>Password:</label>
-			<input type="password" name="password"/>
+			<input type="password" name="password" onChange={this.inputPassword} value={this.state.text}/>
 			</div>
 			<div>
-			<input type="submit" value="Log In"/>
+			<input type="submit" value="Log In" onClick={this.handleAuth}/>
 			</div>
-			</form>
+			</div>
 			)
 		}	
 	}

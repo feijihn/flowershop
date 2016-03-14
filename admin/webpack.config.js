@@ -7,11 +7,11 @@ var APP_DIR = path.resolve(__dirname, 'public');
 
 var config = {
 	entry: {
-		client: APP_DIR + '/Index.jsx',
+		admin: APP_DIR + '/Index.jsx',
 	},
 	output: {
 		path: BUILD_DIR,
-		filename: 'client.bundle.js'
+		filename: 'bundle.js'
 	},
 	resolve: {
 		modulesDirectories: ['node_modules'],

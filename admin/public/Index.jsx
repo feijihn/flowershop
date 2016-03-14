@@ -2,6 +2,6 @@
 
 import ReactDOM from 'react-dom';
 import React from 'react';
-import AdminMain from './views/AdminMain.jsx';
+import Main from './views/Main.jsx';
 
-ReactDOM.render(<AdminMain />,document.getElementById('content'));
+ReactDOM.render(<Main />,document.getElementById('content'));
