@@ -1,12 +1,19 @@
 import $ from 'jquery';
 import React from 'react';
+import Cookie from 'react-cookie';
 
 export default class AdminControl extends React.Component {
 	constructor(props){
 		super(props);
-		this.state = {
-			authed: false
-		};
+		if(Cookie.load('adminSession')){
+			this.state = {
+				authed: true
+			}
+		}else{
+			this.state = {
+				authed: false
+			};
+		}
 	};
 	inputUsername = (e) => {
 		this.setState({
@@ -26,7 +33,8 @@ export default class AdminControl extends React.Component {
 			success: () => {
 				this.setState({
 					authed: true
-				})
+				});
+				this.props.adminAuth();
 			},
 			error: (err) => {
 				console.log(err);

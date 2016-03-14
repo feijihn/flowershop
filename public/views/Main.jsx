@@ -25,8 +25,14 @@ export default class Main extends React.Component {
 				category: window.location.hash.substring(2) || 'home',
 				customerId: Cookie.load('customerId'),
 				cartData: [],
-
+				admin: false,
 			};
+			if(Cookie.load('adminSession')){
+				console.log('IS ADMIN');
+				this.setState({
+					admin: true
+				})
+			}
 	};
 
 	menuClicked = (value) => {
@@ -52,11 +58,17 @@ export default class Main extends React.Component {
 			}.bind(this)
 		});
 	};
+	adminAuth = () => {
+		Cookie.save('adminSession', Keygen.url(Keygen.small), { path: '/', expires: new Date(new Date().getTime() + 60 * 60 * 1000)});
+		this.setState({
+			admin: true
+		})
+	};
 	render(){
 		return (
 			<div className={'MainView'} >
 				<Header clickEvent={this.menuClicked} activeButton={this.state.category}/>
-				<Content addToCart={this.addToCart} customerId={this.state.customerId}/>
+				<Content addToCart={this.addToCart} customerId={this.state.customerId} adminAuth={this.adminAuth} isAdmin={this.state.admin}/>
 				<Footer className={'Footer'} />
 			</div>
 		)
