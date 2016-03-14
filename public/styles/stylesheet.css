@@ -85,14 +85,15 @@ footer .footerAuthors {
   top: 40px;
 }
 .captionFooter {
+  text-align: center;
   padding: 5px;
 }
-.captionFooter text-align center span {
+.captionFooter span {
   font-family: 'Roboto', bold;
   font-weight: 900;
   color: #fff;
 }
-.captionFooter text-align center img {
+.captionFooter img {
   width: 48px;
   height: 48px;
   float: right;

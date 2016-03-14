@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/feijihn/flowershop#readme",
   "dependencies": {
+    "autoprefixer-stylus": "^0.9.2",
     "babel": "^6.5.2",
     "babel-core": "^6.6.4",
     "babel-loader": "^6.2.4",
