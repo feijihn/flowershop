@@ -56,28 +56,31 @@ export default class Catalog extends React.Component {
 						id={id}
 						price={element.price}
 						addToCart={this.props.addToCart}
+						key={id}
 					/>
 				</Col>
 			)
 		}, this);
 		return (
-			<div className={'bodyWrapper'}>
-				<Grid fluid={true}>
-					<Row>
-						<Col lg={8} lgOffset={2} md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-							<Paper className='contentWrapper'>
-								<div className='catalogTitle'>
-									<h2>Каталог</h2>
-								</div>
-							<Grid style={{width:'100%'}}>
-								<Row>
-									{CatalogElements}
-								</Row>
-							</Grid>
-							</Paper>
-						</Col>
-					</Row>
-				</Grid>
+			<div className="catalog">
+				<div className={'bodyWrapper'}>
+					<Grid fluid={true}>
+						<Row>
+							<Col lg={8} lgOffset={2} md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+								<Paper className='contentWrapper'>
+									<div className='catalogTitle'>
+										<h2>Каталог</h2>
+									</div>
+								<Grid style={{width:'100%'}}>
+									<Row>
+										{CatalogElements}
+									</Row>
+								</Grid>
+								</Paper>
+							</Col>
+						</Row>
+					</Grid>
+				</div>
 			</div>
 		)
 	}

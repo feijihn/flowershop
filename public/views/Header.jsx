@@ -71,7 +71,7 @@ export default class Header extends React.Component {
 			},
 		];	
 		return(
-	            <div className="headerContainer">
+	            <div className="header">
 	                <Col className="mobileNavigation"
 	                xs={12} sm={12} mdHidden lgHidden
 	                onTouchTap={this.handleToggle}>
@@ -87,6 +87,7 @@ export default class Header extends React.Component {
 	                                        href={element.href}
 	                                        value={element.value}
 	                                        label={element.label}
+	                                        key={id}
 	                                    />
 	                                </MenuItem>
 	                            )
@@ -109,6 +110,7 @@ export default class Header extends React.Component {
 	                                    label={element.label}
 	                                    style={this.props.activeButton === element.value ? Styles.Header.buttonActive : Styles.Header.button}
 	                                    onTouchTap={() => {this.handleClick(element.value)}}
+	                                    key={id}
 	                                />
 	                            )
 	                        },this)}
