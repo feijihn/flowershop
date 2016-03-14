@@ -3,80 +3,18 @@ import Colors from 'material-ui/lib/styles/colors';
 
 var Styles = {
 	Header : {
-		display: 'flex',
-		display: 'flexbox',
-		width: '100%',
-		height: 'auto',
-		paddingBottom: 30,
-		backgroundColor: Colors.white,
-		Title:{
-			float: 'left',
-			Container: {
-				display: 'inline-block',
-				verticalAlign: 'middle', 
-				height: 140, 
-				margin: '20px',
-				marginBottom: 0,
-			},
-			Label : {
-				fontFamily: '\'Pacifico\', cursive',
-				fontSize: '2.5em',
-				color: Colors.black,
-				lineHeight: '3em',
-				marginLeft: 20,
-			},
-		},
-		Navigation: {
-			width: 'calc(100vw - 270px)',
-			verticalAlign: 'middle',
+		button: {
 			display: 'inline-block',
-			textAlign: 'center',
-			Buttons: {
-				display: 'inline-block',
-				color: Colors.black,
-				fontSize: 11,
-				fontWeight: 400,
-			},
-			ButtonsMobileVersion: {
-				fontSize: 11,
-				fontWeight: 400,
-				width: '100%',
-				height: '100%',
-			},
-			ButtonActive: {
-				display: 'inline-block',
-				color: Colors.black,
-				backgroundColor: 'rgba(0,0,0,0.165)',
-				fontSize: 11,
-				fontWeight: 400,
-			},
+			color: Colors.black,
+			fontSize: 11,/*
+			borderBottom: '1px rgba(0,0,0,0.1) solid',*/
 		},
-		Discription: {
-			color: Colors.grey600,
-			whiteSpace: 'nowrap',
-			fontSize: '0.75em',
-			marginLeft: 100,
-			marginTop: -15,
-		},
-		Phone: {
-			color: Colors.pink900,
-			marginLeft: 145,
-			marginTop: -10
-		},
-		navIcon: {
-			openMenu: {
-				position: 'absolute',
-				color: 'black',
-				top: 42,
-				left: 16,
-				width: 64,
-				height: 64,
-			},
-			closeMenu: {
-				color: 'black',
-				marginTop: 42,
-				marginLeft: 16,
-			},
+		buttonActive: {
+			backgroundColor: 'rgba(0,0,0,0.1)',
+			display: 'inline-block',
+			color: Colors.black,
+			fontSize: 11,/*
+			borderBottom: '2px rgba(0,0,0,0.5) solid',*/
 		},
 	},
 	BodyWrapper:{

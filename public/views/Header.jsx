@@ -71,83 +71,50 @@ export default class Header extends React.Component {
 			},
 		];	
 		return(
-			<Paper className={'Header'} style={Styles.Header}>
-				<Grid fluid={true}>
-					<Row> 
-						<LeftNav
-							docked={false}
-							width={200}
-							open={this.state.open}
-							onRequestChange={open => this.setState({open})}
-						>
-							<i className="material-icons" 
-								style={Styles.Header.navIcon.closeMenu} 
-								onTouchTap={this.handleClose}
-							>close</i>
-
-							{buttons.map(function(element, id) {
-								return(
-									<MenuItem onTouchTap={() => {this.handleClick(element.value)}}>
-										<FlatButton  
-											linkButton
-											href={element.href} 
-											value={element.value} 
-											label={element.label} 
-											style={Styles.Header.Navigation.ButtonsMobileVersion} 
-										/>
-									</MenuItem>
-								)
-							},this)}
-						</LeftNav>
-
-						<Col xs={12} sm={12} mdHidden lgHidden style={{textAlign: 'center',}}>
-
-							<i className="material-icons" 
-								style={Styles.Header.navIcon.openMenu} 
-								onTouchTap={this.handleToggle}
-							>menu</i>
-
-							<h1 id="logo">Majorgarden</h1>
-							<p style={{color: Colors.pink900, marginLeft: 170, marginTop: -10}}>+7(968)400-41-41</p>
-						</Col>
-
-					</Row>
-					</Grid>
-					<Col xsHidden smHidden style={{textAlign: 'center'}}>
-						<div style={Styles.Header.Title.Container}>
-							<h1 id="logo">Majorgarden</h1>
-							<p style={Styles.Header.Discription}>Cтудия дизайна цветов и украшений</p>
-							<h4 style={Styles.Header.Phone}>+7(968)400-41-41</h4>
-						</div>
-						<div className={'Navigation'} style={Styles.Header.Navigation}>
-							{buttons.map(function(element, id) {
-								if(this.props.activeButton === element.value){
-									return(
-										<FlatButton  
-										linkButton
-										href={element.href} 
-										value={element.value} 
-										label={element.label} 
-										style={Styles.Header.Navigation.ButtonActive} 
-										onTouchTap={() => {this.handleClick(element.value)}} 
-										/>
-									)
-								}else{
-									return(
-										<FlatButton  
-										linkButton
-										href={element.href} 
-										value={element.value} 
-										label={element.label} 
-										style={Styles.Header.Navigation.Buttons} 
-										onTouchTap={() => {this.handleClick(element.value)}} 
-										/>
-									)
-								}
-							},this)}
-						</div>
-					</Col>
-			</Paper>	
+	            <div className="headerContainer">
+	                <Col className="mobileNavigation"
+	                xs={12} sm={12} mdHidden lgHidden
+	                onTouchTap={this.handleToggle}>
+	                    МЕНЮ
+	                </Col>
+	                {this.state.open ?
+	                    <div className="mobileNavigationMenu">
+	                        {buttons.map(function(element, id) {
+	                            return(
+	                                <MenuItem onTouchTap={() => {this.handleClick(element.value)}}>
+	                                    <FlatButton  
+	                                        linkButton
+	                                        href={element.href}
+	                                        value={element.value}
+	                                        label={element.label}
+	                                    />
+	                                </MenuItem>
+	                            )
+	                        },this)}
+	                    </div>
+	                :null}
+	                <div className="headerContent">
+	                    <div className="headerLogo">
+	                        <h1 id="logo">Majorgarden</h1>
+	                        <p id="description">Cтудия дизайна цветов и украшений</p>
+	                        <p id="phone">+7(968)400-41-41</p>
+	                    </div>
+	                    <Col className="headerNavigation" xsHidden smHidden >
+	                        {buttons.map(function(element, id) {
+	                            return(
+	                                <FlatButton  
+	                                    linkButton
+	                                    href={element.href}
+	                                    value={element.value}
+	                                    label={element.label}
+	                                    style={this.props.activeButton === element.value ? Styles.Header.buttonActive : Styles.Header.button}
+	                                    onTouchTap={() => {this.handleClick(element.value)}}
+	                                />
+	                            )
+	                        },this)}
+	                    </Col>
+	                </div>
+	            </div>
 		)
 	}
 }
