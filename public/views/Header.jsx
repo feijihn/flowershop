@@ -97,7 +97,7 @@ export default class Header extends React.Component {
 	                    <div className="headerLogo">
 	                        <h1 id="logo">Majorgarden</h1>
 	                        <p id="description">Cтудия дизайна цветов и украшений</p>
-	                        <p id="phone">+7(968)400-41-41</p>
+	                        <p id="phone">+7 968 400-41-41</p>
 	                    </div>
 	                    <Col className="headerNavigation" xsHidden smHidden >
 	                        {buttons.map(function(element, id) {

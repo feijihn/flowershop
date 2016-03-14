@@ -2,12 +2,17 @@
 
 var path = require('path');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var session = require ('express-session');
 var express = require('express');
 var app = express();
 var fs = require('fs');
 var passport = require('passport')
 var Strategy = require('passport-local').Strategy;
 var db = require('./data');
+
+
+
 
 passport.use(new Strategy(
   function(username, password, cb) {
@@ -30,12 +35,16 @@ passport.deserializeUser(function(id, cb) {
   });
 });
 
+app = express();
 
 app.set('port', (process.env.PORT || 3000));
-
 app.use('/', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(require('morgan')('combined'));
+app.use(require('cookie-parser')());
+app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -109,18 +118,31 @@ app.get('/catalog', (req,res) => {
 	});
 });
 
+//app.post('/admin',
+  //passport.authenticate('local'),
+  //function(req, res) {
+    //// If this function gets called, authentication was successful.
+    //// `req.user` contains the authenticated user.
+    //res.redirect('/admin');
+  //}
+//);
 app.post('/login',
   passport.authenticate('local'),
-  function(req, res) {
-    // If this function gets called, authentication was successful.
-    // `req.user` contains the authenticated user.
-    res.send(true);
+	function(req, res) {
+		res.redirect('/admin/panel');
+	}
+)
+
+app.get('/admin/panel',
+  require('connect-ensure-login').ensureLoggedIn(),
+  function(req, res){
+			res.sendFile(path.join(__dirname+'/admin/public/index.html'));
   });
+	app.get('/admin/src/bundle.js', (req,res) => {
+		res.sendFile(path.join(__dirname+'/admin/public/src/bundle.js'));
+	})
 
 
-app.get('/#/admin-control', (req,res) => {
-	res.send('NO AUTH');
-});
 
 app.listen(app.get('port'), function() {
 	var now = new Date()

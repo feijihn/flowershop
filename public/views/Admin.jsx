@@ -3,19 +3,9 @@ import React from 'react';
 export default class Admin extends React.Component {
 	render(){
 		return(
-			<form action="/login" method="post">
 			<div>
-			<label>Username:</label>
-			<input type="text" name="username"/>
+			THIS IS ADMIN PANEL DAMN SON!!!!111
 			</div>
-			<div>
-			<label>Password:</label>
-			<input type="password" name="password"/>
-			</div>
-			<div>
-			<input type="submit" value="Log In"/>
-			</div>
-			</form>
 		)
 	}
 }
