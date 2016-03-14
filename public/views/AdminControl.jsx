@@ -21,6 +21,11 @@ export default class AdminControl extends React.Component {
 			}
 		});
 	};
+
+	handleChange = (value) => {
+		·¸
+	};
+
 	render(){
 		if(this.state.authed){
 		return(
@@ -30,9 +35,19 @@ export default class AdminControl extends React.Component {
 		)
 		}else{
 			return(
-				<div>
-				Not authorized!
-				</div>
+			<form>
+			<div>
+			<label>Username:</label>
+			<input type="text" name="username" onChange={() => {this.handleChange(value)}}/>
+			</div>
+			<div>
+			<label>Password:</label>
+			<input type="password" name="password"/>
+			</div>
+			<div>
+			<input type="submit" value="Log In"/>
+			</div>
+			</form>
 			)
 		}	
 	}

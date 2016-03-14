@@ -34,6 +34,7 @@ passport.deserializeUser(function(id, cb) {
 app.set('port', (process.env.PORT || 3000));
 
 app.use('/', express.static(path.join(__dirname, 'public')));
+//app.use('/admin', express.static(path.join(__dirname, 'admin')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(passport.initialize());
@@ -116,11 +117,6 @@ app.post('/login',
     // `req.user` contains the authenticated user.
     res.send(true);
   });
-
-
-app.get('/#/admin-control', (req,res) => {
-	res.send('NO AUTH');
-});
 
 app.listen(app.get('port'), function() {
 	var now = new Date()
