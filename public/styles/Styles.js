@@ -171,16 +171,6 @@ var Styles = {
 			borderBottom: '2px solid white',
 		},
 	},
-	Footer: {
-		borderTop: '1px solid rgba(0,0,0,0.3)', 
-		padding: 10, 
-		width: '100%', 
-		textWeight: 900,
-		maxHeight: 140,
-		fontFamily:'\'Roboto\', sans-serif', 
-		fontSize: 15,	
-		color: 'rgba(0,0,0,0.7)',
-	}
 }
 
 module.exports = Styles;

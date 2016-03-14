@@ -49,6 +49,7 @@
     "react-slick": "^0.11.1",
     "react-swipe": "^4.0.1",
     "react-tap-event-plugin": "^0.2.2",
+    "stylus": "^0.54.2",
     "swipe-js-iso": "^2.0.2",
     "webpack": "^1.12.14"
   }

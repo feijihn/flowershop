@@ -98,7 +98,7 @@ class CatalogElement extends React.Component {
 		super(props);
 		this.state = {
 			onHover: false,
-			zDepth: 2,
+			zDepth: 1,
 			showPreview: false,
 			id: this.props.id,
 		}
@@ -114,7 +114,7 @@ class CatalogElement extends React.Component {
 	handleMouseLeave = () => {
 		this.setState({
 			onHover: false,
-			zDepth: 2,
+			zDepth: 1,
 		})
 	};
 
@@ -129,11 +129,11 @@ class CatalogElement extends React.Component {
 		var img = this.props.img;
 
 		var ShowCaption = 
-					<div className={'Caption'} style={{backgroundColor: 'rgba(0,0,0,0.4)',height: '80%'}}>
-					</div>;
+			<div className={'Caption'} style={{backgroundColor: 'rgba(0,0,0,0.4)',height: '80%'}}>
+			</div>;
 		var HideCaption = 
-					<div className={'Caption'} style={{backgroundColor: 'rgba(0,0,0,0)',height: '80%'}}>
-					</div>;
+			<div className={'Caption'} style={{backgroundColor: 'rgba(0,0,0,0)',height: '80%'}}>
+			</div>;
 
 		var Element = 					
 			<Paper

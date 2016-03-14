@@ -1,120 +1,103 @@
 * {
-    margin:0;
-    padding:0;
+  margin: 0px;
+  padding: 0px;
 }
- 
-body {
-}
- 
-html,body{
-    height:100%;
-}
- 
 i {
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
+  color: #fff;
+  cursor: pointer;
 }
- 
-.MainView {
-    min-height: 100%;
-    margin-bottom: -102px;
+footer {
+  border-top: 1px solid rgba(0,0,0,0.3);
+  padding: 10px;
+  width: 100%;
+  text-weight: 900px;
+  max-height: 140px;
+  font-family: ' Roboto ', sans-serif;
+  font-size: 15px;
+  color: rgba(0,0,0,0.7);
 }
- 
- 
-.Footer {
-    max-height:100px;
-    border-top: 2px solid grey;
+footer a {
+  border-bottom: 1px dashed rgba(0,0,0,0.3);
 }
- 
-#previewMode {
-    display: block;
-    margin: 1em auto;
+footer .footerContacts {
+  float: left;
+  margin: 15;
 }
- 
-.captionFooter {
-    padding: 5px;
-    text-align: center;
+footer .footerContacts a {
+  color: rgba(0,0,0,0.5);
+  margin-top: -10px;
+  float: right;
 }
- 
-.captionFooter span {
-    font-family: 'Roboto', bold;
-    font-weight: 900;
-    color: white;
+footer .footerAuthors {
+  float: right;
+  color: rgba(0,0,0,0.5);
 }
- 
-.captionFooter img {
-    width: 48px;
-    height: 48px;
-    float: right;
-    background-color: rgba(200,0,100,0.6);
-    padding: 2px;
-    border-radius: 5px;
-    cursor: pointer;
-}
- 
- 
-#logo {
-    font-weight: normal;
-    font-family: "futura-pt";
-    line-height: 1.2em;
-    text-transform: uppercase;
-    letter-spacing: 0px;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 32px;   
-}
- 
-#description {
-    font-size: 12px;
-    color: rgb(117,117,117);
-    margin-top: -13px;
-}
- 
-#phone {
-    margin-top: -13px;
-}
- 
 .headerContainer {
-    height: 18vh;
-    min-height: 150px;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    flex-wrap: wrap;
+  height: 18vh;
+  min-height: 150px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
 }
- 
- 
-.headerContent {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-end;
-    align-items: center;
-    justify-content: center;
+.headerContainer .headerContent {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-end;
+  align-items: center;
+  justify-content: center;
 }
- 
-.headerNavigation {
- 
+.headerContainer .headerContent .headerLogo {
+  padding: 10px;
 }
- 
-.headerLogo {
-    padding: 10px;
+.headerContainer .headerContent .headerLogo #logo {
+  font-weight: normal;
+  font-family: "futura-pt";
+  line-height: 1.2em;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 32px;
 }
- 
-.mobileNavigation {
-    background-color: rgb(238,238,238);
-    padding: 10px;
-    text-align: center;
-    align-self: flex-start;
+.headerContainer .headerContent .headerLogo #description {
+  font-size: 12px;
+  color: #757575;
 }
- 
-.mobileNavigationMenu {
-    z-index: 100;
-    position: absolute;
-    top: 40px;
-    width: 100vw;
-    background-color: rgb(224,224,224);
-    top: 40px;
-    left: 0;
+.headerContainer .headerContent .headerLogo #phone,
+.headerContainer .headerContent .headerLogo #description {
+  margin-top: -13px;
+}
+.headerContainer .mobileNavigation {
+  background-color: #eee;
+  padding: 10px;
+  text-align: center;
+  align-self: flex-start;
+}
+.headerContainer .mobileNavigationMenu {
+  z-index: 100;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100vw;
+  background-color: #e0e0e0;
+  top: 40px;
+}
+.captionFooter {
+  padding: 5px;
+}
+.captionFooter text-align center span {
+  font-family: 'Roboto', bold;
+  font-weight: 900;
+  color: #fff;
+}
+.captionFooter text-align center img {
+  width: 48px;
+  height: 48px;
+  float: right;
+  background-color: rgba(200,0,100,0.6);
+  padding: 2px;
+  border-radius: 5px;
+  cursor: pointer;
 }
