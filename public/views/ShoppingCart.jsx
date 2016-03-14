@@ -42,50 +42,41 @@ export default class ShoppingCart extends React.Component {
 	}
 	render() {
 		return (
-			<div className={'BodyWrapper'} style={Styles.BodyWrapper}>
-			<Grid fluid={true}>
-			<Row>
-			<Col 
-			lg={8}  
-			lgOffset={2}
-			md={8}
-			mdOffset={2} 
-			sm={10} 
-			smOffset={1}
-			xs={12}
-			>
-			
-				<Paper className={'ContentWrapper'} style={Styles.ContentWrapper}>
-					<h3 style={{textAlign: 'center', margin: 15, paddingTop: 20}}> Список покупок </h3>
-					<Divider />
-					<Table>
-						<TableHeader displaySelectAll={false} adjustForCheckbox={false}>
-							<TableRow>
-								<TableHeaderColumn>ID</TableHeaderColumn>
-								<TableHeaderColumn>Название</TableHeaderColumn>
-								<TableHeaderColumn>Количество</TableHeaderColumn>
-								<TableHeaderColumn>Удалить</TableHeaderColumn>
-							</TableRow>
-						</TableHeader>
-						<TableBody displayRowCheckbox={false} showRowHover={true}>
-							{this.state.cartData.map( (row, index) => (
-								<TableRow>
-									<TableRowColumn>{index+1}</TableRowColumn>
-									<TableRowColumn>{row.name}</TableRowColumn>
-									<TableRowColumn>{row.number}</TableRowColumn>
-									<TableRowColumn>
-									<FlatButton label={'Удалить'} />
-									</TableRowColumn>
-								</TableRow>
-							))}
-						</TableBody>
-					</Table>
-					<Divider />
-					<RaisedButton label="Оформить заказ" style={Styles.orderButton} backgroundColor={Colors.lightGreen200}/>
-				</Paper>
-			</Col>
-			</Row>
-			</Grid>
+			<div className='bodyWrapper'>
+				<Grid fluid={true}>
+					<Row>
+						<Col lg={8} lgOffset={2} md={8} mdOffset={2} sm={10} smOffset={1} xs={12} >
+							<Paper className='contentWrapper'>
+								<h3 style={{textAlign: 'center', margin: 15, paddingTop: 20}}> Список покупок </h3>
+								<Divider />
+								<Table>
+									<TableHeader displaySelectAll={false} adjustForCheckbox={false}>
+										<TableRow>
+											<TableHeaderColumn>ID</TableHeaderColumn>
+											<TableHeaderColumn>Название</TableHeaderColumn>
+											<TableHeaderColumn>Количество</TableHeaderColumn>
+											<TableHeaderColumn>Удалить</TableHeaderColumn>
+										</TableRow>
+									</TableHeader>
+									<TableBody displayRowCheckbox={false} showRowHover={true}>
+										{this.state.cartData.map( (row, index) => (
+											<TableRow>
+												<TableRowColumn>{index+1}</TableRowColumn>
+												<TableRowColumn>{row.name}</TableRowColumn>
+												<TableRowColumn>{row.number}</TableRowColumn>
+												<TableRowColumn>
+												<FlatButton label={'Удалить'} />
+												</TableRowColumn>
+											</TableRow>
+										))}
+									</TableBody>
+								</Table>
+								<Divider />
+								<RaisedButton label="Оформить заказ" style={Styles.orderButton} backgroundColor={Colors.lightGreen200}/>
+							</Paper>
+						</Col>
+					</Row>
+				</Grid>
 			</div>
 		)
 	}

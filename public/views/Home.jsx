@@ -3,42 +3,26 @@ import Styles from '../styles/Styles.js';
 import Carousel from 'react-responsive-carousel/components/Carousel';
 import Slider from 'react-slick';
 
-var data = {
-	Main: [
-		{
-			img: '../images/1.jpg',
-			title: '',
-			text: '',
-		},
-		{
-			img: '../images/2.jpg',
-			title: '',
-			text: '',
-		},
-	],
-};
+var data = ["../images/1.jpg", "../images/2.jpg", "../images/3.jpg"];
 
 export default class Home extends React.Component {
 	render() {
 		return (
-			<div className={'HomePageWrapper'} style={Styles.HomeWrapper}>
-				<div className={'CarouselWrapper'} style={Styles.HomeWrapper.Carousel}>
-				<Carousel 
-				axis="horizontal" 
-				showThumbs={false} 
-				showArrows={true}
-				style={{maxHeight: 700}}
-				>
-                <div style={Styles.HomeWrapper.Carousel}>
-                    <img src="../images/1.jpg" />
-                </div>
-                <div style={Styles.HomeWrapper.Carousel}>
-                    <img src="../images/2.jpg" />
-                </div>
-                <div style={Styles.HomeWrapper.Carousel}>
-                    <img src="../images/3.jpg" />
-                </div>
-        </Carousel>
+			<div className={'homepageWrapper'}>
+				<div className={'carouselWrapper'}>
+					<Carousel 
+						axis="horizontal" 
+						showThumbs={false} 
+						showArrows={true}
+					>
+						{data.map(function(img) {
+							return (
+								<div className='carouselWrapper'>
+									<img src={img} />
+								</div>
+							)
+						})}
+					</Carousel>
 				</div>
 			</div>
 		);

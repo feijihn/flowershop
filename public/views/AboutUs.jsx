@@ -87,21 +87,19 @@ export default class AboutUs extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<Col xs={12} sm={12} mdHidden lgHidden style={Styles.AboutUsWrapper.mobileVersion}>
-					<div>
-						<h2>MAJORGARDEN</h2>
-						<p>Россия, Москва, ул. Сущевский Вал д.46</p>
-						<p>+7(968)400-41-41</p>
-						<p>Мы работаем круглосуточно</p>
-					</div>
+			<div className='aboutUs'>
+				<Col className="mobileVersion" xs={12} sm={12} mdHidden lgHidden >
+					<h2>MAJORGARDEN</h2>
+					<p>Россия, Москва, ул. Сущевский Вал д.46</p>
+					<p>+7(968)400-41-41</p>
+					<p>Мы работаем круглосуточно</p>
 				</Col>	
-				<div style={Styles.AboutUsWrapper}>
+				<div className="container">
 					<GoogleMapLoader
 						containerElement={
 							<div
 								{...this.props}
-								style={Styles.AboutUsWrapper.GoogleMap}
+								className='googleMap'
 							/>
 						}
 						googleMapElement={
@@ -123,11 +121,11 @@ export default class AboutUs extends React.Component {
 						}
 					/>
 					<Col xsHidden smHidden md={4} lg={4}>
-						<div className={'AboutUsText'} style={Styles.AboutUsWrapper.text}>
-						<h2>MAJORGARDEN</h2>
-						Россия, Москва, ул. Сущевский Вал д.46<br/>
-						+7(968)400-41-41<br/>
-						Мы работаем круглосуточно<br/>
+						<div className='text'>
+							<h2>MAJORGARDEN</h2>
+							Россия, Москва, ул. Сущевский Вал д.46<br/>
+							+7(968)400-41-41<br/>
+							Мы работаем круглосуточно<br/>
 						</div>
 					</Col>		
 				</div>
