@@ -13,17 +13,23 @@ import Divider from 'material-ui/lib/divider';
 import $ from 'jquery';
 import RaisedButton from 'material-ui/lib/raised-button';
 
+import Dialog from 'material-ui/lib/dialog';
+
+
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 
 import Paper from 'material-ui/lib/paper';
 
+import TextField from 'material-ui/lib/text-field';
+
 export default class ShoppingCart extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state={
-			cartData: []
+			cartData: [],
+			openDialog: false
 		}
 		$.ajax({
 			url: '/cart',
@@ -40,7 +46,29 @@ export default class ShoppingCart extends React.Component {
 			}.bind(this)
 		});
 	}
+
+	handleOpen = () => {
+		this.setState({openDialog: true});
+	};
+
+	handleClose = () => {
+		this.setState({openDialog: false});
+	};
+	
 	render() {
+		const actions = [
+			<FlatButton
+				label="Отмена"
+				secondary={true}
+				onTouchTap={this.handleClose}
+			/>,
+			<FlatButton
+				label="Заказать"
+				primary={true}
+				keyboardFocused={true}
+				onTouchTap={this.handleClose}
+			/>,
+		];
 		return (
 			<div className='bodyWrapper'>
 				<Grid fluid={true}>
@@ -72,7 +100,30 @@ export default class ShoppingCart extends React.Component {
 									</TableBody>
 								</Table>
 								<Divider />
-								<RaisedButton label="Оформить заказ" style={Styles.orderButton} backgroundColor={Colors.lightGreen200}/>
+								<RaisedButton 
+									label="Оформить заказ" 
+									style={Styles.orderButton} 
+									backgroundColor={Colors.lightGreen200}
+									onTouchTap={this.handleOpen}
+								/>
+								<Dialog
+									title="Контактная информация"
+									actions={actions}
+									modal={false}
+									open={this.state.openDialog}
+									onRequestClose={this.handleClose}
+								>
+									Имя
+									<TextField hintText="Имя" />
+									E-mail
+									<TextField hintText="E-mail" />
+									Контактный телефон
+									<TextField hintText="Контактный телефон" />
+									Адрес доставки
+									<TextField hintText="Адрес доставки" />
+									Комментарий
+									<TextField hintText="Комментарий" multiLine={true} />
+								</Dialog>
 							</Paper>
 						</Col>
 					</Row>
