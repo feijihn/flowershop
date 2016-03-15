@@ -15,9 +15,9 @@ export default class Home extends React.Component {
 						showThumbs={false} 
 						showArrows={true}
 					>
-						{data.map(function(img) {
+						{data.map(function(img, id) {
 							return (
-								<div className='carouselWrapper'>
+								<div className='carouselWrapper' key={id}>
 									<img src={img} />
 								</div>
 							)

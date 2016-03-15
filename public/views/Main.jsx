@@ -6,7 +6,6 @@ import Content from './Content.jsx';
 import Cookie from 'react-cookie';
 import Keygen from 'keygen';
 import $ from 'jquery';
-import data from '../data/Data.js';
 import Router from 'react-router-component';
 
 //This is an abroad comment i made to keep the streak on github. Enjoy life, enjoy streaks, enjoy stats, get 60 bucks per minute!

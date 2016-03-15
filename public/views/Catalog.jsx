@@ -58,6 +58,7 @@ export default class Catalog extends React.Component {
 						id={id}
 						price={element.price}
 						addToCart={this.props.addToCart}
+						key={id}
 					/>
 				</Col>
 			)
