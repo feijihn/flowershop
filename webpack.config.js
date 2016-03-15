@@ -11,7 +11,7 @@ var config = {
 	},
 	output: {
 		path: BUILD_DIR,
-		filename: 'client.bundle.js'
+		filename: 'bundle.js'
 	},
 	resolve: {
 		modulesDirectories: ['node_modules'],

@@ -129,18 +129,18 @@ app.get('/catalog', (req,res) => {
 app.post('/login',
   passport.authenticate('local'),
 	function(req, res) {
-		res.redirect('/admin/panel');
+		res.redirect('/#/admin');
 	}
 )
 
-app.get('/admin/panel',
-  require('connect-ensure-login').ensureLoggedIn(),
-  function(req, res){
-			res.sendFile(path.join(__dirname+'/admin/public/index.html'));
-  });
-	app.get('/admin/src/bundle.js', (req,res) => {
-		res.sendFile(path.join(__dirname+'/admin/public/src/bundle.js'));
-	})
+//app.get('/admin/panel',
+  //require('connect-ensure-login').ensureLoggedIn(),
+  //function(req, res){
+			//res.sendFile(path.join(__dirname+'/admin/public/index.html'));
+  //});
+	//app.get('/admin/src/bundle.js', (req,res) => {
+		//res.sendFile(path.join(__dirname+'/admin/public/src/bundle.js'));
+	//})
 
 
 

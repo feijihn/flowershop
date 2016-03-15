@@ -27,9 +27,9 @@ export default class Content extends React.Component {
 				<Location path="/" handler={Home} />
 				<Location path="/home" handler={Home} />
 				<Location path="/bouquets" handler={() => {return <Catalog category={'bouquets'} addToCart={this.props.addToCart}/> }} />
-				<Location path="/wedding" handler={() => {return <Catalog category={'wedding'} />}} />
-				<Location path="/liveplants" handler={() => {return <Catalog category={'liveplants'} />}} />
-				<Location path="/gifts" handler={() => {return <Catalog category={'gifts'} />}} />
+				<Location path="/wedding" handler={() => {return <Catalog category={'wedding'} addToCart={this.props.addToCart}/>}} />
+				<Location path="/liveplants" handler={() => {return <Catalog category={'liveplants'} addToCart={this.props.addToCart}/>}} />
+				<Location path="/gifts" handler={() => {return <Catalog category={'gifts'} addToCart={this.props.addToCart}/>}} />
 				<Location path="/aboutus" handler={AboutUs} />
 				<Location path="/payment" handler={() => {return <ShoppingCart customerId={this.props.customerId}/>}} />
 				<Location path="/admin" handler={() => {return <AdminControl adminAuth={this.props.adminAuth}/> }} />

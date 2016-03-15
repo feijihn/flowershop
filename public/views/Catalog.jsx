@@ -23,8 +23,14 @@ export default class Catalog extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			data: [],
-			showPreview: false,
+			data: {
+				"items":[
+
+				],
+				"categories":[
+
+				],
+			},
 		}
 		$.ajax({
 			url: '/catalog',
@@ -41,12 +47,8 @@ export default class Catalog extends React.Component {
 		});
 	};
 
-	showPreview = (id) => {
-		alert('id');
-	};
-
 	render() {
-		var CatalogElements = this.state.data.map(function(element, id){
+		var CatalogElements = this.state.data.items.map((element, id) => {
 			return (
 				<Col lg={4} md={6} sm={6} xs={12}>
 					<CatalogElement 
@@ -59,7 +61,17 @@ export default class Catalog extends React.Component {
 					/>
 				</Col>
 			)
-		}, this);
+		});
+		var Categories = this.state.data.categories.map((category, id) => {
+			return(
+			<Col lg={6} md={6} sm={6} xs={12}>
+				<CategoryElement
+					name={category.name}
+				>
+				</CategoryElement>
+			</Col>
+			)
+		});
 		return (
 			<div className={'bodyWrapper'}>
 				<Grid fluid={true}>
@@ -71,6 +83,9 @@ export default class Catalog extends React.Component {
 								</div>
 							<Grid style={{width:'100%'}}>
 								<Row>
+									{Categories}
+								</Row>
+								<Row>
 									{CatalogElements}
 								</Row>
 							</Grid>
@@ -78,6 +93,58 @@ export default class Catalog extends React.Component {
 						</Col>
 					</Row>
 				</Grid>
+			</div>
+		)
+	}
+};
+
+class CategoryElement extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			onHover: false,
+			zDepth: 1,
+			showPreview: false,
+			id: this.props.id,
+		}
+	};
+
+	handleMouseEnter = () => {
+		this.setState({
+			onHover: true,
+			zDepth: 1,
+		})
+	};
+
+	handleMouseLeave = () => {
+		this.setState({
+			onHover: false,
+			zDepth: 3,
+		})
+	};
+
+	handleAddToCart = (title) => {
+		this.props.addToCart(title);
+	};
+
+	render() {
+		var Element = 					
+			<Paper
+				className='catalogElementWrapper'
+				zDepth={this.state.zDepth}
+				onMouseEnter={this.handleMouseEnter}
+				onMouseLeave={this.handleMouseLeave}
+			>  
+				<div style={{height: '250px', backgroundColor: 'rgba(77,77,77,0.3)', overflow: 'hidden'}}>
+							<div className='text' style={{textAlign:'center', marginTop: 105, fontSize: 20}}>
+								{this.props.name}
+							</div>
+				</div>
+			</Paper>
+
+		return (
+			<div>
+				{Element}
 			</div>
 		)
 	}

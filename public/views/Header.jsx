@@ -25,7 +25,6 @@ export default class Header extends React.Component {
 
 	handleClick = (value) => {
 		this.props.clickEvent(value);
-		forceReload();
 	};
 	
 	handleToggle = () => this.setState({open: !this.state.open});

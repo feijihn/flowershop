@@ -34,7 +34,7 @@ footer .footerAuthors {
 }
 .headerContainer {
   height: 18vh;
-  min-height: 150px;
+  min-height: 110px;
   background-color: #fff;
   display: flex;
   justify-content: center;

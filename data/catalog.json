@@ -1,5 +1,20 @@
 {
-	"bouquets": [
+	"bouquets": {
+		"categories":[
+			{
+				"name": "roses"
+			},
+			{
+				"name": "lilies"
+			},
+			{
+				"name": "tulips"
+			},
+			{
+				"name":" etc"
+			}
+		],
+		"items":[
 		{
 			"title": "Розы",
 			"text": "Описание роз",
@@ -36,7 +51,9 @@
 			"img": "http://www.shafaliufa.ru/assets/images/tulips/5cd9478f5d68b27_main_foto460.jpg",
 			"price": "1234"
 		}
-	],
+		]	
+	},
+	 
 	"wedding": [
 		{
 			"title": "Розы",
