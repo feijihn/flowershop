@@ -17,6 +17,8 @@ import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
 import LeftNav from 'material-ui/lib/left-nav';
 import {Link} from 'react-router-component';
 
+import Badge from 'material-ui/lib/badge';
+
 export default class Header extends React.Component {
 	constructor(props){
 		super(props);
@@ -120,3 +122,19 @@ export default class Header extends React.Component {
 		)
 	}
 }
+/*
+					<Badge
+						badgeContent={4}
+						primary={true}
+					>
+						<MenuItem onTouchTap={() => {this.handleClick('payment')}}>
+							<FlatButton  
+								linkButton
+								href= '#/payment'
+								value= 'payment'
+								label= 'Корзина'
+								key={6}
+							/>
+						</MenuItem>
+					</Badge>
+*/				
