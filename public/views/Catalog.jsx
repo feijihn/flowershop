@@ -31,6 +31,7 @@ export default class Catalog extends React.Component {
 
 				],
 			},
+			category: null,
 		}
 		$.ajax({
 			url: '/catalog',
@@ -46,9 +47,16 @@ export default class Catalog extends React.Component {
 			}.bind(this)
 		});
 	};
+	
+	changeCategory = (category) => {
+		this.setState({
+			category: category
+		});
+	};
 
 	render() {
 		var CatalogElements = this.state.data.items.map((element, id) => {
+			if(element.category === this.state.category){
 			return (
 				<Col lg={4} md={6} sm={6} xs={12}>
 					<CatalogElement 
@@ -62,16 +70,20 @@ export default class Catalog extends React.Component {
 					/>
 				</Col>
 			)
+			}
 		});
 		var Categories = this.state.data.categories.map((category, id) => {
+			if(!this.state.category){
 			return(
 			<Col lg={6} md={6} sm={6} xs={12}>
 				<CategoryElement
 					name={category.name}
+					changeCategory={this.changeCategory}
 				>
 				</CategoryElement>
 			</Col>
 			)
+}
 		});
 		return (
 			<div className={'bodyWrapper'}>
@@ -79,6 +91,7 @@ export default class Catalog extends React.Component {
 					<Row>
 						<Col lg={8} lgOffset={2} md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
 							<Paper className='contentWrapper'>
+							<FlatButton onTouchTap={() => {this.changeCategory(null)}} label={'Назад'} />
 								<div className='catalogTitle'>
 									<h2>Каталог</h2>
 								</div>
@@ -124,8 +137,8 @@ class CategoryElement extends React.Component {
 		})
 	};
 
-	handleAddToCart = (title) => {
-		this.props.addToCart(title);
+	handleClick = () => {
+		this.props.changeCategory(this.props.name);
 	};
 
 	render() {
@@ -135,6 +148,7 @@ class CategoryElement extends React.Component {
 				zDepth={this.state.zDepth}
 				onMouseEnter={this.handleMouseEnter}
 				onMouseLeave={this.handleMouseLeave}
+				onTouchTap={this.handleClick}
 			>  
 				<div style={{height: '250px', backgroundColor: 'rgba(77,77,77,0.3)', overflow: 'hidden'}}>
 							<div className='text' style={{textAlign:'center', marginTop: 105, fontSize: 20}}>
