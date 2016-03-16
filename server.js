@@ -129,7 +129,7 @@ app.get('/catalog', (req,res) => {
 app.post('/login',
   passport.authenticate('local'),
 	function(req, res) {
-		res.redirect('/#/admin');
+		res.send(true)
 	}
 )
 

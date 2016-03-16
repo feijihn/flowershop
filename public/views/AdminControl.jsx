@@ -5,15 +5,9 @@ import Cookie from 'react-cookie';
 export default class AdminControl extends React.Component {
 	constructor(props){
 		super(props);
-		if(Cookie.load('adminSession')){
-			this.state = {
-				authed: true
-			}
-		}else{
 			this.state = {
 				authed: false
 			};
-		}
 	};
 	inputUsername = (e) => {
 		this.setState({
@@ -30,9 +24,9 @@ export default class AdminControl extends React.Component {
 			url: '/login',
 			method: 'POST',
 			data: {"username" : this.state.username, "password": this.state.password},
-			success: () => {
+			success: (data) => {
 				this.setState({
-					authed: true
+					authed: data
 				});
 				this.props.adminAuth();
 			},
@@ -44,8 +38,8 @@ export default class AdminControl extends React.Component {
 	render(){
 		if(this.state.authed){
 		return(
-			<div>
-			This is admin control page.
+			<div className={'adminPanel'}>
+				
 			</div>
 		)
 		}else{

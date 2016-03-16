@@ -224,7 +224,7 @@ class CatalogElement extends React.Component {
 							<image 
 								src={'../images/icons/add-to-cart.svg'} 
 								className="icon"
-								onClick={()=>{this.props.addToCart(this.props.title)}}
+								onTouchTap={()=>{this.props.addToCart(this.props.title)}}
 							/>
 						</p> 
 						<p>{this.props.price} руб -.</p>

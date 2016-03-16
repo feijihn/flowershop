@@ -47,14 +47,11 @@ export default class Main extends React.Component {
 			dataType: 'json',
 			method: 'post',
 			data:{"customerId": this.state.customerId, "title": title},
-			success: function(data) {
-				this.setState({
-					cartData: data
-				});
-			}.bind(this),
-			error: function(xhr, status, err) {
+			success: (data) => {
+			},
+			error: (xhr, status, err) => {
 				console.error(this.props.url, status, err.toString());
-			}.bind(this)
+			}
 		});
 	};
 	adminAuth = () => {
