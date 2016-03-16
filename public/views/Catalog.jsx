@@ -57,56 +57,57 @@ export default class Catalog extends React.Component {
 	render() {
 		var CatalogElements = this.state.data.items.map((element, id) => {
 			if(element.category === this.state.category){
-			return (
-				<Col lg={4} md={6} sm={6} xs={12}>
-					<CatalogElement 
-						title={element.title}
-						text={element.text}
-						img={element.img}
-						id={id}
-						price={element.price}
-						addToCart={this.props.addToCart}
-						key={id}
-					/>
-				</Col>
-			)
+				return (
+					<Col lg={4} md={6} sm={6} xs={12}>
+						<CatalogElement 
+							title={element.title}
+							text={element.text}
+							img={element.img}
+							id={id}
+							price={element.price}
+							addToCart={this.props.addToCart}
+							key={id}
+						/>
+					</Col>
+				)
 			}
 		});
 		var Categories = this.state.data.categories.map((category, id) => {
 			if(!this.state.category){
 			return(
-			<Col lg={6} md={6} sm={6} xs={12}>
-				<CategoryElement
-					name={category.name}
-					changeCategory={this.changeCategory}
-				>
-				</CategoryElement>
-			</Col>
+				<Col lg={6} md={6} sm={6} xs={12}>
+					<CategoryElement
+						name={category.name}
+						changeCategory={this.changeCategory}
+					>
+					</CategoryElement>
+				</Col>
 			)
-}
-		});
+		}});
 		return (
-			<div className={'bodyWrapper'}>
-				<Grid fluid={true}>
-					<Row>
-						<Col lg={8} lgOffset={2} md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-							<Paper className='contentWrapper'>
-							<FlatButton onTouchTap={() => {this.changeCategory(null)}} label={'Назад'} />
-								<div className='catalogTitle'>
-									<h2>Каталог</h2>
-								</div>
-							<Grid style={{width:'100%'}}>
-								<Row>
-									{Categories}
-								</Row>
-								<Row>
-									{CatalogElements}
-								</Row>
-							</Grid>
-							</Paper>
-						</Col>
-					</Row>
-				</Grid>
+			<div className="catalog">
+				<div className='bodyWrapper'>
+					<Grid fluid={true}>
+						<Row>
+							<Col lg={8} lgOffset={2} md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+								<Paper className='contentWrapper'>
+									<FlatButton onTouchTap={() => {this.changeCategory(null)}} label={'Назад'} />
+									<div className='catalogTitle'>
+										<h2>Каталог</h2>
+									</div>
+									<Grid style={{width:'100%'}}>
+										<Row>
+											{Categories}
+										</Row>
+										<Row>
+											{CatalogElements}
+										</Row>
+									</Grid>
+								</Paper>
+							</Col>
+						</Row>
+					</Grid>
+				</div>
 			</div>
 		)
 	}
