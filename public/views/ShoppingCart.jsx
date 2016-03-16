@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from '../styles/Styles.js';
+
 import Colors from 'material-ui/lib/styles/colors';
 import FlatButton from 'material-ui/lib/flat-button';
 import Table from 'material-ui/lib/table/table';
@@ -24,12 +24,16 @@ import Paper from 'material-ui/lib/paper';
 
 import TextField from 'material-ui/lib/text-field';
 
+import RadioButton from 'material-ui/lib/radio-button';
+import RadioButtonGroup from 'material-ui/lib/radio-button-group';
+
+
 export default class ShoppingCart extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state={
 			cartData: [],
-			openDialog: false
+			openDialog: false,
 		}
 		$.ajax({
 			url: '/cart',
@@ -80,8 +84,8 @@ export default class ShoppingCart extends React.Component {
 								<Table>
 									<TableHeader displaySelectAll={false} adjustForCheckbox={false}>
 										<TableRow>
-											<TableHeaderColumn>ID</TableHeaderColumn>
 											<TableHeaderColumn>Название</TableHeaderColumn>
+											<TableHeaderColumn>Стоимость(за шт.)</TableHeaderColumn>
 											<TableHeaderColumn>Количество</TableHeaderColumn>
 											<TableHeaderColumn>Удалить</TableHeaderColumn>
 										</TableRow>
@@ -89,8 +93,8 @@ export default class ShoppingCart extends React.Component {
 									<TableBody displayRowCheckbox={false} showRowHover={true}>
 										{this.state.cartData.map( (row, index) => (
 											<TableRow>
-												<TableRowColumn>{index+1}</TableRowColumn>
 												<TableRowColumn>{row.name}</TableRowColumn>
+												<TableRowColumn>{row.price}</TableRowColumn>
 												<TableRowColumn>{row.number}</TableRowColumn>
 												<TableRowColumn>
 												<FlatButton label={'Удалить'} />
@@ -100,12 +104,7 @@ export default class ShoppingCart extends React.Component {
 									</TableBody>
 								</Table>
 								<Divider />
-								<RaisedButton 
-									label="Оформить заказ" 
-									style={Styles.orderButton} 
-									backgroundColor={Colors.lightGreen200}
-									onTouchTap={this.handleOpen}
-								/>
+
 								<Dialog
 									title="Контактная информация"
 									actions={actions}
@@ -113,17 +112,39 @@ export default class ShoppingCart extends React.Component {
 									open={this.state.openDialog}
 									onRequestClose={this.handleClose}
 								>
-									Имя
-									<TextField hintText="Имя" />
-									E-mail
-									<TextField hintText="E-mail" />
-									Контактный телефон
-									<TextField hintText="Контактный телефон" />
-									Адрес доставки
-									<TextField hintText="Адрес доставки" />
-									Комментарий
-									<TextField hintText="Комментарий" multiLine={true} />
+									<TextField floatingLabelText="Имя" multiLine={true} fullWidth={true} />
+									<TextField floatingLabelText="E-mail" multiLine={true} fullWidth={true} />
+									<TextField floatingLabelText="Контактный телефон" multiLine={true} fullWidth={true} />
+									<TextField floatingLabelText="Адрес доставки" multiLine={true} fullWidth={true} />
+									<TextField floatingLabelText="Комментарий" multiLine={true} fullWidth={true} />
 								</Dialog>
+
+								<div className="shoppingCartFooter">
+									<RadioButtonGroup name="Доставка" className="radioButtonGroup">
+										<RadioButton
+											value="1"
+											label="Самовывоз м. Марьина Роща - Бесплатно"
+										/>
+										<RadioButton
+											value="2"
+											label="Доставка букетов по Москве в пределах МКАД - 500р."
+										/>
+										<RadioButton
+											value="3"
+											label="Доставка СВАДЕБНЫХ БУКЕТОВ в пределах МКАД - 800р."
+										/>
+										<RadioButton
+											value="4"
+											label="Доставка букетов за МКАД, далее +50 руб./км - 1000р."
+										/>
+									</RadioButtonGroup>
+									<RaisedButton 
+										className="orderButton"
+										label="Оформить заказ" 
+										backgroundColor={Colors.lightGreen200}
+										onTouchTap={this.handleOpen}
+									/>
+								</div>
 							</Paper>
 						</Col>
 					</Row>
